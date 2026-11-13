@@ -1,0 +1,135 @@
+'use client'
+
+import { FC } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowDown, Download, Star, Cpu, Zap, Activity } from 'lucide-react'
+import { profile, experiences, skills } from '../../content'
+
+interface HeroProps {
+  hasResumePdf: boolean
+}
+
+export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
+  return (
+    <section className="relative w-full px-6 md:px-16 pt-16 md:pt-24 pb-28 md:pb-36 overflow-hidden bg-background">
+      {/* Ambient Ember Glows */}
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-primary-container/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute -top-12 -left-20 w-72 h-72 bg-secondary-container/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto flex flex-col items-start">
+        {/* Availability Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="inline-flex items-center gap-2 mb-8 px-3.5 py-1.5 bg-surface-container-low border border-border-hairline rounded-full"
+        >
+          <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
+          <span className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+            Seeking AI Engineer roles — {profile.location}
+          </span>
+        </motion.div>
+
+        {/* Monolithic Display Typography */}
+        <motion.h1
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
+          className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.04] mb-4"
+        >
+          {profile.name.split(' ')[0]} <br />
+          <span className="italic text-primary-container font-light">{profile.name.split('slice').length > 1 ? '' : profile.name.split(' ')[1]}</span>
+        </motion.h1>
+
+        {/* Subtitle Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="flex items-center gap-3 my-6"
+        >
+          <span className="w-6 h-[1.5px] bg-primary-container" />
+          <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary font-semibold">
+            {profile.headline}
+          </span>
+        </motion.div>
+
+        {/* Narrative Bio */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="font-display text-body-lg text-tertiary max-w-2xl leading-relaxed mb-10"
+        >
+          I build LLM products end to end: RAG pipelines and multi-agent LangGraph workflows, plus the React and FastAPI apps around them. B.Tech (CSE, AI &amp; ML) student with 1.5+ years of experience, looking for my first full-time AI Engineer role.
+        </motion.p>
+
+        {/* Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="flex flex-wrap items-center gap-4 mb-16"
+        >
+          <a
+            href="#artifacts"
+            className="px-7 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)] flex items-center gap-2"
+          >
+            <span>Explore The Artifacts</span>
+            <ArrowDown className="w-4 h-4" />
+          </a>
+          {hasResumePdf && (
+            <a
+              href={profile.links.resumePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-all duration-200 flex items-center gap-2"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Résumé</span>
+            </a>
+          )}
+          <a
+            href={`mailto:${profile.email}`}
+            className="px-7 py-3.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-all duration-200"
+          >
+            Make Contact
+          </a>
+        </motion.div>
+
+        {/* Recruiter Fast-Scan Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.25 }}
+          className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg"
+        >
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-light">1.5+ Years</span>
+            <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
+              Experience & RAG
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-light">+35% / -30%</span>
+            <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
+              Relevance & Latency
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-light">62 → 91</span>
+            <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
+              Lighthouse Perf Gain
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-light">2 Shipped</span>
+            <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
+              AI Agent Products
+            </span>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}

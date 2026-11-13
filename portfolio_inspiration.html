@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=JetBrains+Mono:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b02f00", "border-hairline": "#262220", "on-surface-variant": "#e4beb4", "on-error-container": "#ffdad6", "surface-container-lowest": "#0f0e0d", "surface-dim": "#141312", "on-tertiary-container": "#2b2925", "on-secondary-container": "#4f1700", "on-primary-fixed": "#3b0900", "on-background": "#e6e1df", "secondary-container": "#f95e14", "tertiary-container": "#94908a", "secondary": "#ffb59a", "primary": "#ffb5a0", "surface-tint": "#ffb5a0", "surface-charcoal": "#141211", "border-amber": "#FF572240", "on-secondary": "#5b1b00", "on-primary": "#5f1500", "on-surface": "#e6e1df", "on-secondary-fixed": "#380d00", "error-container": "#93000a", "tertiary": "#cbc6bf", "surface-container": "#211f1e", "tertiary-fixed": "#e7e2db", "secondary-fixed-dim": "#ffb59a", "surface-container-highest": "#363433", "on-secondary-fixed-variant": "#802a00", "on-tertiary": "#32302c", "on-error": "#690005", "on-primary-fixed-variant": "#862200", "surface-container-low": "#1d1b1a", "tertiary-fixed-dim": "#cbc6bf", "surface": "#141312", "inverse-on-surface": "#32302f", "primary-fixed-dim": "#ffb5a0", "wireframe-numeral": "#2B2623", "inverse-surface": "#e6e1df", "on-tertiary-fixed": "#1d1b17", "surface-container-high": "#2b2a28", "surface-variant": "#363433", "secondary-fixed": "#ffdbcf", "on-primary-container": "#541200", "primary-fixed": "#ffdbd1", "outline-variant": "#5b4039", "primary-container": "#ff5722", "error": "#ffb4ab", "surface-elevated": "#1A1715", "bone-white": "#F5F3EF", "background": "#141312", "on-tertiary-fixed-variant": "#494642", "surface-bright": "#3b3937", "outline": "#ab8980" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "3rem", "margin": "4rem", "gutter-mobile": "1rem", "space-lg": "1.75rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-sm": "0.5rem" }, "fontFamily": { "body-md": ["JetBrains Mono"], "headline-lg": ["Newsreader"], "headline-sm": ["Newsreader"], "scene-counter-mobile": ["Newsreader"], "body-sm": ["JetBrains Mono"], "headline-md": ["Newsreader"], "display-hero-mobile": ["Newsreader"], "scene-counter": ["Newsreader"], "headline-lg-mobile": ["Newsreader"], "body-lg": ["Newsreader"], "code-inline": ["JetBrains Mono"], "label-caps": ["JetBrains Mono"], "display-hero": ["Newsreader"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-lg": ["52px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "600" }], "scene-counter-mobile": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.03em", "fontWeight": "300" }], "body-sm": ["12px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "display-hero-mobile": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "scene-counter": ["140px", { "lineHeight": "140px", "letterSpacing": "-0.04em", "fontWeight": "300" }], "headline-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }], "code-inline": ["13px", { "lineHeight": "20px", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600" }], "display-hero": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-background/85 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="origin" href="#"><span class="font-headline-sm text-headline-sm text-bone-white tracking-tight">Abhishek Kumar</span><span class="font-headline-sm text-headline-sm italic text-primary-container">/AI</span></a><div class="hidden xl:flex items-center gap-space-md text-on-surface-variant font-label-caps text-label-caps uppercase"><span class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>Available for Select Roles</span><span class="text-tertiary-container">·</span><span>Bengaluru &amp; Remote</span></div></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary-container font-medium"><a aria-current="page" class="tracking-widest transition-colors uppercase text-primary-container font-medium" data-path="origin" href="#">01 Origin</a><a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-colors uppercase" data-path="the-craft" href="#">02 Craft</a><a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-colors uppercase" data-path="artifacts" href="#">03 Artifacts</a><a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-colors uppercase" data-path="arsenal" href="#">04 Arsenal</a><a class="font-label-caps text-label-caps tracking-widest text-on-surface-variant hover:text-on-surface transition-colors uppercase" data-path="epilogue" href="#">Epilogue</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center px-space-md py-space-xs bg-surface-container font-label-caps text-label-caps uppercase text-bone-white hover:bg-surface-container-high hover:text-on-surface transition-colors rounded-DEFAULT" href="mailto:contact@abhishek.ai">Get in Touch</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full px-margin-mobile md:px-margin pt-12 md:pt-20 pb-24 md:pb-36 overflow-hidden">
+<!-- Subtle Ambient Wireframe Grid & Warm Ember Glow -->
+<div class="absolute top-1/4 right-10 w-96 h-96 bg-primary-container/10 rounded-full blur-[130px] pointer-events-none"></div>
+<div class="absolute -top-12 -left-20 w-72 h-72 bg-secondary-container/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative max-w-6xl mx-auto flex flex-col items-start">
+<!-- Eyebrow Tag -->
+<div class="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-surface-container-low rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">A Portfolio in Motion</span>
+</div>
+<!-- Hero Monolithic Display Typography -->
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.04] mb-4">
+        Abhishek<br/>
+<span class="italic text-primary-container font-light">Kumar</span>
+</h1>
+<!-- Subtitle Indicator -->
+<div class="flex items-center gap-3 my-6">
+<span class="w-6 h-[1.5px] bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary font-semibold">An AI Engineer &amp; Product Builder</span>
+</div>
+<!-- Narrative Bio -->
+<p class="font-body-lg text-body-lg text-tertiary max-w-2xl leading-relaxed mb-10">
+        Frontend engineer turned AI systems architect. I bridge high-throughput interactive interfaces with agentic workflows, deterministic AST graph RAG pipelines, and LLM systems that hold up under real-world production load.
+      </p>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="px-7 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded-DEFAULT hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)] flex items-center gap-2" href="#artifacts">
+<span>Explore The Artifacts</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+<a class="px-7 py-3.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded-DEFAULT hover:bg-surface-container hover:text-primary-container transition-all duration-200" href="mailto:contact@abhishek.ai">
+          Make Contact
+        </a>
+</div>
+</div>
+</section>
+<!-- SCENE 01 — ORIGIN -->
+<section class="relative w-full px-margin-mobile md:px-margin py-20 md:py-32 bg-surface-dim" id="origin">
+<div class="max-w-6xl mx-auto relative">
+<!-- Watermark Numeral in Background -->
+<div class="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        01
+      </div>
+<!-- Scene Header -->
+<div class="relative z-10 mb-12">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-4 h-[1px] bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Scene 01 — Origin</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white max-w-3xl">
+          It started with curiosity &amp; <span class="italic text-primary-container font-light">obsession.</span>
+</h2>
+</div>
+<!-- Content Split Grid -->
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Editorial Text Column with Stylized Initials -->
+<div class="lg:col-span-8 space-y-8 font-body-md text-body-md text-tertiary leading-relaxed">
+<p class="relative">
+<span class="float-left font-headline-lg text-headline-lg text-primary-container leading-none pr-3 pt-1 font-serif italic">I</span>
+            started deep in the frontend trenches—profiling React rendering passes, WebGL shaders, sub-frame animation physics, and distributed client state machines. Latency was the enemy; craftsmanship was the metric. Building interfaces that responded at the speed of thought formed an obsession with raw execution speed and deterministic state.
+          </p>
+<p class="relative">
+<span class="float-left font-headline-lg text-headline-lg text-primary-container leading-none pr-3 pt-1 font-serif italic">M</span>
+            y toolkit evolved from DOM orchestration to cognitive orchestration: LangGraph, Python, FastAPI, and Qdrant. Lately I have been deep in the plumbing of agentic systems: AST graph extraction, multi-hop RAG with hybrid dense-sparse search, and deterministic tool execution buses. I care about the unglamorous parts: retrieval quality, state recovery, and evaluation.
+          </p>
+</div>
+<!-- Metric Badges Column -->
+<div class="lg:col-span-4 flex flex-col gap-8 bg-surface-container-low p-8 rounded-lg shadow-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg text-bone-white font-light">4+</span>
+<span class="material-symbols-outlined text-primary-container text-lg">star</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mt-1">
+              Years Shipping Systems<br/><span class="text-tertiary-container font-normal">Frontend to Applied AI</span>
+</span>
+</div>
+<div class="w-full h-[1px] bg-surface-container"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg text-bone-white font-light">12+</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mt-1">
+              Production Builds<br/><span class="text-tertiary-container font-normal">Monorepo, Agentic, B2B</span>
+</span>
+</div>
+<div class="w-full h-[1px] bg-surface-container"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg text-bone-white font-light">99.4%</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mt-1">
+              Retrieval Fidelity<br/><span class="text-tertiary-container font-normal">Reciprocal Rank Fusion</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SCENE 02 — THE CRAFT -->
+<section class="relative w-full px-margin-mobile md:px-margin py-20 md:py-32 bg-background" id="the-craft">
+<div class="max-w-6xl mx-auto relative">
+<!-- Watermark Numeral in Background -->
+<div class="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        02
+      </div>
+<!-- Scene Header -->
+<div class="relative z-10 mb-16">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-4 h-[1px] bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Scene 02 — The Craft</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white max-w-2xl mb-4">
+          Where the <span class="italic text-primary-container font-light">craft</span> was forged.
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          Production frontend engineering to autonomous agent architectures — each environment sharpened a different edge.
+        </p>
+</div>
+<!-- Vertical Chronological Timeline -->
+<div class="relative z-10 ml-2 md:ml-4 pl-6 md:pl-10 space-y-12 before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[1px] before:bg-surface-container-high">
+<!-- Node 1 -->
+<div class="relative group">
+<!-- Diamond Node Anchor -->
+<span class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 rotate-45 bg-primary-container shadow-[0_0_12px_rgba(255,87,34,0.6)]"></span>
+<div class="bg-surface-container-low p-6 md:p-8 rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps uppercase text-primary-container font-bold tracking-widest">2024 — Present</span>
+<span class="text-tertiary-container text-xs">/</span>
+<h3 class="font-headline-sm text-headline-sm text-bone-white">AI Engineer &amp; Agent Architect</h3>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Independent &amp; Select Advisory</span>
+</div>
+<p class="font-body-md text-body-md text-tertiary mt-3 mb-5 leading-relaxed">
+              Architecting deterministic code intelligence engines, graph-augmented retrieval pipelines, and stateful LangGraph agents with human-in-the-loop review canvases. Reduced hallucination rates to sub-0.6% using hybrid AST validation nodes.
+            </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Generative-AI</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">LangGraph</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Python</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">FastAPI</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Qdrant</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">AST-Parsing</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">MCP</span>
+</div>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="relative group">
+<span class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 rotate-45 bg-surface-container-highest group-hover:bg-primary-container transition-colors"></span>
+<div class="bg-surface-container-low p-6 md:p-8 rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps uppercase text-secondary font-bold tracking-widest">2023 — 2024</span>
+<span class="text-tertiary-container text-xs">/</span>
+<h3 class="font-headline-sm text-headline-sm text-bone-white">Frontend &amp; Systems Engineer</h3>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Biz Trade Mart (B2B Marketplace)</span>
+</div>
+<p class="font-body-md text-body-md text-tertiary mt-3 mb-5 leading-relaxed">
+              Engineered high-frequency customer and merchant interfaces for high-volume enterprise trade. Architected complex escrow state machines, reduced client bundle weight by 47%, and integrated multi-tier Django REST backends with sub-millisecond local caching.
+            </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">React</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Next.js</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">TypeScript</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Tailwind</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Django-API</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">State-Machines</span>
+</div>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="relative group">
+<span class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 rotate-45 bg-surface-container-highest group-hover:bg-primary-container transition-colors"></span>
+<div class="bg-surface-container-low p-6 md:p-8 rounded-lg transition-colors hover:bg-surface-container">
+<div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps uppercase text-tertiary-fixed-dim font-bold tracking-widest">2022 — 2023</span>
+<span class="text-tertiary-container text-xs">/</span>
+<h3 class="font-headline-sm text-headline-sm text-bone-white">UI &amp; Interaction Engineer</h3>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Client Systems &amp; WebGL Products</span>
+</div>
+<p class="font-body-md text-body-md text-tertiary mt-3 mb-5 leading-relaxed">
+              Built custom real-time dashboards and high-converting headless digital platforms with 100% Core Web Vitals and dynamic WebGL/Canvas visualizers for high-ticket financial telemetry.
+            </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">JavaScript</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Three.js</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">WebGL</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">REST-APIs</span>
+<span class="px-2.5 py-1 bg-surface-charcoal text-on-surface-variant font-label-caps text-label-caps uppercase rounded-DEFAULT">Web-Vitals</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SCENE 03 — ARTIFACTS -->
+<section class="relative w-full px-margin-mobile md:px-margin py-20 md:py-32 bg-surface-dim" id="artifacts">
+<div class="max-w-6xl mx-auto relative">
+<!-- Watermark Numeral in Background -->
+<div class="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        03
+      </div>
+<!-- Scene Header -->
+<div class="relative z-10 mb-16">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-4 h-[1px] bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Scene 03 — Artifacts</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white max-w-3xl">
+          Things I built that <span class="italic text-primary-container font-light">outlived the weekend.</span>
+</h2>
+</div>
+<!-- 2-Column Technical Card Grid -->
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- ARTIFACT 01 -->
+<div class="group bg-surface-container-low rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+<div>
+<!-- Technical Header Bar -->
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
+<span class="font-label-caps text-label-caps text-primary-container font-bold tracking-widest uppercase">No. 01 // Schematic</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Production</span>
+</div>
+</div>
+<!-- Architectural Blueprint Visual Diagram -->
+<div class="w-full h-44 bg-surface-container-lowest rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
+<div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
+<span>PIPELINE: AST_GRAPH_REASONING</span>
+<span class="text-primary-container">LATENCY: ~38ms</span>
+</div>
+<!-- Visual Mini Flow Nodes -->
+<div class="grid grid-cols-4 gap-2 my-auto items-center">
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Parse</div>
+<div class="font-semibold text-[10px]">Tree-Sitter</div>
+</div>
+<div class="text-center text-primary-container">→</div>
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Index</div>
+<div class="font-semibold text-[10px]">Qdrant RRF</div>
+</div>
+<div class="bg-surface-charcoal p-2 rounded text-center text-primary border border-border-hairline">
+<div class="text-[9px] text-primary-container uppercase">Emit</div>
+<div class="font-semibold text-[10px]">Patch AST</div>
+</div>
+</div>
+<div class="text-on-surface-variant text-[10px] truncate">
+                $ codeatlas index --target=monorepo --sparse-dense-hybrid=active
+              </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-bone-white group-hover:text-primary transition-colors mb-2">
+              CodeAtlas — Semantic Code Intelligence
+            </h3>
+<p class="font-body-md text-body-md text-tertiary leading-relaxed mb-6">
+              A real-time repository reasoning engine indexing monorepos. Features Tree-Sitter AST graphs married to Qdrant vector retrieval with deterministic patch previews and zero token hallucination safeguards.
+            </p>
+</div>
+<div class="flex items-center gap-6 pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase">
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Repo</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Arch Spec</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- ARTIFACT 02 -->
+<div class="group bg-surface-container-low rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
+<span class="font-label-caps text-label-caps text-primary-container font-bold tracking-widest uppercase">No. 02 // Agentic</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Autonomous</span>
+</div>
+</div>
+<!-- Architectural Blueprint Visual Diagram -->
+<div class="w-full h-44 bg-surface-container-lowest rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
+<div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
+<span>SWARM: PARALLEL_EXTRACTOR</span>
+<span class="text-primary-container">WORKERS: 16 HEADLESS</span>
+</div>
+<div class="grid grid-cols-3 gap-2 my-auto items-center">
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Ingest</div>
+<div class="font-semibold text-[10px]">Headless DOM</div>
+</div>
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Grounding</div>
+<div class="font-semibold text-[10px]">Citation Pass</div>
+</div>
+<div class="bg-surface-charcoal p-2 rounded text-center text-primary border border-border-hairline">
+<div class="text-[9px] text-primary-container uppercase">Output</div>
+<div class="font-semibold text-[10px]">Synthesized Doc</div>
+</div>
+</div>
+<div class="text-on-surface-variant text-[10px] truncate">
+                $ swarm --heuristic=anti-bot-pass --grounding=strict-source
+              </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-bone-white group-hover:text-primary transition-colors mb-2">
+              Findly AI — Multi-Agent Research Engine
+            </h3>
+<p class="font-body-md text-body-md text-tertiary leading-relaxed mb-6">
+              Multi-agent research engine orchestrating parallel headless browser workers, filtering anti-bot heuristics, and unifying fragmented web intelligence with mathematical citation grounding.
+            </p>
+</div>
+<div class="flex items-center gap-6 pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase">
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Repo</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>System Demo</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- ARTIFACT 03 -->
+<div class="group bg-surface-container-low rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
+<span class="font-label-caps text-label-caps text-primary-container font-bold tracking-widest uppercase">No. 03 // Commerce Core</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Scale B2B</span>
+</div>
+</div>
+<!-- Architectural Blueprint Visual Diagram -->
+<div class="w-full h-44 bg-surface-container-lowest rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
+<div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
+<span>STATE_MACHINE: ESCROW_RELEASE</span>
+<span class="text-primary-container">UPTIME: 99.98%</span>
+</div>
+<div class="flex items-center justify-between gap-1 my-auto text-center">
+<span class="px-2 py-1 bg-surface-container rounded text-[10px]">Merchant Order</span>
+<span class="text-tertiary">→</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] text-primary">Escrow Lock</span>
+<span class="text-tertiary">→</span>
+<span class="px-2 py-1 bg-surface-container rounded text-[10px]">Webhook Auth</span>
+<span class="text-tertiary">→</span>
+<span class="px-2 py-1 bg-surface-charcoal rounded text-[10px] text-primary-container">Ledger Commit</span>
+</div>
+<div class="text-on-surface-variant text-[10px] truncate">
+                $ txn_audit --bundle-reduction=47% --cache-layer=redis
+              </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-bone-white group-hover:text-primary transition-colors mb-2">
+              Biz Trade Mart — B2B Commerce Core
+            </h3>
+<p class="font-body-md text-body-md text-tertiary leading-relaxed mb-6">
+              Full-featured enterprise trade engine handling merchant orders, escrow multi-step releases, and optimized micro-frontend components serving production transactions with zero drift.
+            </p>
+</div>
+<div class="flex items-center gap-6 pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase">
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Case Study</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Live Portal</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- ARTIFACT 04 -->
+<div class="group bg-surface-container-low rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
+<span class="font-label-caps text-label-caps text-primary-container font-bold tracking-widest uppercase">No. 04 // Guardrails</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Critical</span>
+</div>
+</div>
+<!-- Architectural Blueprint Visual Diagram -->
+<div class="w-full h-44 bg-surface-container-lowest rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
+<div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
+<span>VERIFICATION: CLINICAL_TRIAGE</span>
+<span class="text-primary-container">LEAK_RATE: 0.00%</span>
+</div>
+<div class="grid grid-cols-3 gap-2 my-auto items-center">
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Anonymize</div>
+<div class="font-semibold text-[10px]">PII Scrubber</div>
+</div>
+<div class="bg-surface-container-high p-2 rounded text-center text-bone-white">
+<div class="text-[9px] text-on-surface-variant uppercase">Guardrail</div>
+<div class="font-semibold text-[10px]">Schema Verify</div>
+</div>
+<div class="bg-surface-charcoal p-2 rounded text-center text-primary border border-border-hairline">
+<div class="text-[9px] text-primary-container uppercase">Output</div>
+<div class="font-semibold text-[10px]">Safe Payload</div>
+</div>
+</div>
+<div class="text-on-surface-variant text-[10px] truncate">
+                $ guard --enforce-json-schema --strict-pii-isolation
+              </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-bone-white group-hover:text-primary transition-colors mb-2">
+              MediBuddy — Clinical Triage Guard
+            </h3>
+<p class="font-body-md text-body-md text-tertiary leading-relaxed mb-6">
+              Zero-leak zero-shot clinical safety verification pipeline. Formulates deterministic guardrails before LLM diagnoses reach clinicians, scrubbing PII and checking medical guideline compliance.
+            </p>
+</div>
+<div class="flex items-center gap-6 pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase">
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Benchmark</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+<a class="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1" href="#">
+<span>Docs</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Action Button Centered -->
+<div class="flex justify-center mt-14">
+<a class="px-8 py-3.5 bg-surface-container text-bone-white font-label-caps text-label-caps uppercase tracking-widest rounded-DEFAULT hover:bg-surface-container-high hover:text-primary-container transition-colors shadow-sm" href="#">
+          Unearth 14 More Artifacts
+        </a>
+</div>
+</div>
+</section>
+<!-- SCENE 04 — ARSENAL -->
+<section class="relative w-full px-margin-mobile md:px-margin py-20 md:py-32 bg-background" id="arsenal">
+<div class="max-w-6xl mx-auto relative">
+<!-- Watermark Numeral in Background -->
+<div class="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        04
+      </div>
+<!-- Scene Header -->
+<div class="relative z-10 mb-16">
+<div class="flex items-center gap-3 mb-3">
+<span class="w-4 h-[1px] bg-primary-container"></span>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-widest">Scene 04 — Arsenal</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white">
+          Tools of <span class="italic text-primary-container font-light">the trade.</span>
+</h2>
+</div>
+<!-- Classified Chips Stack -->
+<div class="relative z-10 space-y-12">
+<!-- Core Expertise -->
+<div>
+<span class="block font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-4">
+            Core Expertise
+          </span>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              FastAPI
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              LangChain / LangGraph
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Python
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              TypeScript
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Next.js / React
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Qdrant / Pinecone
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Docker
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm rounded-DEFAULT flex items-center gap-2 hover:bg-surface-container transition-colors">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              MCP Protocols
+            </span>
+</div>
+</div>
+<!-- Extended Arsenal -->
+<div>
+<span class="block font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-4">
+            Extended Arsenal
+          </span>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              Three.js / WebGL
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              PostgreSQL
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              Redis
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              Tailwind CSS
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              FastAPI Async
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              Git &amp; CI/CD
+            </span>
+<span class="px-4 py-2.5 bg-surface-container-low text-tertiary font-body-sm text-body-sm rounded-DEFAULT hover:bg-surface-container hover:text-bone-white transition-colors">
+              WebSockets
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EPILOGUE -->
+<section class="relative w-full px-margin-mobile md:px-margin py-24 md:py-36 bg-surface-container-lowest text-center" id="epilogue">
+<div class="max-w-4xl mx-auto flex flex-col items-center">
+<div class="flex items-center gap-2 mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">Epilogue</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white leading-tight mb-4">
+        The next chapter is <span class="italic text-primary-container font-light">unwritten.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-tertiary max-w-xl mb-10">
+        Open for high-impact AI Product roles, staff frontend engineering, and selective advisory architecture sprints.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+<a class="px-8 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded-DEFAULT hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)]" href="mailto:contact@abhishek.ai">
+          Write It With Me
+        </a>
+<button class="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded-DEFAULT hover:bg-surface-container-high hover:text-primary transition-all duration-200" id="terminalTrigger">
+          Talk to Portfolio AI
+        </button>
+</div>
+<!-- Quick Social Icons -->
+<div class="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps uppercase">
+<a class="hover:text-primary-container transition-colors" href="#">GitHub</a>
+<span>·</span>
+<a class="hover:text-primary-container transition-colors" href="#">LinkedIn</a>
+<span>·</span>
+<a class="hover:text-primary-container transition-colors" href="#">X / Twitter</a>
+<span>·</span>
+<a class="hover:text-primary-container transition-colors" href="mailto:contact@abhishek.ai">Email</a>
+</div>
+</div>
+</section>
+<!-- Interactive AI Modal Simulation -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm hidden p-4" id="aiDialog">
+<div class="bg-surface-container-low max-w-lg w-full rounded-lg p-6 shadow-2xl space-y-4">
+<div class="flex items-center justify-between border-b border-surface-container pb-3">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase text-bone-white">Abhishek AI System Query</span>
+</div>
+<button class="text-tertiary hover:text-bone-white" id="closeAiDialog">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded font-code-inline text-code-inline text-tertiary space-y-2 h-48 overflow-y-auto">
+<p class="text-primary-container">&gt; Initializing LangGraph agent context...</p>
+<p class="text-on-surface-variant">&gt; Loaded 4 artifacts &amp; 3 milestones.</p>
+<p class="text-bone-white">&gt; "Abhishek is ready to discuss architectural systems, RAG retrieval pipelines, or full-stack web products. How can we collaborate?"</p>
+</div>
+<div class="flex gap-2">
+<input class="w-full bg-surface-container-highest px-3 py-2 text-bone-white font-body-sm text-body-sm rounded focus:outline-none" placeholder="Ask about latency, AST graphs, or availability..." type="text"/>
+<a class="px-4 py-2 bg-primary-container text-surface-container-lowest font-label-caps text-label-caps uppercase font-bold rounded" href="mailto:contact@abhishek.ai">
+          Send
+        </a>
+</div>
+</div>
+</div>
+<script>
+    const trigger = document.getElementById('terminalTrigger');
+    const dialog = document.getElementById('aiDialog');
+    const closeBtn = document.getElementById('closeAiDialog');
+
+    if (trigger && dialog && closeBtn) {
+      trigger.addEventListener('click', () => {
+        dialog.classList.remove('hidden');
+      });
+      closeBtn.addEventListener('click', () => {
+        dialog.classList.add('hidden');
+      });
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.classList.add('hidden');
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-margin"><div class="w-full px-margin-mobile md:px-margin"><div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-space-xl pb-space-xl"><div class="space-y-space-sm"><div class="font-headline-md text-headline-md text-bone-white">Abhishek Kumar</div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Architecting cognitive engines, agentic workflows, and frontier machine learning architectures.</p></div><div class="flex flex-wrap items-center gap-space-lg"><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary-container transition-colors" href="#">GitHub</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary-container transition-colors" href="#">LinkedIn</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary-container transition-colors" href="#">X / Twitter</a><a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary-container transition-colors" href="mailto:contact@abhishek.ai">Email</a></div></div><div class="pt-space-lg flex flex-col sm:flex-row justify-between items-center gap-space-md text-on-surface-variant font-label-caps text-label-caps uppercase"><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" data-path="origin" href="#">Scene 01</a><span class="text-tertiary-container">/</span><a class="hover:text-on-surface transition-colors" data-path="the-craft" href="#">Scene 02</a><span class="text-tertiary-container">/</span><a class="hover:text-on-surface transition-colors" data-path="artifacts" href="#">Scene 03</a><span class="text-tertiary-container">/</span><a class="hover:text-on-surface transition-colors" data-path="arsenal" href="#">Scene 04</a><span class="text-tertiary-container">/</span><a class="hover:text-on-surface transition-colors" data-path="epilogue" href="#">Epilogue</a></div><div>© 2025 Abhishek Kumar. Engineered with precision.</div></div></div></footer></body></html>

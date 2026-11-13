@@ -1,0 +1,8 @@
+# Git Ignore Check
+.env
+.env.local
+.env*.local
+node_modules/
+.next/
+.vercel
+.env*

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #141312;
+    color: #e6e1df;
+    font-family: var(--font-jetbrains), monospace;
+    overscroll-behavior: none;
+  }
+
+  /* Global Ember Focus Styles */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid #ff5722;
+    outline-offset: 2px;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
