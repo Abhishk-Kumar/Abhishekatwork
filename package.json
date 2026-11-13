@@ -1,6 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
+  "packageManager": "pnpm@11.24.0",
   "description": "AI Engineer Portfolio",
   "private": true,
   "scripts": {
