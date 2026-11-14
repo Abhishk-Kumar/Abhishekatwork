@@ -1,6 +1,7 @@
 'use client'
 
 import { FC } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ExternalLink, Code, ChevronRight } from 'lucide-react'
 import { projects } from '../../content'
@@ -34,6 +35,14 @@ export const Artifacts: FC = () => {
             const isFullStack = project.slug === 'mediconnect'
             const isRenderPreview = project.links.preview.includes('onrender.com')
 
+            const projectImages: Record<string, string> = {
+              'repogent-ai': '/screenshots/Repogent.png',
+              'findly-ai': '/screenshots/Findly-ai.png',
+              'mediconnect': '/screenshots/Mediconnect.png',
+              'ombre-ash': '/screenshots/Ombre&ash-perfumes.png',
+              'biz-trade-mart': '/screenshots/biz-trade-mart.png',
+            }
+
             return (
               <div
                 key={project.slug}
@@ -53,6 +62,20 @@ export const Artifacts: FC = () => {
                         {project.status}
                       </span>
                     </div>
+                  </div>
+
+                  {/* Project Screenshot */}
+                  <div className="mb-4">
+                    <Image
+                      src={projectImages[project.slug]}
+                      alt={`${project.title} project screenshot`}
+                      width={1920}
+                      height={1080}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      quality={85}
+                      className="w-full h-48 object-cover rounded-lg border border-border-hairline"
+                      loading="lazy"
+                    />
                   </div>
 
                   {/* Mini Architecture Schematic (for AI Agent systems) */}
@@ -93,7 +116,7 @@ export const Artifacts: FC = () => {
                         </div>
                       )}
 
-                      <div className="text-on-surface-variant text-[10px] truncate">
+                      <div className="text-on-surface-variant text-[10px]">
                         $ stack: {project.stack.join(' + ')}
                       </div>
                     </div>

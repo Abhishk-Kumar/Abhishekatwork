@@ -14,11 +14,41 @@ interface EpilogueProps {
 export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
   const [copied, setCopied] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
+  const [contactFormOpen, setContactFormOpen] = useState(false)
+  const [formValues, setFormValues] = useState({ name: '', email: '', message: '' })
+  const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({})
+  const [submitted, setSubmitted] = useState(false)
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const handleOpenContactForm = () => setContactFormOpen(true)
+  const handleCloseContactForm = () => setContactFormOpen(false)
+
+  const handleFormChange = (field: 'name' | 'email' | 'message', value: string) => {
+    setFormValues((prev) => ({ ...prev, [field]: value }))
+    setFormErrors((prev) => ({ ...prev, [field]: undefined }))
+  }
+
+  const validateForm = () => {
+    const errors: { name?: string; email?: string; message?: string } = {}
+    if (!formValues.name.trim()) errors.name = 'Name is required.'
+    if (!formValues.email.trim()) errors.email = 'Email is required.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) errors.email = 'Invalid email address.'
+    if (!formValues.message.trim()) errors.message = 'Message is required.'
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!validateForm()) return
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
+    setFormValues({ name: '', email: '', message: '' })
   }
 
   return (
@@ -48,6 +78,14 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
             <span>{copied ? 'Email Copied to Clipboard' : 'Copy Email Address'}</span>
           </button>
 
+          <button
+            onClick={handleOpenContactForm}
+            className="px-8 py-3.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-all duration-200 flex items-center gap-2"
+          >
+            <Mail className="w-4 h-4 text-primary-container" />
+            <span>Contact Form</span>
+          </button>
+
           {hasApiKey && (
             <button
               onClick={() => setChatOpen(true)}
@@ -70,6 +108,99 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
             </a>
           )}
         </div>
+
+        {/* Email as readable text */}
+        <p className="font-body-md text-body-md text-tertiary mb-12">
+          Email: <a href={`mailto:${profile.email}`} className="text-primary-container hover:text-secondary-container transition-colors underline">{profile.email}</a>
+        </p>
+
+        {/* Frontend-only Contact Form */}
+        {contactFormOpen && (
+          <div className="fixed inset-0 z-50 bg-surface-container-lowest/95 backdrop-blur-lg flex items-center justify-center p-6 md:p-12 animate-in fade-in duration-200">
+            <button
+              onClick={handleCloseContactForm}
+              className="absolute top-6 right-6 p-2 text-bone-white hover:text-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container rounded"
+              aria-label="Close contact form"
+            >
+              <span className="w-6 h-6">{'×'}</span>
+            </button>
+            <div className="max-w-lg w-full bg-surface-container-low border border-border-hairline rounded-lg p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+              <div className="flex items-center gap-2 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
+                <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary-container font-bold">
+                  Send a Message
+                </span>
+              </div>
+
+              <form onSubmit={handleFormSubmit} noValidate>
+                <div className="space-y-5">
+                  <div>
+                    <label htmlFor="contact-name" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                      Name
+                    </label>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      value={formValues.name}
+                      onChange={(e) => handleFormChange('name', e.target.value)}
+                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      placeholder="Your name"
+                    />
+                    {formErrors.name && (
+                      <p className="mt-1 text-xs text-error-container font-mono">{formErrors.name}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="contact-email" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                      Email Address
+                    </label>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      value={formValues.email}
+                      onChange={(e) => handleFormChange('email', e.target.value)}
+                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      placeholder="you@example.com"
+                    />
+                    {formErrors.email && (
+                      <p className="mt-1 text-xs text-error-container font-mono">{formErrors.email}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="contact-message" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                      Message
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      rows={5}
+                      value={formValues.message}
+                      onChange={(e) => handleFormChange('message', e.target.value)}
+                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      placeholder="How can I help you?"
+                    />
+                    {formErrors.message && (
+                      <p className="mt-1 text-xs text-error-container font-mono">{formErrors.message}</p>
+                    )}
+                  </div>
+
+                  <p className="text-xs text-on-surface-variant text-center font-mono mb-6">
+                    {submitted ? 'Thank you — your message has been prepared.' : 'This contact form is frontend-only. No submission service is connected yet.'}
+                  </p>
+
+                  <button
+                    type="submit"
+                    disabled={submitted}
+                    className="w-full px-8 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)]"
+                  >
+                    {submitted ? 'Sent' : 'Send Message'}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
 
         {/* Social Links */}
         <div className="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest">

@@ -18,57 +18,42 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
 
       <div className="relative max-w-6xl mx-auto flex flex-col items-start">
         {/* Availability Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+        <div
           className="inline-flex items-center gap-2 mb-8 px-3.5 py-1.5 bg-surface-container-low border border-border-hairline rounded-full"
         >
           <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
           <span className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
             Seeking AI Engineer roles — {profile.location}
           </span>
-        </motion.div>
+        </div>
 
         {/* Monolithic Display Typography */}
-        <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
+        <h1
           className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.04] mb-4"
         >
           {profile.name.split(' ')[0]} <br />
           <span className="italic text-primary-container font-light">{profile.name.split('slice').length > 1 ? '' : profile.name.split(' ')[1]}</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
+        <div
           className="flex items-center gap-3 my-6"
         >
           <span className="w-6 h-[1.5px] bg-primary-container" />
           <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary font-semibold">
             {profile.headline}
           </span>
-        </motion.div>
+        </div>
 
         {/* Narrative Bio */}
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
+        <p
           className="font-display text-body-lg text-tertiary max-w-2xl leading-relaxed mb-10"
         >
           I build LLM products end to end: RAG pipelines and multi-agent LangGraph workflows, plus the React and FastAPI apps around them. B.Tech (CSE, AI &amp; ML) student with 1.5+ years of experience, looking for my first full-time AI Engineer role.
-        </motion.p>
+        </p>
 
         {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+        <div
           className="flex flex-wrap items-center gap-4 mb-16"
         >
           <a
@@ -95,40 +80,43 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
           >
             Make Contact
           </a>
-        </motion.div>
+        </div>
 
         {/* Recruiter Fast-Scan Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.25 }}
-          className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg"
+        <div
+          className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg"
         >
           <div className="flex flex-col">
             <span className="font-headline-sm text-bone-white font-light">1.5+ Years</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
-              Experience & RAG
+              EXPERIENCE &amp; RAG
             </span>
           </div>
           <div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-light">+35% / -30%</span>
+            <span className="font-headline-sm text-bone-white font-light">+35%</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
-              Relevance & Latency
+              RELEVANCE
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-light">−30%</span>
+            <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
+              LATENCY
             </span>
           </div>
           <div className="flex flex-col">
             <span className="font-headline-sm text-bone-white font-light">62 → 91</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
-              Lighthouse Perf Gain
+              LIGHTHOUSE PERF GAIN
             </span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col col-span-2 md:col-span-1">
             <span className="font-headline-sm text-bone-white font-light">2 Shipped</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
-              AI Agent Products
+              AI AGENT PRODUCTS
             </span>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

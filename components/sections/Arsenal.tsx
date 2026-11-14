@@ -73,8 +73,9 @@ export const Arsenal: FC = () => {
               {[...skills.backend, ...skills.databases].map((skill, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-2.5 bg-surface-container-low border border-border-hairline text-tertiary font-body-sm text-body-sm rounded hover:bg-surface-container hover:text-bone-white transition-colors"
+                  className="px-4 py-2.5 bg-surface-container-low border border-border-hairline text-bone-white font-body-sm text-body-sm rounded flex items-center gap-2 hover:bg-surface-container transition-colors"
                 >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-container" />
                   {skill}
                 </span>
               ))}
@@ -90,8 +91,9 @@ export const Arsenal: FC = () => {
               {[...skills.frontend, ...skills.devops, ...skills.practices].map((skill, idx) => (
                 <span
                   key={idx}
-                  className="px-4 py-2.5 bg-surface-container-low border border-border-hairline text-tertiary font-body-sm text-body-sm rounded hover:bg-surface-container hover:text-bone-white transition-colors"
+                  className="px-4 py-2.5 bg-surface-container-low border border-border-hairline text-bone-white font-body-sm text-body-sm rounded flex items-center gap-2 hover:bg-surface-container transition-colors"
                 >
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary-container" />
                   {skill}
                 </span>
               ))}

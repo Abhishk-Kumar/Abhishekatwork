@@ -13,14 +13,12 @@ const newsreader = Newsreader({
   variable: '--font-newsreader',
   display: 'swap',
   style: ['normal', 'italic'],
-  weight: ['300', '400', '500', '600', '700'],
 })
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
   display: 'swap',
-  weight: ['400', '500', '600'],
 })
 
 const siteUrl = process.env.SITE_URL || 'http://localhost:3000'
