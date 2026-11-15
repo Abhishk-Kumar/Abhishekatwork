@@ -2,14 +2,13 @@
 
 import { FC } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { ExternalLink, Code, ChevronRight } from 'lucide-react'
 import { projects } from '../../content'
 import Link from 'next/link'
 
 export const Artifacts: FC = () => {
   return (
-    <section className="relative w-full px-6 md:px-16 py-20 md:py-32 bg-surface-dim" id="artifacts">
+    <section className="relative w-full px-6 md:px-16 py-20 md:py-28 bg-surface-dim" id="artifacts">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
@@ -72,9 +71,7 @@ export const Artifacts: FC = () => {
             return (
               <div
                 key={project.slug}
-                className={`group bg-surface-container-low border border-border-hairline rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl ${
-                  index === 2 ? 'md:col-span-2' : ''
-                }`}
+                className={`group bg-surface-container-low border border-border-hairline rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl`}
               >
                 <div>
                   {/* Technical Header Bar */}
@@ -123,7 +120,7 @@ export const Artifacts: FC = () => {
                       ))}
                     </div>
 
-                    <div className="text-on-surface-variant text-[10px]">
+                    <div className="text-on-surface-variant text-[11px]">
                       $ stack: {project.stack.join(' + ')}
                     </div>
                   </div>
@@ -136,20 +133,31 @@ export const Artifacts: FC = () => {
                   <p className="font-body-md text-body-md text-tertiary leading-relaxed mb-4">
                     {project.oneLiner}
                   </p>
-
-                  {/* Verified Metrics / Highlights */}
-                  <ul className="space-y-1 mb-6 font-body-sm text-tertiary-container list-disc list-inside">
-                    {project.highlights.map((h, hIdx) => (
-                      <li key={hIdx}>{h}</li>
-                    ))}
-                  </ul>
+                  {project.problem && (
+                    <div className="rounded border-red-500/20 p-3 mb-3">
+                      <span className="text-[11px] uppercase tracking-widest text-red-500 font-semibold block mb-1">PROBLEM</span>
+                      <p className="text-sm text-tertiary">{project.problem}</p>
+                    </div>
+                  )}
+                  {project.architecture && (
+                    <div className="rounded border-blue-500/20 p-3 mb-3">
+                      <span className="text-[11px] uppercase tracking-widest text-blue-500 font-semibold block mb-1">SOLUTION</span>
+                      <p className="text-sm text-tertiary">{project.architecture}</p>
+                    </div>
+                  )}
+                  {project.results && (
+                    <div className="rounded border-orange-500/20 p-3">
+                      <span className="text-[11px] uppercase tracking-widest text-orange-500 font-semibold block mb-1">RESULT</span>
+                      <p className="text-sm text-tertiary">{project.results}</p>
+                    </div>
+                  )}
 
                   {/* Metrics Strip */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {projectMetrics[project.slug].map((m, mIdx) => (
                       <span
                         key={mIdx}
-                        className="px-2 py-1 bg-surface-charcoal border border-border-hairline text-on-surface-variant font-label-caps text-label-caps uppercase rounded text-[10px]"
+                        className="px-2 py-1 bg-surface-charcoal border border-border-hairline text-on-surface-variant font-label-caps text-label-caps uppercase rounded text-[11px]"
                       >
                         {m}
                       </span>
@@ -175,7 +183,7 @@ export const Artifacts: FC = () => {
                       * Free hosting, may take about 30 seconds to wake up.
                     </div>
                   )}
-                <div className="flex items-center justify-between pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase">
+                <div className="flex items-center justify-between pt-4 border-t border-surface-container font-label-caps text-label-caps uppercase mt-auto">
                   <div className="flex items-center gap-6">
                     {project.links.preview && (
                       <a

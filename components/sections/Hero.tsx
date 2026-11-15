@@ -2,7 +2,7 @@
 
 import { FC } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Download, Star, Cpu, Zap, Activity } from 'lucide-react'
+import { ArrowDown, Download } from 'lucide-react'
 import { profile, experiences, skills } from '../../content'
 
 interface HeroProps {
@@ -11,11 +11,8 @@ interface HeroProps {
 
 export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
   return (
-    <section className="relative w-full px-6 md:px-16 pt-16 md:pt-24 pb-28 md:pb-36 overflow-hidden bg-background">
-      {/* Ambient Orange Glow Orbs per design tokens */}
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-[rgba(249,94,20,.10)] rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute -top-12 -left-20 w-72 h-72 bg-[rgba(249,94,20,.10)] rounded-full blur-[130px] pointer-events-none" />
-
+    <section className="relative w-full px-6 md:px-16 pt-16 md:pt-24 pb-28 md:pb-36">
+      {/* Ambient glow now comes from the page-level layer */}
       <div className="relative max-w-6xl mx-auto flex flex-col items-start">
         {/* Availability Pill */}
         <div
@@ -23,7 +20,7 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
         >
           <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse" />
           <span className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
-            Seeking AI Engineer roles — {profile.location}
+            Seeking <span className="text-bone-white font-medium">AI Engineer role</span>s — {profile.location}
           </span>
         </div>
 
@@ -32,7 +29,7 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
           className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.04] mb-4"
         >
           {profile.name.split(' ')[0]} <br />
-          <span className="italic text-primary-container font-light">{profile.name.split('slice').length > 1 ? '' : profile.name.split(' ')[1]}</span>
+          <span className="italic text-primary-container font-normal">{profile.name.split(' ')[1]}</span>
         </h1>
 
         {/* Subtitle Indicator */}
@@ -49,7 +46,7 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
         <p
           className="font-display text-body-lg text-tertiary max-w-2xl leading-relaxed mb-10"
         >
-          I build LLM products end to end: RAG pipelines and multi-agent LangGraph workflows, plus the React and FastAPI apps around them. B.Tech (CSE, AI &amp; ML) student with 1.5+ years of experience, looking for my first full-time AI Engineer role.
+          I build LLM products end to end: <span className="text-bone-white font-medium">RAG pipelines</span> and <span className="text-bone-white font-medium">multi-agent LangGraph workflows</span>, plus the React and FastAPI apps around them. B.Tech (CSE, AI &amp; ML) student with 1.5+ years of experience, looking for my first full-time <span className="text-bone-white font-medium">AI Engineer role</span>.
         </p>
 
         {/* Action Buttons */}
@@ -86,32 +83,34 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
         <div
           className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg"
         >
-          <div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-light">1.5+ Years</span>
+<div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-semibold">YEARS IN SOFTWARE</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
-              EXPERIENCE &amp; RAG
+              YEARS IN SOFTWARE
             </span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-light">+35%</span>
+          <div className="flex flex-col {
+            border-top: 2px solid #ff5722;
+          }">
+            <span className="font-headline-sm text-bone-white font-semibold">+35%</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               RELEVANCE
             </span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-light">−30%</span>
+          <div className="flex flex-col border-t border-primary">
+            <span className="font-headline-sm text-bone-white font-semibold">−30%</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               LATENCY
             </span>
           </div>
-          <div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-light">62 → 91</span>
+          <div className="flex flex-col border-t border-primary">
+            <span className="font-headline-sm text-bone-white font-semibold">62 → 91</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               LIGHTHOUSE PERF GAIN
             </span>
           </div>
-          <div className="flex flex-col col-span-2 md:col-span-1">
-            <span className="font-headline-sm text-bone-white font-light">2 Shipped</span>
+          <div className="flex flex-col">
+            <span className="font-headline-sm text-bone-white font-semibold">2 Shipped</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               AI AGENT PRODUCTS
             </span>

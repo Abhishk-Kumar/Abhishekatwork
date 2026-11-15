@@ -84,7 +84,7 @@ export const Craft: FC = () => {
       skills: "Data Structures, Algorithms, Core Programming"
     },
     {
-      period: "2023 — 2024",
+      period: "Diploma final year + B.Tech (lateral entry)",
       skills: "Python, Machine Learning, B.Tech Transition"
     },
     {
@@ -94,7 +94,7 @@ export const Craft: FC = () => {
   ]
 
   return (
-    <section className="relative w-full px-6 md:px-16 py-16 md:py-20 bg-background" id="the-craft">
+    <section className="relative w-full px-6 md:px-16 py-20 md:py-28 bg-surface-container-lowest/60 backdrop-blur-[2px]" id="the-craft">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">

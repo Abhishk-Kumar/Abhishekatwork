@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Newsreader, JetBrains_Mono } from 'next/font/google'
+import { Newsreader, JetBrains_Mono, Dancing_Script } from 'next/font/google'
 import './globals.css'
 import { Header } from './../components/layout/Header'
 import { Footer } from './../components/layout/Footer'
@@ -21,7 +21,14 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
-const siteUrl = process.env.SITE_URL || 'http://localhost:3000'
+const scriptFont = Dancing_Script({
+  subsets: ['latin'],
+  variable: '--font-script',
+  weight: '500',
+  display: 'swap',
+})
+
+const siteUrl = process.env.SITE_URL ?? process.env.VERCEL_PROJECT_PRODUCTION_URL ? 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL : 'http://localhost:3000'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -75,7 +82,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className={`dark ${newsreader.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`dark ${newsreader.variable} ${jetbrainsMono.variable} ${scriptFont.variable}`} suppressHydrationWarning>
       <body className="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest" suppressHydrationWarning>
         <script
           type="application/ld+json"
@@ -87,10 +94,20 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ScrollProgress />
-        <Header hasResumePdf={hasResumePdf} />
-        <div id="main-content">{children}</div>
-        <Footer />
+<div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+  <div className="glow-orb glow-a aria-hidden" />
+  <div className="glow-orb glow-b aria-hidden" />
+  <div className="glow-orb glow-c aria-hidden" />
+  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,87,34,0.05),transparent_60%)]" />
+</div>
+        <div className="relative z-10">
+          <ScrollProgress />
+          <Header hasResumePdf={hasResumePdf} />
+        </div>
+        <div id="main-content" className="relative z-10">{children}</div>
+        <div className="relative z-10">
+          <Footer hasResumePdf={hasResumePdf} />
+        </div>
       </body>
     </html>
   )

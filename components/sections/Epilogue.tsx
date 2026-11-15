@@ -1,26 +1,19 @@
 'use client'
 
-import { FC, useState, useEffect } from 'react'
-import { Mail, Check, Download, Code, Globe, Terminal } from 'lucide-react'
+import { FC, useState } from 'react'
+import { Mail, Check, Download, Code, Globe } from 'lucide-react'
 import { profile } from '../../content'
-import { ChatModal } from '../chat/ChatModal'
 
 interface EpilogueProps {
   hasResumePdf: boolean
-  hasApiKey: boolean
 }
 
-export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
+export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
   const [copied, setCopied] = useState(false)
-  const [chatOpen, setChatOpen] = useState(false)
-  const [contactFormOpen, setContactFormOpen] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formValues, setFormValues] = useState({ name: '', email: '', message: '' })
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({})
-  const [currentYear, setCurrentYear] = useState(2026)
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear())
-  }, [])
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email)
@@ -28,95 +21,128 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  const handleOpenContactForm = () => setContactFormOpen(true)
-
-  const handleCloseContactForm = () => setContactFormOpen(false)
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setContactFormOpen(false)
-  }
-
   const handleFormChange = (field: 'name' | 'email' | 'message', value: string) => {
     setFormValues((prev) => ({ ...prev, [field]: value }))
     setFormErrors((prev) => ({ ...prev, [field]: undefined }))
   }
 
+  const validateForm = () => {
+    const errors: { name?: string; email?: string; message?: string } = {}
+    if (!formValues.name.trim()) errors.name = 'Name is required.'
+    if (!formValues.email.trim()) errors.email = 'Email is required.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) errors.email = 'Invalid email address.'
+    if (!formValues.message.trim()) errors.message = 'Message is required.'
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
+  }
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!validateForm()) return
+
+    setSending(true)
+    setSubmitStatus('idle')
+
+    const honeypot = (e.currentTarget as HTMLFormElement).elements.namedItem('website')
+    if (honeypot && (honeypot as HTMLInputElement).value) {
+      setSending(false)
+      setSubmitStatus('error')
+      return
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formValues.name,
+          email: formValues.email,
+          message: formValues.message,
+        }),
+      })
+
+      if (res.ok) {
+        setSubmitStatus('success')
+        setFormValues({ name: '', email: '', message: '' })
+        setFormErrors({})
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setSending(false)
+    }
+  }
+
   return (
-    <section className="relative w-full px-6 md:px-16 py-24 md:py-36 bg-surface-container-lowest text-center border-t border-border-hairline" id="epilogue">
-      <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6" />
+    <section className="relative w-full px-6 md:px-16 py-24 md:py-36 border-t border-border-hairline" id="epilogue">
       <div className="max-w-6xl mx-auto relative">
-        <div className="flex items-center gap-2 mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
-          <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">
-            Epilogue
-          </span>
-        </div>
+        <div className="grid lg:grid-cols-12 gap-12">
+          {/* Left: cols 1-6 */}
+          <div className="lg:col-span-6 space-y-8">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
+              <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">
+                Epilogue
+              </span>
+            </div>
 
-        <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white leading-tight mb-4">
-          The next chapter is <span className="italic text-primary-container font-light">unwritten.</span>
-        </h2>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-bone-white leading-tight mb-4">
+              The next chapter is <span className="italic text-primary-container font-normal">unwritten.</span>
+            </h2>
 
-        <p className="font-body-lg text-body-lg text-tertiary max-w-xl mb-10">
-          Seeking an AI Engineer role. I build LLM products end-to-end: RAG pipelines, multi-agent workflows, and production-grade interfaces.
-        </p>
+            <p className="font-body-lg text-body-lg text-tertiary max-w-xl mb-8">
+              {profile.summary}
+            </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-          <button
-            onClick={handleCopyEmail}
-            className="px-8 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)] flex items-center gap-2"
-          >
-            {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
-            <span>{copied ? 'Email Copied to Clipboard' : 'Copy Email Address'}</span>
-          </button>
+            {/* Email card */}
+            <div className="border border-border-hairline bg-surface-container-low rounded-lg p-5">
+              <div className="flex items-baseline gap-2 mb-3">
+                <span className="font-body-lg text-lg font-semibold text-bone-white">{profile.email}</span>
+                <button
+                  onClick={handleCopyEmail}
+                  className="flex items-center gap-1.5 p-1.5 rounded hover:bg-surface-container-high transition-colors focus-visible:ring-2 focus-visible:ring-primary-container"
+                >
+                  {copied ? <Check className="w-4 h-4 text-primary-container" /> : <Mail className="w-4 h-4 text-primary-container" />}
+                </button>
+              </div>
+              {copied && (
+                <p className="text-xs font-mono text-tertiary-container">Email copied to clipboard</p>
+              )}
+            </div>
 
-          <button
-            onClick={handleOpenContactForm}
-            className="px-8 py-3.5 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-all duration-200 flex items-center gap-2"
-          >
-            <Mail className="w-4 h-4 text-primary-container" />
-            <span>Contact Form</span>
-          </button>
-        </div>
+            {/* Buttons row */}
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={handleCopyEmail}
+                className="flex-1 min-w-[120px] px-4 py-3 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-colors flex items-center justify-center gap-2"
+              >
+                {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
+                <span>{copied ? 'Copied' : 'Copy Email'}</span>
+              </button>
+              <a
+                href={`mailto:${profile.email}`}
+                className="flex-1 min-w-[120px] px-4 py-3 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4 text-primary-container" />Contact Form
+              </a>
+              {hasResumePdf && (
+                <a
+                  href={profile.links.resumePdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 min-w-[120px] px-4 py-3 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-2"
+                >
+                  <Download className="w-4 h-4" />Download Résumé
+                </a>
+              )}
+            </div>
+          </div>
 
-        {hasApiKey && (
-          <button
-            onClick={() => setChatOpen(true)}
-            className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
-          >
-            <Terminal className="w-4 h-4 text-primary-container" />
-            <span>Talk to Portfolio AI</span>
-          </button>
-        )}
-
-        {hasResumePdf && (
-          <a
-            href={profile.links.resumePdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
-          >
-            <Download className="w-4 h-4" />
-            <span>Download Résumé</span>
-          </a>
-        )}
-
-        {/* Email as readable text */}
-        <p className="font-body-md text-body-md text-tertiary mb-12">
-          Email: <a href={`mailto:${profile.email}`} className="text-primary-container hover:text-secondary-container transition-colors underline">{profile.email}</a>
-        </p>
-
-        {/* Frontend-only Contact Form */}
-        {contactFormOpen && (
-          <div className="fixed inset-0 z-50 bg-surface-container-lowest/95 backdrop-blur-lg flex items-center justify-center p-6 md:p-12 animate-in fade-in duration-200">
-            <button
-              onClick={handleCloseContactForm}
-              className="absolute top-6 right-6 p-2 text-bone-white hover:text-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container rounded"
-              aria-label="Close contact form"
-            >
-              <span className="w-6 h-6">{'×'}</span>
-            </button>
-            <div className="max-w-lg w-full bg-surface-container-low border border-border-hairline rounded-lg p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+          {/* Right: cols 7-12 - inline form card */}
+          <div className="lg:col-span-6">
+            <div className="border border-border-hairline bg-surface-container-low rounded-lg p-6 md:p-8">
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
                 <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary-container font-bold">
@@ -125,9 +151,17 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
               </div>
 
               <form onSubmit={handleFormSubmit} noValidate>
-                <div className="space-y-5">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
+                />
+
+                <div className="space-y-4">
                   <div>
-                    <label htmlFor="contact-name" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                    <label htmlFor="contact-name" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1 font-medium text-[11px]">
                       Name
                     </label>
                     <input
@@ -135,7 +169,9 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                       type="text"
                       value={formValues.name}
                       onChange={(e) => handleFormChange('name', e.target.value)}
-                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      className={`w-full px-4 py-3 rounded border text-bone-white font-body-sm transition-colors ${
+                        formErrors.name ? 'border-error-container' : 'border-border-hairline'
+                      } focus-visible:ring-2 focus-visible:ring-primary-container outline-none`}
                       placeholder="Your name"
                     />
                     {formErrors.name && (
@@ -144,7 +180,7 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-email" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                    <label htmlFor="contact-email" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1 font-medium text-[11px]">
                       Email Address
                     </label>
                     <input
@@ -152,7 +188,9 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                       type="email"
                       value={formValues.email}
                       onChange={(e) => handleFormChange('email', e.target.value)}
-                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      className={`w-full px-4 py-3 rounded border text-bone-white font-body-sm transition-colors ${
+                        formErrors.email ? 'border-error-container' : 'border-border-hairline'
+                      } focus-visible:ring-2 focus-visible:ring-primary-container outline-none`}
                       placeholder="you@example.com"
                     />
                     {formErrors.email && (
@@ -161,15 +199,17 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                   </div>
 
                   <div>
-                    <label htmlFor="contact-message" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-2 font-medium">
+                    <label htmlFor="contact-message" className="block font-label-caps text-label-caps uppercase text-on-surface-variant mb-1 font-medium text-[11px]">
                       Message
                     </label>
                     <textarea
                       id="contact-message"
-                      rows={5}
+                      rows={4}
                       value={formValues.message}
                       onChange={(e) => handleFormChange('message', e.target.value)}
-                      className="w-full px-4 py-3 bg-surface-container-lowest border border-border-hairline rounded text-bone-white focus:outline-none focus:ring-2 focus:ring-primary-container transition-all font-body-sm"
+                      className={`w-full px-4 py-3 rounded border text-bone-white font-body-sm transition-colors ${
+                        formErrors.message ? 'border-error-container' : 'border-border-hairline'
+                      } focus-visible:ring-2 focus-visible:ring-primary-container outline-none`}
                       placeholder="How can I help you?"
                     />
                     {formErrors.message && (
@@ -177,55 +217,38 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                     )}
                   </div>
 
-                  <p className="text-xs text-on-surface-variant text-center font-mono mb-6">
-                    This contact form is frontend-only. No submission service is connected yet.
-                  </p>
-
                   <button
                     type="submit"
-                    className="w-full px-8 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)]"
+                    disabled={sending}
+                    className="w-full px-8 py-3.5 rounded font-body-sm text-body-sm font-semibold uppercase tracking-wider transition-colors focus-visible:ring-2 focus-visible:ring-primary-container outline-none"
                   >
-                    OPEN EMAIL APP
+                    {submitStatus === 'success' ? (
+                      <div className="flex items-center gap-2 text-surface-container-lowest">
+                        <Check className="w-4 h-4 text-surface-container-lowest" />
+                        <span>Message sent</span>
+                      </div>
+                    ) : sending ? (
+                      <div className="flex items-center gap-2 text-surface-container-lowest animate-pulse">
+                        <span className="w-3 h-3 rounded-full border-2 border-current border-t-transparent animate-spin" />
+                        <span>Sending…</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <Mail className="w-4 h-4" />
+                        <span>{submitStatus === 'error' ? 'Try email directly' : 'Send Message'}</span>
+                      </div>
+                    )}
                   </button>
+
+                  {submitStatus === 'error' && (
+                    <p className="mt-3 text-xs text-error-container font-mono text-center">
+                      Couldn&apos;t send — email me directly at <a href={`mailto:${profile.email}`} className="text-primary-container hover:underline">{profile.email}</a>
+                    </p>
+                  )}
                 </div>
               </form>
             </div>
           </div>
-        )}
-
-        {/* Social Links */}
-        <div className="flex items-center gap-6 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest">
-          {profile.links.github && (
-            <a
-              href={profile.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-container transition-colors flex items-center gap-1.5"
-            >
-              <Code className="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
-          )}
-          <span>·</span>
-          {profile.links.linkedin && (
-            <a
-              href={profile.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary-container transition-colors flex items-center gap-1.5"
-            >
-              <Globe className="w-4 h-4" />
-              <span>LinkedIn</span>
-            </a>
-          )}
-          <span>·</span>
-          <a
-            href={`mailto:${profile.email}`}
-            className="hover:text-primary-container transition-colors flex items-center gap-1.5"
-          >
-            <Mail className="w-4 h-4" />
-            <span>Email</span>
-          </a>
         </div>
       </div>
     </section>

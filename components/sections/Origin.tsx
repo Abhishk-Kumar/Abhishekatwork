@@ -1,21 +1,15 @@
 'use client'
 
 import { FC } from 'react'
-import { motion } from 'framer-motion'
 import { profile } from '../../content'
 
 export const Origin: FC = () => {
   return (
-    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim overflow-hidden" id="origin">
+    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-transparent" id="origin">
       <div className="max-w-6xl mx-auto relative">
-        {/* Watermark Numeral */}
-        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
-
-<div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0" aria-hidden="true">
           01
         </div>
-
-        {/* Scene Header */}
         <div className="relative z-10 mb-12">
           <div className="flex items-center gap-3 mb-3">
             <span className="w-4 h-[1px] bg-primary-container" />

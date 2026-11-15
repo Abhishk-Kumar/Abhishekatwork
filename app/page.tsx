@@ -26,7 +26,7 @@ export default function Page() {
       <Craft />
       <Artifacts />
       <Arsenal />
-      <Epilogue hasResumePdf={hasResumePdf} hasApiKey={hasApiKey} />
+      <Epilogue hasResumePdf={hasResumePdf} />
     </main>
   )
 }
