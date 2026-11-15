@@ -49,7 +49,7 @@ export const Header: FC<HeaderProps> = ({ hasResumePdf = false, hasApiKey = fals
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-background/80 backdrop-blur-md border-b border-border-hairline">
+      <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur-md border-b border-border-hairline">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link
             href="#"

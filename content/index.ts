@@ -134,7 +134,6 @@ export const projects: Project[] = z.array(projectSchema).parse([
     metrics: [
       "Sub-100ms MongoDB aggregation queries",
       "Real-time Socket.io bi-directional messaging",
-      "* Free hosting on Render: initial request may take ~30s to wake up"
     ],
     verified: true,
     problem: "Healthcare booking systems often suffer from scheduling conflicts and lagging doctor-patient communication.",

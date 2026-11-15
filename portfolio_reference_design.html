@@ -1,0 +1,984 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Kumar — AI Engineer | Full-Stack Builder</title>
+  <!-- Google Fonts: Playfair Display (Serif display) + JetBrains Mono (Monospace labels and body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#FF4D00',
+            'brand-hover': '#ff631c',
+            surface: '#080808',
+            'surface-card': '#111111',
+            'surface-border': '#222222',
+            'surface-border-subtle': '#1a1a1a',
+            'text-primary': '#f4f4f2',
+            'text-muted': '#a1a1aa',
+            'text-dim': '#71717a'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom scrollbar & design lock styles */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080808;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #262626;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF4D00;
+    }
+    .accent-glow {
+      box-shadow: 0 0 25px -5px rgba(255, 77, 0, 0.15);
+    }
+    .accent-border-glow:hover {
+      border-color: rgba(255, 77, 0, 0.5);
+      box-shadow: 0 0 20px -3px rgba(255, 77, 0, 0.2);
+    }
+    /* Subtle dot grid backdrop */
+    .bg-dot-grid {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Code highlight tag */
+    .code-tag {
+      background: rgba(255, 77, 0, 0.08);
+      border: 1px solid rgba(255, 77, 0, 0.2);
+      color: #FF4D00;
+    }
+  </style>
+</head>
+<body class="bg-surface text-text-muted font-mono antialiased selection:bg-brand selection:text-black min-h-screen relative flex flex-col justify-between">
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-brand z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- FIXED NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-surface-border transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Left: Name Branding -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+        <span class="font-serif font-bold text-lg text-text-primary group-hover:text-brand transition-colors tracking-tight">Abhishek Kumar</span>
+      </a>
+
+      <!-- Center: Navigation Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest text-text-muted">
+        <a href="#origin" class="hover:text-text-primary hover:border-b hover:border-brand pb-0.5 transition-all">01 Origin</a>
+        <a href="#craft" class="hover:text-text-primary hover:border-b hover:border-brand pb-0.5 transition-all">02 Craft</a>
+        <a href="#artifacts" class="hover:text-text-primary hover:border-b hover:border-brand pb-0.5 transition-all">03 Artifacts</a>
+        <a href="#arsenal" class="hover:text-text-primary hover:border-b hover:border-brand pb-0.5 transition-all">04 Arsenal</a>
+        <a href="#epilogue" class="hover:text-text-primary hover:border-b hover:border-brand pb-0.5 transition-all">Epilogue</a>
+      </nav>
+
+      <!-- Right: Action Buttons (Resume + Contact) -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-text-primary border border-surface-border hover:border-brand/60 rounded bg-surface-card hover:bg-neutral-900 transition-all flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Resume
+        </a>
+        <a href="#contact-section" class="px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-black bg-brand hover:bg-brand-hover rounded shadow-sm transition-all transform hover:-translate-y-0.5">
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex md:hidden items-center gap-2">
+        <a href="/resume.pdf" class="px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-text-primary border border-surface-border rounded bg-surface-card">
+          CV
+        </a>
+        <button id="mobile-menu-btn" aria-label="Toggle navigation menu" class="p-2 text-text-primary hover:text-brand focus:outline-none">
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-surface-border px-6 py-6 space-y-4">
+      <nav class="flex flex-col space-y-3 text-sm tracking-widest uppercase">
+        <a href="#origin" class="mobile-link text-text-muted hover:text-brand py-1">01 Origin</a>
+        <a href="#craft" class="mobile-link text-text-muted hover:text-brand py-1">02 Craft</a>
+        <a href="#artifacts" class="mobile-link text-text-muted hover:text-brand py-1">03 Artifacts</a>
+        <a href="#arsenal" class="mobile-link text-text-muted hover:text-brand py-1">04 Arsenal</a>
+        <a href="#epilogue" class="mobile-link text-text-muted hover:text-brand py-1">Epilogue</a>
+      </nav>
+      <div class="pt-4 border-t border-surface-border flex flex-col gap-2">
+        <a href="/resume.pdf" class="w-full text-center py-2.5 text-xs font-semibold uppercase tracking-wider text-text-primary border border-surface-border rounded bg-surface-card">Download Resume</a>
+        <a href="#contact-section" class="mobile-link w-full text-center py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-brand rounded">Make Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-20">
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 bg-dot-grid border-b border-surface-border/60">
+      <div class="max-w-4xl">
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-surface-border bg-surface-card/80 text-[11px] sm:text-xs text-text-primary font-mono uppercase tracking-wider mb-8">
+          <span class="w-2 h-2 rounded-full bg-brand animate-ping"></span>
+          <span>SEEKING AI ENGINEER ROLES — KANPUR, INDIA</span>
+        </div>
+
+        <!-- Huge two-line serif name (FULL OPACITY immediately, no illegible faint grey entrance) -->
+        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif font-black tracking-tight leading-[0.95] mb-6 text-text-primary">
+          Abhishek<br>
+          <span class="italic text-brand font-serif">Kumar</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <div class="flex items-center gap-3 text-sm sm:text-base font-bold tracking-widest text-text-primary uppercase mb-6 font-mono">
+          <span class="text-brand">/</span>
+          <span>AI ENGINEER</span>
+          <span class="text-text-dim">|</span>
+          <span>FULL-STACK ENGINEER</span>
+        </div>
+
+        <!-- Intro Paragraph -->
+        <p class="text-base sm:text-lg text-text-muted leading-relaxed font-mono max-w-3xl mb-10">
+          I build production-grade AI systems, intelligent agent architectures, and high-performance full-stack web applications with rigorous engineering discipline and precision.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-4 mb-16">
+          <a href="#artifacts" class="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-black bg-brand hover:bg-brand-hover rounded transition-all transform hover:-translate-y-0.5 flex items-center gap-2 accent-glow">
+            <span>EXPLORE THE ARTIFACTS</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+          <a href="#contact-section" class="px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-text-primary bg-surface-card hover:bg-neutral-900 border border-surface-border hover:border-text-muted rounded transition-all">
+            MAKE CONTACT
+          </a>
+        </div>
+
+        <!-- 4-CELL STATS BAR (Separate cells for Relevance & Latency) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-surface-border">
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded"><div class="text-2xl sm:text-3xl font-serif font-bold text-text-primary mb-1">1.5+ YEARS</div>
+<div class="text-[10px] sm:text-xs text-text-dim uppercase tracking-wider font-mono">EXPERIENCE &amp; RAG</div></div>
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-brand mb-1">3 Production</div>
+            <div class="text-[10px] sm:text-xs text-text-dim uppercase tracking-wider font-mono">Shipped Artifacts</div>
+          </div>
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-brand mb-1">+35%</div>
+            <div class="text-[10px] sm:text-xs text-text-dim uppercase tracking-wider font-mono">Query Relevance Gain</div>
+          </div>
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-2xl sm:text-3xl font-serif font-bold text-brand mb-1">-30%</div>
+            <div class="text-[10px] sm:text-xs text-text-dim uppercase tracking-wider font-mono">Latency Reduction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 01: ORIGIN -->
+    <section id="origin" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-b border-surface-border/60">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-brand text-xs uppercase tracking-widest font-bold">SCENE 01</span>
+        <span class="h-px w-8 bg-brand/40"></span>
+        <span class="text-xs uppercase tracking-widest text-text-dim">Origin</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <!-- Left: Narrative -->
+        <div class="lg:col-span-7 space-y-6">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary leading-tight">
+            It started with curiosity &amp; obsession.
+          </h2>
+
+          <div class="space-y-4 text-text-muted text-sm sm:text-base leading-relaxed">
+            <!-- Drop cap properly implemented without splitting the word visually -->
+            <p>
+              <span class="float-left text-4xl sm:text-5xl font-serif font-bold text-brand leading-none pr-3 pt-1">M</span>y path into computing began not with tutorials, but with a relentless urge to understand how complex systems operate under the hood. From parsing compiler syntax trees to architecting asynchronous pipelines, I found myself captivated by the intersection of rigorous full-stack mechanics and emergent artificial intelligence.
+            </p>
+            <p>
+              Over the past three years, that curiosity transformed into focused production execution. I specialize in taking raw model capabilities and shaping them into deterministic, fault-tolerant software—building agentic workflows that self-evaluate, intelligent code navigation graphs, and resilient distributed backends that deliver actual value.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: "WHAT I DO" Card (sized strictly to content, no dead space) -->
+        <div class="lg:col-span-5">
+          <div class="p-6 sm:p-7 bg-surface-card border border-surface-border rounded-lg shadow-xl accent-border-glow transition-all">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-surface-border">
+              <span class="text-xs font-bold tracking-widest uppercase text-brand">WHAT I DO</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+            </div>
+
+            <ul class="space-y-4 text-xs sm:text-sm font-mono text-text-primary">
+              <li class="flex items-start gap-3">
+                <span class="text-brand font-bold mt-0.5">01</span>
+                <div>
+                  <strong class="text-text-primary block font-semibold">Multi-Agent Systems &amp; Orchestration</strong>
+                  <span class="text-text-muted text-xs">LangGraph workflows, state machines, self-correction loops, and recursive retrieval.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand font-bold mt-0.5">02</span>
+                <div>
+                  <strong class="text-text-primary block font-semibold">Code Intelligence &amp; AST Analysis</strong>
+                  <span class="text-text-muted text-xs">Custom parsers, dependency graphs, and code metric computation engines.</span>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand font-bold mt-0.5">03</span>
+                <div>
+                  <strong class="text-text-primary block font-semibold">Full-Stack Production Engineering</strong>
+                  <span class="text-text-muted text-xs">Next.js/React frontend systems, scalable FastAPI/Express backends, Redis caching, and real-time WebSockets.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 02: THE CRAFT (SPLIT INTO EDUCATION & EXPERIENCE) -->
+    <section id="craft" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-b border-surface-border/60">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-brand text-xs uppercase tracking-widest font-bold">SCENE 02</span>
+        <span class="h-px w-8 bg-brand/40"></span>
+        <span class="text-xs uppercase tracking-widest text-text-dim">The Craft</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary mb-12">
+        Journey, Education &amp; Work
+      </h2>
+
+      <!-- (A) EDUCATION COMPACT BLOCK (Visually distinct styling) -->
+      <div class="mb-14">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+          <h3 class="text-xs font-bold tracking-widest uppercase text-text-primary">ACADEMIC FOUNDATION</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Diploma -->
+          <div class="p-5 bg-surface-card/40 border border-surface-border rounded-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-surface-border"></div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-mono text-brand font-bold uppercase tracking-wider">Jul 2021 — Jul 2024</span>
+              <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-surface border border-surface-border text-text-dim">Completed</span>
+            </div>
+            <h4 class="text-base font-serif font-bold text-text-primary">Diploma in Computer Science Engineering</h4>
+            <p class="text-xs font-mono text-text-muted mt-1">Govt. Technical Institute, Kanpur</p>
+          </div>
+
+          <!-- B.Tech -->
+          <div class="p-5 bg-surface-card/40 border border-brand/30 rounded-lg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-1 h-full bg-brand"></div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-xs font-mono text-brand font-bold uppercase tracking-wider">Mar 2024 — Mar 2027</span>
+              <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-brand/10 border border-brand/30 text-brand">Current</span>
+            </div>
+            <h4 class="text-base font-serif font-bold text-text-primary">B.Tech in CSE (AI &amp; ML)</h4>
+            <p class="text-xs font-mono text-text-muted mt-1">Dr. A.P.J. Abdul Kalam Technical University, Kanpur</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- (B) EXPERIENCE REVERSE-CHRONOLOGICAL TIMELINE -->
+      <div class="mb-14">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <h3 class="text-xs font-bold tracking-widest uppercase text-text-primary">PROFESSIONAL EXPERIENCE</h3>
+          </div>
+          <span class="text-[11px] font-mono text-text-dim italic">* Internships were pursued part-time / remotely alongside B.Tech coursework</span>
+        </div>
+
+        <div class="relative border-l border-surface-border pl-6 sm:pl-8 space-y-8 ml-3">
+          <!-- NOW -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-brand ring-4 ring-surface flex items-center justify-center">
+              <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+            </div>
+            <div class="p-6 bg-surface-card border border-brand/40 rounded-lg shadow-sm">
+              <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+                <span class="text-xs font-mono font-bold text-brand uppercase tracking-wider">Present</span>
+                <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-brand text-black">Active Pursuit</span>
+              </div>
+              <h4 class="text-lg font-serif font-bold text-text-primary">AI Engineer &amp; Full-Stack Builder</h4>
+              <p class="text-xs font-mono text-text-muted mt-1">Independent Research &amp; Building — Seeking full-time AI Engineer roles</p>
+              <p class="text-sm font-mono text-text-muted mt-3 leading-relaxed">
+                Dedicated to engineering autonomous agent graphs, synthetic evaluation benchmarks, and scalable full-stack applications solving tangible developer and operational problems.
+              </p>
+            </div>
+          </div>
+
+          <!-- BTM -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-surface-card border border-surface-border ring-4 ring-surface"></div>
+            <div class="p-6 bg-surface-card border border-surface-border rounded-lg">
+              <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+                <span class="text-xs font-mono text-text-dim uppercase tracking-wider">Dec 2024 — Feb 2026</span>
+                <span class="text-[11px] font-mono text-text-dim">Part-time / Remote</span>
+              </div>
+              <h4 class="text-lg font-serif font-bold text-text-primary">Frontend Developer</h4>
+              <p class="text-xs font-mono text-brand mt-1">Biz Trade Mart</p>
+              <p class="text-sm font-mono text-text-muted mt-3 leading-relaxed">
+                Constructed high-speed responsive B2B web applications, catalog management interfaces, and optimized performance metrics across core marketplace touchpoints.
+              </p>
+            </div>
+          </div>
+
+          <!-- Planto AI -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-surface-card border border-surface-border ring-4 ring-surface"></div>
+            <div class="p-6 bg-surface-card border border-surface-border rounded-lg">
+              <div class="flex flex-wrap justify-between items-center gap-2 mb-2">
+                <span class="text-xs font-mono text-text-dim uppercase tracking-wider">Nov 2024 — May 2025</span>
+                <span class="text-[11px] font-mono text-text-dim">Part-time / Remote</span>
+              </div>
+              <h4 class="text-lg font-serif font-bold text-text-primary">AI Research Intern</h4>
+              <p class="text-xs font-mono text-brand mt-1">Planto AI</p>
+              <p class="text-sm font-mono text-text-muted mt-3 leading-relaxed">
+                Researched deep learning pipelines, optimized prompt chaining strategies, and evaluated retrieval-augmented generation architectures for customer-facing AI products.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL GROWTH BY STAGE (Fix: non-overlapping and clearly sequenced) -->
+      <div>
+        <h3 class="text-xs font-bold tracking-widest uppercase text-text-dim mb-4">SKILL GROWTH BY STAGE</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-[10px] font-bold text-brand uppercase tracking-wider mb-1">STAGE 01 (2021-2022)</div>
+            <div class="text-sm font-serif font-bold text-text-primary mb-2">Core Foundations</div>
+            <p class="text-xs text-text-muted font-mono leading-relaxed">C/C++, Data Structures, Algorithms, Computer Architecture, Linux systems.</p>
+          </div>
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-[10px] font-bold text-brand uppercase tracking-wider mb-1">STAGE 02 (2022-2023)</div>
+            <div class="text-sm font-serif font-bold text-text-primary mb-2">Full-Stack Execution</div>
+            <p class="text-xs text-text-muted font-mono leading-relaxed">JavaScript/TypeScript, React, Node.js, Express, PostgreSQL, RESTful APIs.</p>
+          </div>
+          <div class="p-4 bg-surface-card/60 border border-surface-border rounded">
+            <div class="text-[10px] font-bold text-brand uppercase tracking-wider mb-1">STAGE 03 (2023-2024)</div>
+            <div class="text-sm font-serif font-bold text-text-primary mb-2">Applied AI &amp; Python</div>
+            <p class="text-xs text-text-muted font-mono leading-relaxed">Python, PyTorch, Embeddings, Vector Databases, Retrieval-Augmented Generation.</p>
+          </div>
+          <div class="p-4 bg-surface-card/60 border border-brand/40 rounded bg-brand/5">
+            <div class="text-[10px] font-bold text-brand uppercase tracking-wider mb-1">STAGE 04 (2024-PRESENT)</div>
+            <div class="text-sm font-serif font-bold text-text-primary mb-2">Autonomous Agent Systems</div>
+            <p class="text-xs text-text-muted font-mono leading-relaxed">LangGraph, Multi-Agent Swarms, Evaluation Quality Gates, Production LLMOps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 03: ARTIFACTS (PROJECT CARDS REBUILT) -->
+    <section id="artifacts" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-b border-surface-border/60">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-brand text-xs uppercase tracking-widest font-bold">SCENE 03</span>
+        <span class="h-px w-8 bg-brand/40"></span>
+        <span class="text-xs uppercase tracking-widest text-text-dim">Artifacts</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary">
+            Featured Systems
+          </h2>
+          <p class="text-text-muted text-sm font-mono mt-2">Production deployments, source architectures, and verified performance benchmarks.</p>
+        </div>
+        <div class="mt-4 md:mt-0 text-xs font-mono text-text-dim">
+          3 SHIPPED ARTIFACTS / PRODUCTION READY
+        </div>
+      </div>
+
+      <div class="space-y-16">
+        <!-- PROJECT 1: REPOGENT -->
+        <article class="bg-surface-card border border-surface-border rounded-xl overflow-hidden accent-border-glow transition-all">
+          <!-- Large AI Mockup Header -->
+          <div class="relative w-full bg-black border-b border-surface-border overflow-hidden">
+  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcscN9rOHvYoDMnSPOqafAVMi7K_-G8zgomrqSwV7KJmHOUXBNS1ih0dDDMNABU7_6zvKgs6WNMl_mz52KCy5Iwfw8LiEWsEsm51sFX_8O4tkHwl1XkHXKb9BuWqosHTDghm7mJlYelwcDF0-AqC9V5QA10yKZ0ZymCFlDGxBd2_YY2F8nhKnnw08g6i-uyOtvJiKDE-D0cYGALYTpugjlTfdztfLfUBaVxp-h3DRMTyzuGn122Den" alt="Repogent CodeAtlas UI Screenshot" class="w-full h-auto max-h-[500px] object-cover object-top hover:scale-[1.01] transition-transform duration-500 rounded-t-xl block">
+</div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6">
+            <!-- Title + One Line Summary -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-surface-border">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Repogent</h3>
+                <p class="text-xs sm:text-sm text-text-muted font-mono mt-1">Autonomous Code Intelligence &amp; Repository Analysis Platform</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://repogent.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-brand hover:bg-brand-hover rounded flex items-center gap-1.5 transition-all">
+                  <span>Live Demo</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://github.com/Abhishk-Kumar/Repogent" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-1.5 transition-all">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#artifacts" class="text-xs text-text-dim hover:text-brand font-mono underline ml-2">Case Study</a>
+              </div>
+            </div>
+
+            <!-- METRICS STRIP -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface border border-surface-border rounded-lg">
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Parse Latency</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-brand">&lt; 60s Parse</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Scale Cap</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">500+ Files</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Analysis Scope</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">AST Tree</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Host</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">Vercel Edge</span>
+              </div>
+            </div>
+
+            <!-- VISUAL ARCHITECTURE DIAGRAM (Graphic representation) -->
+            <div class="p-4 bg-surface/80 border border-surface-border rounded-lg">
+              <div class="text-[10px] uppercase font-mono tracking-widest text-text-dim mb-3 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+                <span>SYSTEM ARCHITECTURE DIAGRAM</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 items-center text-center font-mono text-xs">
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Repo Cloner</span>
+                  <span class="text-[10px] text-text-dim">Octokit &amp; Git Clone</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-brand/40 rounded">
+                  <span class="text-brand font-bold block">AST Engine</span>
+                  <span class="text-[10px] text-text-dim">Tree-sitter Parser</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Graph Matrix</span>
+                  <span class="text-[10px] text-text-dim">Call Hierarchies</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">AI Inspector</span>
+                  <span class="text-[10px] text-text-dim">LLM Metric Reports</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Problem → Solution → Result Bullets -->
+            <div class="space-y-3 text-xs sm:text-sm font-mono">
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-red-950/40 border border-red-800/40 text-red-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
+                <p class="text-text-muted">Developers onboarding to unfamiliar repositories spend days tracing function invocations, module interdependencies, and latent circular dependencies manually.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-blue-950/40 border border-blue-800/40 text-blue-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
+                <p class="text-text-muted">Engineered an automated pipeline pairing Tree-sitter abstract syntax tree parsing with dynamic graph rendering and targeted AI code reasoning engines.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-brand/10 border border-brand/30 text-brand text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Result</span>
+                <p class="text-text-muted">Under 60s parse time across codebases exceeding 500+ files with zero external server crashes and instant interactive topological visualization.</p>
+              </div>
+            </div>
+
+            <!-- Tech Chips -->
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-surface-border">
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Next.js</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>TypeScript</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Tree-sitter</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Gemini Pro API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: FINDLY.AI -->
+        <article class="bg-surface-card border border-surface-border rounded-xl overflow-hidden accent-border-glow transition-all">
+          <!-- Large AI Mockup Header -->
+          <div class="relative w-full bg-black border-b border-surface-border overflow-hidden">
+  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkoP9g4Kql7mbJWewfp9D9Phak_fcy_w2ogzEDpdVkz8GCe4c2DZXGuofexOl2QBvG841vh3QjvriDTLCv5ezLbSk7YtWhndYD9oyu5s6echItuvqLSP6LQuTrG2y_vwYSVFbQR1DXzyLjBNfAXS0VANNciKOolLWLQllqS5SZ_cqliojBT2uMlra-cBVXwwLEC-rWJCVX2-6SbxnNTJiBkMl8gbWrFnJKctwqEGN1csLGZaNUfhTj" alt="Findly.AI Dashboard UI Screenshot" class="w-full h-auto max-h-[500px] object-cover object-top hover:scale-[1.01] transition-transform duration-500 rounded-t-xl block">
+</div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6">
+            <!-- Title + One Line Summary -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-surface-border">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">Findly.AI</h3>
+                <p class="text-xs sm:text-sm text-text-muted font-mono mt-1">Multi-Agent Autonomous Deep Research Engine with Verified Quality Gates</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://findly-ai-rosy.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-brand hover:bg-brand-hover rounded flex items-center gap-1.5 transition-all">
+                  <span>Live Demo</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://github.com/Abhishk-Kumar/Findly-AI" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-1.5 transition-all">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#artifacts" class="text-xs text-text-dim hover:text-brand font-mono underline ml-2">Case Study</a>
+              </div>
+            </div>
+
+            <!-- METRICS STRIP -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface border border-surface-border rounded-lg">
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Agent Topology</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-brand">8-Node Graph</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Evaluation Gate</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">Score ≥ 7 / 10</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Self-Correction</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">Max 3 Revisions</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Citations</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-brand">100% Grounded</span>
+              </div>
+            </div>
+
+            <!-- VISUAL ARCHITECTURE DIAGRAM -->
+            <div class="p-4 bg-surface/80 border border-surface-border rounded-lg">
+              <div class="text-[10px] uppercase font-mono tracking-widest text-text-dim mb-3 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+                <span>SYSTEM ARCHITECTURE DIAGRAM</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 items-center text-center font-mono text-xs">
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Decomposition</span>
+                  <span class="text-[10px] text-text-dim">Sub-query Generation</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-brand/40 rounded">
+                  <span class="text-brand font-bold block">Parallel Crawlers</span>
+                  <span class="text-[10px] text-text-dim">Tavily Search Agents</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Synthesis Node</span>
+                  <span class="text-[10px] text-text-dim">Deduplication &amp; Citations</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Quality Gate</span>
+                  <span class="text-[10px] text-text-dim">Score ≥ 7 Validation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Problem → Solution → Result Bullets -->
+            <div class="space-y-3 text-xs sm:text-sm font-mono">
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-red-950/40 border border-red-800/40 text-red-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
+                <p class="text-text-muted">Standard search engine prompts hallucinate facts, fail to cross-validate multiple independent sources, and deliver shallow unverified summaries.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-blue-950/40 border border-blue-800/40 text-blue-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
+                <p class="text-text-muted">Orchestrated an 8-node LangGraph autonomous agent workflow implementing query decomposition, parallel Tavily web crawling, source citation anchoring, and automated critique scoring.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-brand/10 border border-brand/30 text-brand text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Result</span>
+                <p class="text-text-muted">Guaranteed quality threshold (minimum score 7/10 or up to 3 automated recursive revisions) with interactive citation breadcrumbs for every synthesized claim.</p>
+              </div>
+            </div>
+
+            <!-- Full Tech Stack Line (NO TRUNCATION) -->
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-surface-border">
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>LangGraph</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Python FastAPI</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Tavily API</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Groq LLaMA 3.3 70B</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Next.js App Router</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Tailwind CSS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: MEDICONNECT -->
+        <article class="bg-surface-card border border-surface-border rounded-xl overflow-hidden accent-border-glow transition-all">
+          <!-- Large AI Mockup Header -->
+          <div class="relative w-full bg-black border-b border-surface-border overflow-hidden">
+  <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQU6YBPDyblcGButYGAZJh4yLlW8B7xICNWoTocdivLcTnliZxAe5I5Qk_ZS5VejS8Gpstu_vEGQK_Ro5hxTGKwbazFrIVyBM_t8nPWygMCtvFqCqE5wQG8-wHqkzUmxynhO5XHLMAgxHsO7CWzhCy0WOdjvSZgpxHj-5uc8YsQ_Y2XvK6zY3p9Ry6bC-HCj2Oq2txFXBnBkXovncZsd_X-3icMqltYFR1rs_5pvm3sJUTEh2MiTfX" alt="MediConnect Healthcare Platform Screenshot" class="w-full h-auto max-h-[500px] object-cover object-top hover:scale-[1.01] transition-transform duration-500 rounded-t-xl block">
+</div>
+
+          <!-- Card Content Body -->
+          <div class="p-6 sm:p-8 space-y-6">
+            <!-- Title + One Line Summary -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-surface-border">
+              <div>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-text-primary">MediConnect</h3>
+                <p class="text-xs sm:text-sm text-text-muted font-mono mt-1">Full-Stack Real-Time Healthcare Consultation &amp; Records Platform</p>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://e-consultancy.onrender.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-brand hover:bg-brand-hover rounded flex items-center gap-1.5 transition-all">
+                  <span>Live Demo</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="https://github.com/Abhishk-Kumar/Consultancy-website" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-1.5 transition-all">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="#artifacts" class="text-xs text-text-dim hover:text-brand font-mono underline ml-2">Case Study</a>
+              </div>
+            </div>
+
+            <!-- Sleep Wake-up Note for Onrender -->
+            <div class="px-3.5 py-2 rounded bg-amber-950/20 border border-amber-800/40 text-amber-300 text-xs font-mono flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              <span>* Free hosting on Render, may take about 30 seconds to wake up on first visit.</span>
+            </div>
+
+            <!-- METRICS STRIP -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 bg-surface border border-surface-border rounded-lg">
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Cache Latency</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-brand">&lt; 100ms Queries</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Sync Channel</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">WebSocket Duplex</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Security</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-text-primary">JWT + RBAC</span>
+              </div>
+              <div>
+                <span class="block text-[11px] text-text-dim uppercase tracking-wider font-mono">Architecture</span>
+                <span class="text-base sm:text-lg font-serif font-bold text-brand">Micro-services</span>
+              </div>
+            </div>
+
+            <!-- VISUAL ARCHITECTURE DIAGRAM (Matches exact diagram treatment) -->
+            <div class="p-4 bg-surface/80 border border-surface-border rounded-lg">
+              <div class="text-[10px] uppercase font-mono tracking-widest text-text-dim mb-3 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand"></span>
+                <span>SYSTEM ARCHITECTURE DIAGRAM</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 items-center text-center font-mono text-xs">
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Client Portal</span>
+                  <span class="text-[10px] text-text-dim">React + Tailwind UI</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-brand/40 rounded">
+                  <span class="text-brand font-bold block">Gateway API</span>
+                  <span class="text-[10px] text-text-dim">Express + Socket.io</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Cache Layer</span>
+                  <span class="text-[10px] text-text-dim">Redis Key-Value</span>
+                </div>
+                <div class="hidden sm:flex justify-center text-brand font-bold">→</div>
+                <div class="p-3 bg-surface-card border border-surface-border rounded">
+                  <span class="text-text-primary font-bold block">Data Store</span>
+                  <span class="text-[10px] text-text-dim">MongoDB Medical DB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Problem → Solution → Result Bullets -->
+            <div class="space-y-3 text-xs sm:text-sm font-mono">
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-red-950/40 border border-red-800/40 text-red-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Problem</span>
+                <p class="text-text-muted">Decentralized patient appointments, fragmented prescription records, and high latency during critical live consultation interactions.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-blue-950/40 border border-blue-800/40 text-blue-400 text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Solution</span>
+                <p class="text-text-muted">Built an end-to-end full-stack portal with Socket.io real-time doctor-patient communication, Redis session caching, and secure role-based medical record pipelines.</p>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="px-2 py-0.5 rounded bg-brand/10 border border-brand/30 text-brand text-[10px] font-bold uppercase tracking-wider shrink-0 mt-0.5">Result</span>
+                <p class="text-text-muted">Sub-100ms database response latency under Redis caching with zero packet loss during live consultation test cycles.</p>
+              </div>
+            </div>
+
+            <!-- Full Tech Stack Line (Matching treatment) -->
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-surface-border">
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>React</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Node.js</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Express</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>MongoDB</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Socket.io</span>
+              <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Redis</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SCENE 04: ARSENAL (SPLIT FRONTEND AND DEVOPS, CONSISTENT CHIPS, NO % BARS) -->
+    <section id="arsenal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 border-b border-surface-border/60">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-brand text-xs uppercase tracking-widest font-bold">SCENE 04</span>
+        <span class="h-px w-8 bg-brand/40"></span>
+        <span class="text-xs uppercase tracking-widest text-text-dim">Arsenal</span>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-text-primary">Tools of the trade</h2>
+        <p class="text-text-muted text-sm font-mono mt-2">Tools, frameworks, languages, and architectures mastered through production shipping.</p>
+      </div>
+
+      <!-- Skill Groups Grid (Categorized clearly, Split Frontend / DevOps) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- GROUP 1: AI / ML Core -->
+  <div class="p-6 bg-surface-card border border-surface-border rounded-lg space-y-4">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+      <span class="text-xs font-bold tracking-widest uppercase text-brand">AI / ML Core</span>
+      <span class="text-[10px] font-mono text-text-dim">01</span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>LangChain</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>LangGraph</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>LLM API integration (Groq, Mistral, OpenAI)</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Prompt engineering</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>RAG pipelines</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>ChromaDB</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>FAISS</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Machine learning</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>ML model optimization</span>
+    </div>
+  </div>
+
+  <!-- GROUP 2: Languages & Core -->
+  <div class="p-6 bg-surface-card border border-surface-border rounded-lg space-y-4">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+      <span class="text-xs font-bold tracking-widest uppercase text-brand">Languages &amp; Core</span>
+      <span class="text-[10px] font-mono text-text-dim">02</span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>JavaScript (ES6+)</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>TypeScript</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Python</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Java</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>SQL</span>
+    </div>
+  </div>
+
+  <!-- GROUP 3: Backend & Databases -->
+  <div class="p-6 bg-surface-card border border-surface-border rounded-lg space-y-4">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+      <span class="text-xs font-bold tracking-widest uppercase text-brand">Backend &amp; Databases</span>
+      <span class="text-[10px] font-mono text-text-dim">03</span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>FastAPI</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Node.js</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Express.js</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>REST APIs</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>JWT</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>OAuth2</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>MongoDB</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>PostgreSQL</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>MySQL</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>SQLite</span>
+    </div>
+  </div>
+
+  <!-- GROUP 4: Frontend, DevOps & Practices -->
+  <div class="p-6 bg-surface-card border border-surface-border rounded-lg space-y-4">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-border">
+      <span class="text-xs font-bold tracking-widest uppercase text-brand">Frontend, DevOps &amp; Practices</span>
+      <span class="text-[10px] font-mono text-text-dim">04</span>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>React.js</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Next.js</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Tailwind CSS</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Material-UI</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>HTML5</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>CSS3</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Docker</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Git</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Vercel</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Agile/Scrum</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>OOP</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Jest</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Pytest</span>
+      <span class="px-2.5 py-1 rounded bg-surface border border-surface-border text-xs text-text-primary font-mono flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>Code review</span>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- EPILOGUE + CONTACT SECTION (Readable email, Copy button, Contact Form UI) -->
+    <section id="epilogue" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-brand text-xs uppercase tracking-widest font-bold">EPILOGUE</span>
+        <span class="h-px w-8 bg-brand/40"></span>
+        <span class="text-xs uppercase tracking-widest text-text-dim">Connect</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="contact-section">
+        <!-- Left: Narrative & Contact Links -->
+        <div class="lg:col-span-6 space-y-6">
+          <h2 class="text-4xl sm:text-5xl font-serif font-bold text-text-primary leading-tight">
+            The next chapter is unwritten.
+          </h2>
+          <p class="text-text-muted text-sm sm:text-base leading-relaxed font-mono">
+            I am actively looking for full-time AI Engineer and high-impact Full-Stack Engineering roles where I can contribute to serious systems, agent architectures, and resilient developer tools. Whether you have an open role, an intriguing problem, or want to talk shop—let's connect.
+          </p>
+
+          <!-- Explicit Readable Email Address + Copy Button -->
+          <div class="p-5 bg-surface-card border border-surface-border rounded-lg space-y-3">
+            <span class="text-[11px] font-mono text-text-dim uppercase tracking-wider block">Direct Email Address</span>
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <span class="text-base sm:text-lg font-mono font-bold text-text-primary selection:bg-brand selection:text-black">
+                abhishkdk@gmail.com
+              </span>
+              <button id="copy-email-btn" onclick="navigator.clipboard.writeText('abhishkdk@gmail.com'); alert('Email address copied to clipboard!');" class="px-3.5 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-black bg-brand hover:bg-brand-hover rounded transition-all">
+                Copy Email Address
+              </button>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="https://github.com/Abhishk-Kumar" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:abhishkdk@gmail.com" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider text-text-primary bg-surface border border-surface-border hover:border-brand rounded flex items-center gap-2 transition-all">
+              <svg class="w-4 h-4 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <span>Email Client</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Simple Contact Form UI (Front-end only) -->
+        <div class="lg:col-span-6">
+          <form onsubmit="event.preventDefault(); alert('Message dispatched! Thank you for reaching out.');" class="p-6 sm:p-8 bg-surface-card border border-surface-border rounded-xl space-y-4">
+            <h3 class="text-lg font-serif font-bold text-text-primary">Send a Direct Transmission</h3>
+            <p class="text-xs font-mono text-text-muted">Direct dispatch to Abhishek's inbox.</p>
+            
+            <div class="space-y-1">
+              <label class="block text-xs font-mono uppercase tracking-wider text-text-dim">Your Name</label>
+              <input type="text" required="" placeholder="e.g. Alex Thorne" class="w-full px-4 py-2.5 bg-surface border border-surface-border rounded font-mono text-xs text-text-primary focus:outline-none focus:border-brand">
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-xs font-mono uppercase tracking-wider text-text-dim">Your Email</label>
+              <input type="email" required="" placeholder="alex@company.com" class="w-full px-4 py-2.5 bg-surface border border-surface-border rounded font-mono text-xs text-text-primary focus:outline-none focus:border-brand">
+            </div>
+
+            <div class="space-y-1">
+              <label class="block text-xs font-mono uppercase tracking-wider text-text-dim">Message / Inquiry</label>
+              <textarea rows="4" required="" placeholder="Let's build something extraordinary..." class="w-full px-4 py-2.5 bg-surface border border-surface-border rounded font-mono text-xs text-text-primary focus:outline-none focus:border-brand resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 text-xs font-bold uppercase tracking-widest text-black bg-brand hover:bg-brand-hover rounded font-mono transition-all">
+              SEND TRANSMISSION
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (Full bio, zero truncation, Back to top control) -->
+  <section class="w-full overflow-hidden py-12 md:py-20 border-t border-[#262220] relative flex justify-center items-center select-none bg-surface pointer-events-auto"><div class="font-serif font-bold uppercase tracking-tight leading-[0.8] whitespace-nowrap text-[#1E1C1B] hover:text-[#2E2C2B] transition-colors duration-500" style="font-size: clamp(120px, 20vw, 320px);">ABHISHEK</div></section><footer class="bg-surface border-t border-surface-border py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-surface-border">
+        <!-- Full Untruncated Bio -->
+        <div class="max-w-2xl space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand"></span>
+            <span class="font-serif font-bold text-text-primary text-base">Abhishek Kumar</span>
+            <span class="text-xs text-text-dim font-mono">— AI Engineer &amp; Full-Stack Builder</span>
+          </div>
+          <p class="text-xs font-mono text-text-muted leading-relaxed">
+            Specializing in multi-agent orchestration, syntax tree parsers, and scalable full-stack web platforms based out of Kanpur, India. Dedicated to crafting software that bridges cutting-edge machine learning research and solid engineering craft.
+          </p>
+        </div>
+
+        <!-- Back to Top Control -->
+        
+      <a href="#hero" class="font-mono text-xs uppercase tracking-wider text-[#a1a1aa] hover:text-brand transition-colors flex items-center gap-1 shrink-0">BACK TO TOP ↑</a></div>
+
+      <!-- Copyright & Design Lock Indicator -->
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-text-dim gap-3">
+        <div>
+          © <span id="current-year">2026</span> Abhishek Kumar. All rights reserved.
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand"></span>#FF4D00 PALETTE LOCK</span>
+          <span>•</span>
+          <span>NO FACE PHOTO</span>
+          <span>•</span>
+          <span>SCENES 01–04 + EPILOGUE</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: Scroll progress, year, and mobile menu -->
+  <script>
+    // Set dynamic year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Scroll progress line
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scroll-progress').style.width = scrolled + '%';
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        menuIconOpen.classList.toggle('hidden', !isHidden);
+        menuIconClose.classList.toggle('hidden', isHidden);
+      });
+    }
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuIconOpen.classList.remove('hidden');
+          menuIconClose.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+</body></html>

@@ -12,9 +12,9 @@ interface HeroProps {
 export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
   return (
     <section className="relative w-full px-6 md:px-16 pt-16 md:pt-24 pb-28 md:pb-36 overflow-hidden bg-background">
-      {/* Ambient Ember Glows */}
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-primary-container/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute -top-12 -left-20 w-72 h-72 bg-secondary-container/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Ambient Orange Glow Orbs per design tokens */}
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-[rgba(249,94,20,.10)] rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute -top-12 -left-20 w-72 h-72 bg-[rgba(249,94,20,.10)] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto flex flex-col items-start">
         {/* Availability Pill */}

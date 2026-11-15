@@ -9,7 +9,9 @@ export const Arsenal: FC = () => {
     <section className="relative w-full px-6 md:px-16 py-20 md:py-32 bg-background" id="arsenal">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
-        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+
+<div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
           04
         </div>
 

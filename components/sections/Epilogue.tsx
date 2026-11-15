@@ -1,7 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react'
-import { motion } from 'framer-motion'
+import { FC, useState, useEffect } from 'react'
 import { Mail, Check, Download, Code, Globe, Terminal } from 'lucide-react'
 import { profile } from '../../content'
 import { ChatModal } from '../chat/ChatModal'
@@ -17,7 +16,11 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
   const [contactFormOpen, setContactFormOpen] = useState(false)
   const [formValues, setFormValues] = useState({ name: '', email: '', message: '' })
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({})
-  const [submitted, setSubmitted] = useState(false)
+  const [currentYear, setCurrentYear] = useState(2026)
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email)
@@ -26,34 +29,23 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
   }
 
   const handleOpenContactForm = () => setContactFormOpen(true)
+
   const handleCloseContactForm = () => setContactFormOpen(false)
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setContactFormOpen(false)
+  }
 
   const handleFormChange = (field: 'name' | 'email' | 'message', value: string) => {
     setFormValues((prev) => ({ ...prev, [field]: value }))
     setFormErrors((prev) => ({ ...prev, [field]: undefined }))
   }
 
-  const validateForm = () => {
-    const errors: { name?: string; email?: string; message?: string } = {}
-    if (!formValues.name.trim()) errors.name = 'Name is required.'
-    if (!formValues.email.trim()) errors.email = 'Email is required.'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) errors.email = 'Invalid email address.'
-    if (!formValues.message.trim()) errors.message = 'Message is required.'
-    setFormErrors(errors)
-    return Object.keys(errors).length === 0
-  }
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!validateForm()) return
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setFormValues({ name: '', email: '', message: '' })
-  }
-
   return (
     <section className="relative w-full px-6 md:px-16 py-24 md:py-36 bg-surface-container-lowest text-center border-t border-border-hairline" id="epilogue">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6" />
+      <div className="max-w-6xl mx-auto relative">
         <div className="flex items-center gap-2 mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
           <span className="font-label-caps text-label-caps uppercase tracking-widest text-primary-container">
@@ -85,29 +77,29 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
             <Mail className="w-4 h-4 text-primary-container" />
             <span>Contact Form</span>
           </button>
-
-          {hasApiKey && (
-            <button
-              onClick={() => setChatOpen(true)}
-              className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
-            >
-              <Terminal className="w-4 h-4 text-primary-container" />
-              <span>Talk to Portfolio AI</span>
-            </button>
-          )}
-
-          {hasResumePdf && (
-            <a
-              href={profile.links.resumePdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download Résumé</span>
-            </a>
-          )}
         </div>
+
+        {hasApiKey && (
+          <button
+            onClick={() => setChatOpen(true)}
+            className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
+          >
+            <Terminal className="w-4 h-4 text-primary-container" />
+            <span>Talk to Portfolio AI</span>
+          </button>
+        )}
+
+        {hasResumePdf && (
+          <a
+            href={profile.links.resumePdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3.5 bg-surface-container text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container-high hover:text-primary transition-all duration-200 flex items-center gap-2"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download Résumé</span>
+          </a>
+        )}
 
         {/* Email as readable text */}
         <p className="font-body-md text-body-md text-tertiary mb-12">
@@ -186,15 +178,14 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
                   </div>
 
                   <p className="text-xs text-on-surface-variant text-center font-mono mb-6">
-                    {submitted ? 'Thank you — your message has been prepared.' : 'This contact form is frontend-only. No submission service is connected yet.'}
+                    This contact form is frontend-only. No submission service is connected yet.
                   </p>
 
                   <button
                     type="submit"
-                    disabled={submitted}
                     className="w-full px-8 py-3.5 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-all duration-200 shadow-[0_0_24px_rgba(255,87,34,0.25)]"
                   >
-                    {submitted ? 'Sent' : 'Send Message'}
+                    OPEN EMAIL APP
                   </button>
                 </div>
               </form>
@@ -237,7 +228,6 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf, hasApiKey }) => {
           </a>
         </div>
       </div>
-      <ChatModal isOpen={chatOpen} onClose={() => setChatOpen(false)} />
     </section>
   )
 }

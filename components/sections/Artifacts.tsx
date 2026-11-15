@@ -12,7 +12,9 @@ export const Artifacts: FC = () => {
     <section className="relative w-full px-6 md:px-16 py-20 md:py-32 bg-surface-dim" id="artifacts">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
-        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
+        <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+
+<div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
           03
         </div>
 
@@ -43,6 +45,30 @@ export const Artifacts: FC = () => {
               'biz-trade-mart': '/screenshots/biz-trade-mart.png',
             }
 
+            const projectMetrics: Record<string, string[]> = {
+              'repogent-ai': ['<60s parse', '500+ files'],
+              'findly-ai': ['8-node LangGraph', 'quality gate ≥7', 'max 3 revisions'],
+              'mediconnect': ['sub-100ms queries'],
+              'ombre-ash': ['4 signature extraits', '400 units per batch', '3 salons (Paris / Grasse / Kyoto)'],
+              'biz-trade-mart': ['Lighthouse 62→91', '10+ product modules', '−35% bug reports'],
+            }
+
+            const projectCategory: Record<string, string> = {
+              'repogent-ai': 'AI Agent System',
+              'findly-ai': 'AI Agent System',
+              'mediconnect': 'Full-stack project',
+              'ombre-ash': 'E-Commerce / Brand Site',
+              'biz-trade-mart': 'B2B Marketplace',
+            }
+
+            const projectDiagram: Record<string, string[]> = {
+              'repogent-ai': ['Parse', 'Summarize', 'Q&A', 'Graph Gen'],
+              'findly-ai': ['Search', 'Scrape', 'Synthesize', 'Draft', 'Critique', 'Finalize (x3)'],
+              'mediconnect': ['Patient', 'Search', 'Book', 'Consult', 'Record', 'Pay'],
+              'ombre-ash': ['Hero', 'Collection', 'Atelier', 'Journal', 'Cart'],
+              'biz-trade-mart': ['Catalogue', 'Cart', 'Escrow/Order', 'Dashboard'],
+            }
+
             return (
               <div
                 key={project.slug}
@@ -54,7 +80,7 @@ export const Artifacts: FC = () => {
                   {/* Technical Header Bar */}
                   <div className="flex items-center justify-between pb-3 mb-4 border-b border-surface-container">
                     <span className="font-label-caps text-label-caps text-primary-container font-bold tracking-widest uppercase">
-                      {`No. 0${index + 1} // ${isFullStack ? 'Full-stack project' : 'AI Agent System'}`}
+                      {`No. 0${index + 1} // ${projectCategory[project.slug]}`}
                     </span>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse" />
@@ -78,49 +104,29 @@ export const Artifacts: FC = () => {
                     />
                   </div>
 
-                  {/* Mini Architecture Schematic (for AI Agent systems) */}
-                  {!isFullStack && (
-                    <div className="w-full h-44 bg-surface-container-lowest border border-border-hairline rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
-                      <div className="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
-                        <span>PIPELINE: {project.slug === 'repogent-ai' ? 'MULTI_AGENT_GRAPH' : 'LANGGRAPH_REVISION_LOOP'}</span>
-                        <span className="text-primary-container">ACTIVE</span>
-                      </div>
-
-                      {project.slug === 'repogent-ai' ? (
-                        <div className="grid grid-cols-4 gap-2 my-auto items-center">
-                          <div className="bg-surface-container-high p-2 rounded text-center text-bone-white">
-                            <div className="text-[9px] text-on-surface-variant uppercase">Parse</div>
-                            <div className="font-semibold text-[10px]">AST Parser</div>
-                          </div>
-                          <div className="bg-surface-container-high p-2 rounded text-center text-bone-white">
-                            <div className="text-[9px] text-on-surface-variant uppercase">Summarize</div>
-                            <div className="font-semibold text-[10px]">Summarizer</div>
-                          </div>
-                          <div className="bg-surface-container-high p-2 rounded text-center text-bone-white">
-                            <div className="text-[9px] text-on-surface-variant uppercase">Q&amp;A</div>
-                            <div className="font-semibold text-[10px]">Semantic Q&amp;A</div>
-                          </div>
-                          <div className="bg-surface-charcoal p-2 rounded text-center text-primary border border-border-hairline">
-                            <div className="text-[9px] text-primary-container uppercase">Graph</div>
-                            <div className="font-semibold text-[10px]">Graph Gen</div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="grid grid-cols-6 gap-1 my-auto items-center text-center text-[10px]">
-                          <div className="bg-surface-container-high p-1.5 rounded text-bone-white">Search</div>
-                          <div className="bg-surface-container-high p-1.5 rounded text-bone-white">Scrape</div>
-                          <div className="bg-surface-container-high p-1.5 rounded text-bone-white">Synthesize</div>
-                          <div className="bg-surface-container-high p-1.5 rounded text-bone-white">Draft</div>
-                          <div className="bg-surface-charcoal p-1.5 rounded text-primary border border-border-hairline">Critique</div>
-                          <div className="bg-surface-charcoal p-1.5 rounded text-primary-container border border-border-hairline">Finalize (x3)</div>
-                        </div>
-                      )}
-
-                      <div className="text-on-surface-variant text-[10px]">
-                        $ stack: {project.stack.join(' + ')}
-                      </div>
+                  {/* Project Architecture Diagram */}
+                  <div className="w-full h-44 bg-surface-container-lowest border border-border-hairline rounded p-3 mb-5 flex flex-col justify-between overflow-hidden relative font-mono text-[11px] text-tertiary">
+                    <div className="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps border-b border-surface-charcoal pb-1">
+                      <span>PIPELINE: {project.slug.toUpperCase().replace(/-/g, '_')}</span>
+                      <span className="text-primary-container">ACTIVE</span>
                     </div>
-                  )}
+
+                    <div className={`grid gap-2 my-auto items-center ${project.slug === 'ombre-ash' || project.slug === 'biz-trade-mart' ? 'grid-cols-5' : 'grid-cols-4'}`}>
+                      {projectDiagram[project.slug].map((step, sIdx) => (
+                        <div
+                          key={sIdx}
+                          className={`bg-surface-container-high p-2 rounded text-center text-bone-white ${project.slug === 'ombre-ash' || project.slug === 'biz-trade-mart' ? 'text-[8px]' : 'text-[9px]'}`}
+                        >
+                          <div className="text-on-surface-variant uppercase">{step.split(' ')[0]}</div>
+                          <div className="font-semibold">{step.split(' ').slice(1).join(' ') || step}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="text-on-surface-variant text-[10px]">
+                      $ stack: {project.stack.join(' + ')}
+                    </div>
+                  </div>
 
                   <h3 className="font-headline-sm text-headline-sm text-bone-white group-hover:text-primary transition-colors mb-2">
                     <Link href={`/projects/${project.slug}`} className="hover:underline">
@@ -137,6 +143,18 @@ export const Artifacts: FC = () => {
                       <li key={hIdx}>{h}</li>
                     ))}
                   </ul>
+
+                  {/* Metrics Strip */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {projectMetrics[project.slug].map((m, mIdx) => (
+                      <span
+                        key={mIdx}
+                        className="px-2 py-1 bg-surface-charcoal border border-border-hairline text-on-surface-variant font-label-caps text-label-caps uppercase rounded text-[10px]"
+                      >
+                        {m}
+                      </span>
+                    ))}
+                  </div>
 
                   {/* Stack Chips */}
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -166,7 +184,7 @@ export const Artifacts: FC = () => {
                         rel="noopener noreferrer"
                         className="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1.5"
                       >
-                        <span>Live Preview</span>
+                        <span>LIVE DEMO</span>
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     )}
@@ -177,7 +195,7 @@ export const Artifacts: FC = () => {
                         rel="noopener noreferrer"
                         className="text-bone-white hover:text-primary-container transition-colors flex items-center gap-1.5"
                       >
-                        <span>Repo</span>
+                        <span>GITHUB</span>
                         <Code className="w-3.5 h-3.5" />
                       </a>
                     )}
