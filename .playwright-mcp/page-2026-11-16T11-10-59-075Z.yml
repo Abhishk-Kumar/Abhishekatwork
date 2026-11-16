@@ -1,0 +1,4 @@
+- status [ref=f25e1]:
+  - generic [ref=f25e6]:
+    - text: Static route
+    - button "Hide static indicator" [ref=f25e7] [cursor=pointer]

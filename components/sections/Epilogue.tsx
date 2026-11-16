@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { Mail, Check, Download, Code, Globe } from 'lucide-react'
 import { profile } from '../../content'
 
@@ -88,29 +88,29 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
               )}
             </div>
 
-            {/* Buttons row */}
-            <div className="flex flex-wrap gap-3">
+            {/* Buttons row - blueprint spec */}
+            <div className="flex flex-col sm:flex-row items-center gap-3">
               <button
                 onClick={handleCopyEmail}
-                className="flex-1 min-w-[120px] px-4 py-3 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-colors flex items-center justify-center gap-2"
+                className="flex-1 min-w-[120px] px-4 py-3 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-semibold uppercase tracking-wider rounded hover:bg-secondary-container transition-colors flex items-center justify-center gap-1.5"
               >
-                {copied ? <Check className="w-4 h-4" /> : <Mail className="w-4 h-4" />}
+                {copied ? <Check className="w-3.5 h-3.5" /> : <Mail className="w-3.5 h-3.5" />}
                 <span>{copied ? 'Copied' : 'Copy Email'}</span>
               </button>
               <a
                 href={`mailto:${profile.email}`}
-                className="flex-1 min-w-[120px] px-4 py-3 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-2"
+                className="flex-1 min-w-[120px] px-4 py-3 bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-1.5"
               >
-                <Mail className="w-4 h-4 text-primary-container" />Contact Form
+                <Mail className="w-3.5 h-3.5 text-primary-container" />Contact Form
               </a>
               {hasResumePdf && (
                 <a
                   href={profile.links.resumePdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 min-w-[120px] px-4 py-3 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 min-w-[120px] px-4 py-3 bg-surface-container-low text-bone-white font-body-sm text-body-sm font-medium uppercase tracking-wider rounded border border-border-hairline hover:bg-surface-container hover:text-primary-container transition-colors flex items-center justify-center gap-1.5"
                 >
-                  <Download className="w-4 h-4" />Download Résumé
+                  <Download className="w-3.5 h-3.5" />Download Résumé
                 </a>
               )}
             </div>
@@ -198,9 +198,8 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
                     className="w-full px-8 py-3.5 rounded font-body-sm text-body-sm font-semibold uppercase tracking-wider transition-colors focus-visible:ring-2 focus-visible:ring-primary-container outline-none"
                   >
                     <Mail className="w-4 h-4" />
-                    <span>Open Email App</span>
+                    <span>Send message</span>
                   </button>
-
                 </div>
               </form>
             </div>

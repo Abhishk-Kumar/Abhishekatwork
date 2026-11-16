@@ -1,0 +1,590 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to main content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e5]:
+    - generic [ref=f1e6]:
+      - link "Abhishek Kumar" [ref=f1e7] [cursor=pointer]:
+        - /url: "#"
+      - button "Toggle mobile menu" [ref=f1e8] [cursor=pointer]
+  - main [ref=f1e11]:
+    - generic [ref=f1e13]:
+      - generic [ref=f1e14]: Seeking AI Engineer roles — Kanpur, India
+      - heading "Abhishek Kumar" [level=1] [ref=f1e17]:
+        - generic [ref=f1e18]: Abhishek
+        - text: Kumar
+      - generic [ref=f1e19]: AI Engineer | Full-Stack Engineer
+      - paragraph [ref=f1e22]: "I build LLM products end to end: RAG pipelines and multi-agent LangGraph workflows, plus the React and FastAPI apps around them. B.Tech (CSE, AI & ML) student with 1.5+ years of experience, looking for my first full-time AI Engineer role."
+      - generic [ref=f1e23]:
+        - link "Explore The Artifacts" [ref=f1e24] [cursor=pointer]:
+          - /url: "#artifacts"
+        - link "Download Résumé" [ref=f1e28] [cursor=pointer]:
+          - /url: /resume.pdf
+        - link "Make Contact" [ref=f1e33] [cursor=pointer]:
+          - /url: mailto:abhishkdk@gmail.com
+      - generic [ref=f1e34]:
+        - generic [ref=f1e35]:
+          - generic [ref=f1e36]: 1.5+
+          - generic [ref=f1e37]: YEARS IN SOFTWARE
+        - generic [ref=f1e38]:
+          - generic [ref=f1e39]: +35%
+          - generic [ref=f1e40]: RELEVANCE
+        - generic [ref=f1e41]:
+          - generic [ref=f1e42]: −30%
+          - generic [ref=f1e43]: LATENCY
+        - generic [ref=f1e44]:
+          - generic [ref=f1e45]: 62 → 91
+          - generic [ref=f1e46]: LIGHTHOUSE PERF GAIN
+        - generic [ref=f1e47]:
+          - generic [ref=f1e48]: 2 Shipped
+          - generic [ref=f1e49]: AI AGENT PRODUCTS
+    - generic [ref=f1e51]:
+      - generic [aria-hidden]: "01"
+      - generic [ref=f1e52]:
+        - generic [ref=f1e53]: Scene 01 — Origin
+        - heading "It started with curiosity & obsession." [level=2] [ref=f1e56]
+      - generic [ref=f1e57]:
+        - generic [ref=f1e58]:
+          - paragraph [ref=f1e59]: "I started with a Computer Science diploma in 2021, then moved into a B.Tech in CSE (AI & ML) in 2024. In late 2024 I worked in two directions at once: as a frontend developer on a B2B marketplace, where I learned performance, design systems and shipping to real users, and as an AI research intern, where I learned how to measure RAG quality and cut latency."
+          - paragraph [ref=f1e60]: "What I then combined both skill sets into my own projects: agents with state machines, quality gates and streaming interfaces. I care about retrieval quality, evaluation and making AI products dependable."
+        - generic [ref=f1e61]:
+          - generic [ref=f1e62]:
+            - generic [ref=f1e63]: +35%
+            - generic [ref=f1e65]: Response Relevance (Planto AI Copilot)
+          - generic [ref=f1e66]:
+            - generic [ref=f1e67]: 62 → 91
+            - generic [ref=f1e69]: Lighthouse Score (Biz Trade Mart)
+          - generic [ref=f1e70]:
+            - generic [ref=f1e71]: < 60s
+            - generic [ref=f1e73]: Repo Parsing Speed (Repogent AI)
+    - generic [ref=f1e75]:
+      - generic: "02"
+      - generic [ref=f1e76]:
+        - generic [ref=f1e77]: Scene 02 — The Craft
+        - heading "Where the craft was forged." [level=2] [ref=f1e80]
+        - paragraph [ref=f1e81]: "From foundational computer science to AI research and production frontend engineering — chronological timeline from oldest to newest. Note: AI Research at Planto AI and Frontend Development at Biz Trade Mart overlapped starting Dec 2024."
+      - generic [ref=f1e82]:
+        - generic [ref=f1e83]: Skill Growth by Stage
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e86]: 2021 — 2022
+            - text: Java, SQL, CS Fundamentals, Diploma Foundation
+          - generic [ref=f1e87]:
+            - generic [ref=f1e88]: 2022 — 2023
+            - text: Data Structures, Algorithms, Core Programming
+          - generic [ref=f1e89]:
+            - generic [ref=f1e90]: Diploma final year + B.Tech (lateral entry)
+            - text: Python, Machine Learning, B.Tech Transition
+          - generic [ref=f1e91]:
+            - generic [ref=f1e92]: 2024 — Present
+            - text: LangChain, LangGraph, RAG, React.js, FastAPI, Next.js
+      - generic [ref=f1e93]:
+        - heading "Academic Foundation" [level=3] [ref=f1e96]
+        - generic [ref=f1e97]:
+          - generic [ref=f1e100]:
+            - generic [ref=f1e101]:
+              - generic [ref=f1e102]:
+                - generic [ref=f1e103]: Jul 2021 — Jul 2024
+                - generic [ref=f1e104]: /
+                - heading "Diploma in Computer Science Engineering" [level=4] [ref=f1e105]
+              - generic [ref=f1e106]: Government Technical Institute, Kanpur
+            - list [ref=f1e107]:
+              - listitem [ref=f1e108]: Built core foundations in programming, data structures, and computer science principles.
+              - listitem [ref=f1e109]: Graduated with 7.5 CGPA.
+            - generic [ref=f1e110]:
+              - generic [ref=f1e111]: What I Learned
+              - paragraph [ref=f1e112]: Core programming fundamentals and computational thinking.
+            - generic [ref=f1e113]:
+              - generic [ref=f1e114]: Java
+              - generic [ref=f1e115]: SQL
+              - generic [ref=f1e116]: CS Fundamentals
+          - generic [ref=f1e119]:
+            - generic [ref=f1e120]:
+              - generic [ref=f1e121]:
+                - generic [ref=f1e122]: Mar 2024 — Mar 2027
+                - generic [ref=f1e123]: /
+                - heading "B.Tech in CSE (AI & ML)" [level=4] [ref=f1e124]
+              - generic [ref=f1e125]: Dr. A.P.J. Abdul Kalam Technical University, Kanpur
+            - list [ref=f1e126]:
+              - listitem [ref=f1e127]: Focused studies on machine learning algorithms, artificial intelligence architecture, and data engineering.
+              - listitem [ref=f1e128]: Maintained 7.13 CGPA through 6th semester.
+            - generic [ref=f1e129]:
+              - generic [ref=f1e130]: What I Learned
+              - paragraph [ref=f1e131]: Mathematical foundations of machine learning and neural architectures.
+            - generic [ref=f1e132]:
+              - generic [ref=f1e133]: Python
+              - generic [ref=f1e134]: Machine Learning
+              - generic [ref=f1e135]: Algorithms
+      - generic [ref=f1e136]:
+        - generic [ref=f1e137]:
+          - heading "Professional Experience" [level=3] [ref=f1e140]
+          - generic [ref=f1e141]: "* Note: Professional internships were conducted part-time / remotely alongside B.Tech studies."
+        - generic [ref=f1e142]:
+          - generic [ref=f1e145]:
+            - generic [ref=f1e146]:
+              - generic [ref=f1e147]:
+                - generic [ref=f1e148]: Now
+                - generic [ref=f1e149]: /
+                - heading "AI Engineer & Full-Stack Builder" [level=4] [ref=f1e150]
+              - generic [ref=f1e151]: Seeking Full-Time AI Engineer Roles
+            - list [ref=f1e152]:
+              - listitem [ref=f1e153]: "Shipped Repogent AI: codebase onboarding agent handling 500+ files with LangChain + LangGraph multi-agent pipeline and ChromaDB semantic retrieval."
+              - listitem [ref=f1e154]: "Shipped Findly.AI: autonomous research platform with 8-node LangGraph state machine, quality-gated revision loop, and SSRF-hardened FastAPI backend."
+              - listitem [ref=f1e155]: "Shipped MediConnect: full-stack healthcare appointment platform with real-time Socket.io messaging and MongoDB aggregation pipelines."
+            - generic [ref=f1e156]:
+              - generic [ref=f1e157]: What I Learned
+              - paragraph [ref=f1e158]: "End-to-end ownership: combining rigorous RAG retrieval, multi-agent state machines, and production-ready full-stack interfaces into dependable AI products."
+            - generic [ref=f1e159]:
+              - generic [ref=f1e160]: LangGraph
+              - generic [ref=f1e161]: LangChain
+              - generic [ref=f1e162]: FastAPI
+              - generic [ref=f1e163]: Python
+              - generic [ref=f1e164]: React
+              - generic [ref=f1e165]: Next.js
+          - generic [ref=f1e168]:
+            - generic [ref=f1e169]:
+              - generic [ref=f1e170]:
+                - generic [ref=f1e171]: Dec 2024 — Feb 2026
+                - generic [ref=f1e172]: /
+                - heading "Frontend Developer" [level=4] [ref=f1e173]
+              - generic [ref=f1e174]: Biz Trade Mart (Bizindo Trade Mart Pvt. Ltd., Remote)
+            - list [ref=f1e175]:
+              - listitem [ref=f1e176]: Architected a scalable component library in React.js with Tailwind CSS using OOP principles, reducing UI development time by 40% and enforcing design-system consistency across 10+ product modules.
+              - listitem [ref=f1e177]: Engineered lazy-loading, code-splitting and memoization strategies that improved the Lighthouse performance score from 62 to 91 on core client-facing dashboards.
+              - listitem [ref=f1e178]: Designed RESTful API contracts with optimistic UI updates and error boundary patterns in an agile/scrum workflow; resolved 30+ cross-browser regressions, reducing production bug reports by 35%.
+            - generic [ref=f1e179]:
+              - generic [ref=f1e180]: What I Learned
+              - paragraph [ref=f1e181]: "Production-grade frontend: performance budgets, reusable design systems and working with a team on a live product."
+            - generic [ref=f1e182]:
+              - generic [ref=f1e183]: React.js
+              - generic [ref=f1e184]: Tailwind CSS
+              - generic [ref=f1e185]: REST APIs
+              - generic [ref=f1e186]: Agile/Scrum
+          - generic [ref=f1e189]:
+            - generic [ref=f1e190]:
+              - generic [ref=f1e191]:
+                - generic [ref=f1e192]: Nov 2024 — May 2025
+                - generic [ref=f1e193]: /
+                - heading "AI Research Intern" [level=4] [ref=f1e194]
+              - generic [ref=f1e195]: Planto AI (Remote)
+            - list [ref=f1e196]:
+              - listitem [ref=f1e197]: Contributed to building an AI copilot product, designing prompt engineering strategies and retrieval-augmented generation (RAG) workflows that improved response relevance by 35%.
+              - listitem [ref=f1e198]: Built and evaluated LLM-driven features using LangChain, benchmarking outputs against 500+ test queries to reduce the hallucination rate by about 25%.
+              - listitem [ref=f1e199]: Optimized the vector retrieval pipeline, cutting average copilot response latency by 30%.
+            - generic [ref=f1e200]:
+              - generic [ref=f1e201]: What I Learned
+              - paragraph [ref=f1e202]: How to evaluate an LLM system with a real test set (500+ queries) instead of judging by feel, and how retrieval design affects both quality and speed.
+            - generic [ref=f1e203]:
+              - generic [ref=f1e204]: LangChain
+              - generic [ref=f1e205]: RAG
+              - generic [ref=f1e206]: Embeddings
+              - generic [ref=f1e207]: Vector Search
+              - generic [ref=f1e208]: Prompt Engineering
+    - generic [ref=f1e210]:
+      - generic [ref=f1e211]:
+        - generic [ref=f1e212]: Scene 03 — Artifacts
+        - heading "Five systems, shipped." [level=2] [ref=f1e215]
+      - generic [ref=f1e216]:
+        - generic [ref=f1e217]:
+          - generic [ref=f1e218]:
+            - generic [ref=f1e220]:
+              - generic [ref=f1e221]: repogent.vercel.app
+              - img "Repogent AI project screenshot" [ref=f1e224]
+            - generic [ref=f1e225]:
+              - generic [ref=f1e226]:
+                - generic [ref=f1e227]: Repo
+                - generic [ref=f1e228]: →
+              - generic [ref=f1e229]:
+                - generic [ref=f1e230]: AST Parse
+                - generic [ref=f1e231]: →
+              - generic [ref=f1e232]:
+                - generic [ref=f1e233]: Graph
+                - generic [ref=f1e234]: →
+              - generic [ref=f1e235]: Chat/Scan
+          - generic [ref=f1e237]:
+            - generic [ref=f1e238]: 1. AI Agent System
+            - heading "Repogent AI" [level=3] [ref=f1e240]
+            - paragraph [ref=f1e241]: AI-powered onboarding agent that takes a GitHub repo URL or ZIP upload and generates interactive dependency graphs and visual architecture maps.
+            - generic [ref=f1e242]:
+              - generic [ref=f1e243]: PROBLEM
+              - paragraph [ref=f1e244]: Navigating large unfamiliar codebases takes days of manual exploration and architecture diagramming.
+            - generic [ref=f1e245]:
+              - generic [ref=f1e246]: SOLUTION
+              - paragraph [ref=f1e247]: Multi-agent LangGraph workflow coordinated with ChromaDB vector store and Groq/Mistral LLM inference.
+            - generic [ref=f1e248]:
+              - generic [ref=f1e249]: RESULT
+              - paragraph [ref=f1e250]: Successfully generates complete architecture visualizers in under 60 seconds.
+            - generic [ref=f1e252]:
+              - generic [ref=f1e253]: <60s parse
+              - generic [ref=f1e254]: 500+ files
+            - generic [ref=f1e256]:
+              - generic [ref=f1e257]: LangChain
+              - generic [ref=f1e258]: LangGraph
+              - generic [ref=f1e259]: Mistral
+              - generic [ref=f1e260]: Groq API
+              - generic [ref=f1e261]: Python
+              - generic [ref=f1e262]: ChromaDB
+            - generic [ref=f1e263]:
+              - link "LIVE DEMO" [ref=f1e264] [cursor=pointer]:
+                - /url: https://repogent.vercel.app/
+              - link "GITHUB" [ref=f1e270] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar/Repogent
+              - link "Case Study" [ref=f1e275] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+        - generic [ref=f1e279]:
+          - generic [ref=f1e280]:
+            - generic [ref=f1e282]:
+              - generic [ref=f1e283]: findly-ai-rosy.vercel.app
+              - img "Findly.AI project screenshot" [ref=f1e286]
+            - generic [ref=f1e287]:
+              - generic [ref=f1e288]:
+                - generic [ref=f1e289]: Query
+                - generic [ref=f1e290]: →
+              - generic [ref=f1e291]:
+                - generic [ref=f1e292]: Decompose
+                - generic [ref=f1e293]: →
+              - generic [ref=f1e294]:
+                - generic [ref=f1e295]: Crawl
+                - generic [ref=f1e296]: →
+              - generic [ref=f1e297]:
+                - generic [ref=f1e298]: Synthesize
+                - generic [ref=f1e299]: →
+              - generic [ref=f1e300]:
+                - generic [ref=f1e301]: Quality Gate ≥7
+                - generic [ref=f1e302]: →
+              - generic [ref=f1e303]: Finalize (x3)
+          - generic [ref=f1e305]:
+            - generic [ref=f1e306]: 2. AI Agent System
+            - heading "Findly.AI" [level=3] [ref=f1e308]
+            - paragraph [ref=f1e309]: Turns a research question into a cited report using an 8-node LangGraph state machine with quality gates.
+            - generic [ref=f1e310]:
+              - generic [ref=f1e311]: PROBLEM
+              - paragraph [ref=f1e312]: Deep web research requires iterative searching, source synthesis, and rigorous fact-checking which is slow and manual.
+            - generic [ref=f1e313]:
+              - generic [ref=f1e314]: SOLUTION
+              - paragraph [ref=f1e315]: FastAPI backend orchestrating an 8-node LangGraph agent graph backed by PostgreSQL/SQLAlchemy and Tavily search.
+            - generic [ref=f1e316]:
+              - generic [ref=f1e317]: RESULT
+              - paragraph [ref=f1e318]: Produces comprehensive, fully cited research briefs with automated quality control.
+            - generic [ref=f1e320]:
+              - generic [ref=f1e321]: 8-node LangGraph
+              - generic [ref=f1e322]: quality gate ≥7
+              - generic [ref=f1e323]: max 3 revisions
+            - generic [ref=f1e325]:
+              - generic [ref=f1e326]: LangGraph
+              - generic [ref=f1e327]: FastAPI
+              - generic [ref=f1e328]: React
+              - generic [ref=f1e329]: TypeScript
+              - generic [ref=f1e330]: Groq Llama-3.3-70B
+              - generic [ref=f1e331]: Tavily
+              - generic [ref=f1e332]: SQLAlchemy
+            - generic [ref=f1e333]:
+              - link "LIVE DEMO" [ref=f1e334] [cursor=pointer]:
+                - /url: https://findly-ai-rosy.vercel.app/
+              - link "GITHUB" [ref=f1e340] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar/Findly-AI
+              - link "Case Study" [ref=f1e345] [cursor=pointer]:
+                - /url: /projects/findly-ai
+        - generic [ref=f1e349]:
+          - generic [ref=f1e350]:
+            - generic [ref=f1e352]:
+              - generic [ref=f1e353]: onrender.com
+              - img "MediConnect project screenshot" [ref=f1e356]
+            - generic [ref=f1e357]:
+              - generic [ref=f1e358]:
+                - generic [ref=f1e359]: Patient
+                - generic [ref=f1e360]: →
+              - generic [ref=f1e361]:
+                - generic [ref=f1e362]: Search
+                - generic [ref=f1e363]: →
+              - generic [ref=f1e364]:
+                - generic [ref=f1e365]: Book
+                - generic [ref=f1e366]: →
+              - generic [ref=f1e367]:
+                - generic [ref=f1e368]: Consult
+                - generic [ref=f1e369]: →
+              - generic [ref=f1e370]:
+                - generic [ref=f1e371]: Record
+                - generic [ref=f1e372]: →
+              - generic [ref=f1e373]: Pay
+          - generic [ref=f1e375]:
+            - generic [ref=f1e376]: 3. Full-stack project
+            - heading "MediConnect" [level=3] [ref=f1e378]
+            - paragraph [ref=f1e379]: Full-stack healthcare appointment platform with real-time doctor-patient messaging and optimized scheduling.
+            - generic [ref=f1e380]:
+              - generic [ref=f1e381]: PROBLEM
+              - paragraph [ref=f1e382]: Healthcare booking systems often suffer from scheduling conflicts and lagging doctor-patient communication.
+            - generic [ref=f1e383]:
+              - generic [ref=f1e384]: SOLUTION
+              - paragraph [ref=f1e385]: MERN stack architecture with JWT cookie-based auth, Socket.io websocket server, and Mongoose ODM.
+            - generic [ref=f1e386]:
+              - generic [ref=f1e387]: RESULT
+              - paragraph [ref=f1e388]: Delivers responsive booking flows and instant messaging with sub-100ms query performance.
+            - generic [ref=f1e389]: sub-100ms queries
+            - generic [ref=f1e393]:
+              - generic [ref=f1e394]: React
+              - generic [ref=f1e395]: Node.js
+              - generic [ref=f1e396]: Express
+              - generic [ref=f1e397]: MongoDB
+              - generic [ref=f1e398]: JWT
+              - generic [ref=f1e399]: Socket.io
+            - generic [ref=f1e400]:
+              - link "LIVE DEMO" [ref=f1e401] [cursor=pointer]:
+                - /url: https://e-consultancy.onrender.com/
+              - link "GITHUB" [ref=f1e407] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar/Consultancy-website
+              - link "Case Study" [ref=f1e412] [cursor=pointer]:
+                - /url: /projects/mediconnect
+        - generic [ref=f1e416]:
+          - generic [ref=f1e417]:
+            - generic [ref=f1e419]:
+              - generic [ref=f1e420]: ombre-ash-perfumes.vercel.app
+              - img "Ombre & Ash project screenshot" [ref=f1e423]
+            - generic [ref=f1e424]:
+              - generic [ref=f1e425]:
+                - generic [ref=f1e426]: Hero
+                - generic [ref=f1e427]: →
+              - generic [ref=f1e428]:
+                - generic [ref=f1e429]: Collection
+                - generic [ref=f1e430]: →
+              - generic [ref=f1e431]:
+                - generic [ref=f1e432]: Atelier
+                - generic [ref=f1e433]: →
+              - generic [ref=f1e434]:
+                - generic [ref=f1e435]: Journal
+                - generic [ref=f1e436]: →
+              - generic [ref=f1e437]: Cart
+          - generic [ref=f1e439]:
+            - generic [ref=f1e440]: 4. E-Commerce / Brand Site
+            - heading "Ombre & Ash" [level=3] [ref=f1e442]
+            - paragraph [ref=f1e443]: E-commerce and brand presentation for an artisanal perfumery featuring 4 signature extraits and numbered batch releases.
+            - generic [ref=f1e444]:
+              - generic [ref=f1e445]: PROBLEM
+              - paragraph [ref=f1e446]: Artisanal luxury perfumery requires a digital showcase that matches physical atelier exclusivity.
+            - generic [ref=f1e447]:
+              - generic [ref=f1e448]: SOLUTION
+              - paragraph [ref=f1e449]: Static HTML/CSS/JS frontend hosted on Vercel with responsive mobile-first layouts.
+            - generic [ref=f1e450]:
+              - generic [ref=f1e451]: RESULT
+              - paragraph [ref=f1e452]: Delivers an atmospheric, polished digital storefront for luxury extraits.
+            - generic [ref=f1e454]:
+              - generic [ref=f1e455]: 4 signature extraits
+              - generic [ref=f1e456]: 400 units per batch
+              - generic [ref=f1e457]: 3 salons (Paris / Grasse / Kyoto)
+            - generic [ref=f1e459]:
+              - generic [ref=f1e460]: HTML5
+              - generic [ref=f1e461]: CSS3
+              - generic [ref=f1e462]: JavaScript
+              - generic [ref=f1e463]: Tailwind CSS
+            - generic [ref=f1e464]:
+              - link "LIVE DEMO" [ref=f1e465] [cursor=pointer]:
+                - /url: https://ombre-ash-perfumes.vercel.app/
+              - link "Case Study" [ref=f1e471] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+        - generic [ref=f1e475]:
+          - generic [ref=f1e476]:
+            - generic [ref=f1e478]:
+              - generic [ref=f1e479]: www.biztrademart.com
+              - img "Biz Trade Mart project screenshot" [ref=f1e482]
+            - generic [ref=f1e483]:
+              - generic [ref=f1e484]:
+                - generic [ref=f1e485]: Catalogue
+                - generic [ref=f1e486]: →
+              - generic [ref=f1e487]:
+                - generic [ref=f1e488]: Cart
+                - generic [ref=f1e489]: →
+              - generic [ref=f1e490]:
+                - generic [ref=f1e491]: Escrow/Order
+                - generic [ref=f1e492]: →
+              - generic [ref=f1e493]: Dashboard
+          - generic [ref=f1e495]:
+            - generic [ref=f1e496]: 5. B2B Marketplace
+            - heading "Biz Trade Mart" [level=3] [ref=f1e498]
+            - paragraph [ref=f1e499]: Scalable B2B marketplace dashboards and reusable React component library built during professional tenure.
+            - generic [ref=f1e500]:
+              - generic [ref=f1e501]: PROBLEM
+              - paragraph [ref=f1e502]: Rapid product expansion led to UI inconsistencies and sluggish dashboard load speeds.
+            - generic [ref=f1e503]:
+              - generic [ref=f1e504]: SOLUTION
+              - paragraph [ref=f1e505]: Modular React component architecture integrated with RESTful backend APIs and performance optimization budgets.
+            - generic [ref=f1e506]:
+              - generic [ref=f1e507]: RESULT
+              - paragraph [ref=f1e508]: Boosted client dashboard speed from 62 to 91 and standardized UI across 10+ modules.
+            - generic [ref=f1e510]:
+              - generic [ref=f1e511]: Lighthouse 62→91
+              - generic [ref=f1e512]: 10+ product modules
+              - generic [ref=f1e513]: −35% bug reports
+            - generic [ref=f1e515]:
+              - generic [ref=f1e516]: React.js
+              - generic [ref=f1e517]: Tailwind CSS
+              - generic [ref=f1e518]: REST APIs
+              - generic [ref=f1e519]: Agile/Scrum
+            - generic [ref=f1e520]:
+              - link "LIVE DEMO" [ref=f1e521] [cursor=pointer]:
+                - /url: https://www.biztrademart.com/
+              - link "Case Study" [ref=f1e527] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+    - generic [ref=f1e532]:
+      - generic [ref=f1e533]:
+        - generic [ref=f1e534]: Scene 04 — Arsenal
+        - heading "Tools of the trade." [level=2] [ref=f1e537]
+      - generic [ref=f1e538]:
+        - generic [ref=f1e539]:
+          - generic [ref=f1e540]: AI / ML Core
+          - generic [ref=f1e541]:
+            - generic [ref=f1e542]: LangChain
+            - generic [ref=f1e544]: LangGraph
+            - generic [ref=f1e546]: LLM API integration (Groq, Mistral, OpenAI)
+            - generic [ref=f1e548]: Prompt engineering
+            - generic [ref=f1e550]: RAG pipelines
+            - generic [ref=f1e552]: ChromaDB
+            - generic [ref=f1e554]: FAISS
+            - generic [ref=f1e556]: Machine learning
+            - generic [ref=f1e558]: ML model optimization
+        - generic [ref=f1e560]:
+          - generic [ref=f1e561]: Languages & Core
+          - generic [ref=f1e562]:
+            - generic [ref=f1e563]: JavaScript (ES6+)
+            - generic [ref=f1e565]: TypeScript
+            - generic [ref=f1e567]: Python
+            - generic [ref=f1e569]: Java
+            - generic [ref=f1e571]: SQL
+        - generic [ref=f1e573]:
+          - generic [ref=f1e574]: Backend & Databases
+          - generic [ref=f1e575]:
+            - generic [ref=f1e576]: FastAPI
+            - generic [ref=f1e578]: Node.js
+            - generic [ref=f1e580]: Express.js
+            - generic [ref=f1e582]: REST APIs
+            - generic [ref=f1e584]: JWT
+            - generic [ref=f1e586]: OAuth2
+            - generic [ref=f1e588]: MongoDB
+            - generic [ref=f1e590]: PostgreSQL
+            - generic [ref=f1e592]: MySQL
+            - generic [ref=f1e594]: SQLite
+        - generic [ref=f1e596]:
+          - generic [ref=f1e597]: Frontend, DevOps & Practices
+          - generic [ref=f1e598]:
+            - generic [ref=f1e599]: React.js
+            - generic [ref=f1e601]: Next.js
+            - generic [ref=f1e603]: Tailwind CSS
+            - generic [ref=f1e605]: Material-UI
+            - generic [ref=f1e607]: HTML5
+            - generic [ref=f1e609]: CSS3
+            - generic [ref=f1e611]: Docker
+            - generic [ref=f1e613]: Git
+            - generic [ref=f1e615]: Vercel
+            - generic [ref=f1e617]: Agile/Scrum
+            - generic [ref=f1e619]: OOP
+            - generic [ref=f1e621]: Jest
+            - generic [ref=f1e623]: Pytest
+            - generic [ref=f1e625]: Code review
+    - generic [ref=f1e629]:
+      - generic [ref=f1e630]:
+        - generic [ref=f1e631]: Epilogue
+        - heading "The next chapter is unwritten." [level=2] [ref=f1e634]
+        - paragraph [ref=f1e635]: AI Engineer with 1.5+ years of experience building LLM-powered products, from RAG pipelines and multi-agent LangGraph workflows to the full-stack apps around them (React/Next.js, FastAPI, Node.js). Improved response relevance by 35% and cut latency by 30% on an AI copilot at Planto AI; shipped deployed projects including Repogent AI (codebase onboarding agent) and Findly.AI (autonomous research platform with a quality-gated revision loop). B.Tech candidate in CSE (AI & ML), seeking an AI Engineer role.
+        - generic [ref=f1e637]:
+          - generic [ref=f1e638]: abhishkdk@gmail.com
+          - button [ref=f1e639] [cursor=pointer]
+        - generic [ref=f1e643]:
+          - button "Copy Email" [ref=f1e644] [cursor=pointer]
+          - link "Contact Form" [ref=f1e649] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com
+          - link "Download Résumé" [ref=f1e653] [cursor=pointer]:
+            - /url: /resume.pdf
+      - generic [ref=f1e658]:
+        - generic [ref=f1e659]: Send a Message
+        - generic [ref=f1e662]:
+          - textbox [ref=f1e663]
+          - generic [ref=f1e664]:
+            - generic [ref=f1e665]:
+              - generic [ref=f1e666]: Name
+              - textbox "Name" [ref=f1e667]:
+                - /placeholder: Your name
+            - generic [ref=f1e668]:
+              - generic [ref=f1e669]: Email Address
+              - textbox "Email Address" [ref=f1e670]:
+                - /placeholder: you@example.com
+            - generic [ref=f1e671]:
+              - generic [ref=f1e672]: Message
+              - textbox "Message" [ref=f1e673]:
+                - /placeholder: How can I help you?
+            - button "Send message" [ref=f1e674] [cursor=pointer]
+  - contentinfo [ref=f1e679]:
+    - generic [ref=f1e682]:
+      - paragraph [ref=f1e683]: Building AI products that are measurable and dependable.
+      - generic [ref=f1e684]: Open to AI Engineer roles — Kanpur, India
+      - generic [ref=f1e687]:
+        - generic [ref=f1e688]:
+          - heading "Navigate" [level=3] [ref=f1e689]
+          - list [ref=f1e690]:
+            - listitem [ref=f1e691]:
+              - link "01 Origin" [ref=f1e692] [cursor=pointer]:
+                - /url: "#origin"
+            - listitem [ref=f1e693]:
+              - link "02 Craft" [ref=f1e694] [cursor=pointer]:
+                - /url: "#craft"
+            - listitem [ref=f1e695]:
+              - link "03 Artifacts" [ref=f1e696] [cursor=pointer]:
+                - /url: "#artifacts"
+            - listitem [ref=f1e697]:
+              - link "04 Arsenal" [ref=f1e698] [cursor=pointer]:
+                - /url: "#arsenal"
+            - listitem [ref=f1e699]:
+              - link "Epilogue" [ref=f1e700] [cursor=pointer]:
+                - /url: "#epilogue"
+        - generic [ref=f1e701]:
+          - heading "Case Studies" [level=3] [ref=f1e702]
+          - list [ref=f1e703]:
+            - listitem [ref=f1e704]:
+              - link "Repogent AI" [ref=f1e705] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+            - listitem [ref=f1e706]:
+              - link "Findly.AI" [ref=f1e707] [cursor=pointer]:
+                - /url: /projects/findly-ai
+            - listitem [ref=f1e708]:
+              - link "MediConnect" [ref=f1e709] [cursor=pointer]:
+                - /url: /projects/mediconnect
+            - listitem [ref=f1e710]:
+              - link "Ombre & Ash" [ref=f1e711] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+            - listitem [ref=f1e712]:
+              - link "Biz Trade Mart" [ref=f1e713] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+        - generic [ref=f1e714]:
+          - heading "Connect" [level=3] [ref=f1e715]
+          - list [ref=f1e716]:
+            - listitem [ref=f1e717]:
+              - link "Email" [ref=f1e718] [cursor=pointer]:
+                - /url: mailto:abhishkdk@gmail.com
+            - listitem [ref=f1e719]:
+              - link "GitHub" [ref=f1e720] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar
+            - listitem [ref=f1e724]:
+              - link "LinkedIn" [ref=f1e725] [cursor=pointer]:
+                - /url: https://linkedin.com/in/abhishkatwork
+            - listitem [ref=f1e729]:
+              - link "Résumé" [ref=f1e730] [cursor=pointer]:
+                - /url: /resume.pdf
+      - generic [aria-hidden] [ref=f1e735]: ABHISHEK KUMAR
+      - generic [ref=f1e736]:
+        - generic [ref=f1e737]:
+          - generic [ref=f1e738]: © 2026 Abhishek Kumar. All rights reserved.
+          - generic [ref=f1e739]: Open to AI Engineer roles — Kanpur / Remote
+        - navigation "Section navigation" [ref=f1e740]:
+          - link "Origin" [ref=f1e741] [cursor=pointer]:
+            - /url: "#origin"
+          - link "Craft" [ref=f1e742] [cursor=pointer]:
+            - /url: "#the-craft"
+          - link "Artifacts" [ref=f1e743] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Arsenal" [ref=f1e744] [cursor=pointer]:
+            - /url: "#arsenal"
+        - generic [ref=f1e745]:
+          - link "GitHub" [ref=f1e746] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar
+          - link "LinkedIn" [ref=f1e750] [cursor=pointer]:
+            - /url: https://linkedin.com/in/abhishkatwork
+          - link "Email" [ref=f1e754] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com
+  - alert [ref=f1e758]

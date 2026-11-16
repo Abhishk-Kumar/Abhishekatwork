@@ -1,0 +1,180 @@
+- generic [active] [ref=f8e1]:
+  - link "Skip to main content" [ref=f8e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f8e5]:
+    - generic [ref=f8e6]:
+      - link "Abhishek Kumar" [ref=f8e7] [cursor=pointer]:
+        - /url: "#"
+      - button "Toggle mobile menu" [ref=f8e8] [cursor=pointer]
+  - article [ref=f8e11]:
+    - generic [ref=f8e12]:
+      - img "Findly.AI project screenshot" [ref=f8e14]
+      - generic [ref=f8e15]:
+        - link "Back to Artifacts" [ref=f8e16] [cursor=pointer]:
+          - /url: /#artifacts
+        - generic [ref=f8e20]: Deployed
+      - generic [ref=f8e23]:
+        - generic [ref=f8e24]: Case Study // AI Agent System
+        - heading "Findly.AI — Autonomous Research Platform" [level=1] [ref=f8e25]
+        - paragraph [ref=f8e26]: Turns a research question into a cited report using an 8-node LangGraph state machine with quality gates.
+        - generic [ref=f8e27]:
+          - link "LIVE DEMO" [ref=f8e28] [cursor=pointer]:
+            - /url: https://findly-ai-rosy.vercel.app/
+          - link "GITHUB" [ref=f8e34] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar/Findly-AI
+      - generic [ref=f8e39]:
+        - generic [ref=f8e40]:
+          - generic [ref=f8e41]: "ARCHITECTURE: FINDLY_AI"
+          - generic [ref=f8e42]: DEPLOYED
+        - generic [ref=f8e43]:
+          - generic [ref=f8e44]:
+            - generic [ref=f8e45]: Search
+            - generic [ref=f8e46]: Search
+          - generic [ref=f8e47]:
+            - generic [ref=f8e48]: Scrape
+            - generic [ref=f8e49]: Scrape
+          - generic [ref=f8e50]:
+            - generic [ref=f8e51]: Synthesize
+            - generic [ref=f8e52]: Synthesize
+          - generic [ref=f8e53]:
+            - generic [ref=f8e54]: Draft
+            - generic [ref=f8e55]: Draft
+          - generic [ref=f8e56]:
+            - generic [ref=f8e57]: Critique
+            - generic [ref=f8e58]: Critique
+          - generic [ref=f8e59]:
+            - generic [ref=f8e60]: Finalize
+            - generic [ref=f8e61]: (x3)
+        - generic [ref=f8e62]: "$ stack: LangGraph + FastAPI + React + TypeScript + Groq Llama-3.3-70B + Tavily + SQLAlchemy"
+      - generic [ref=f8e63]:
+        - generic [ref=f8e64]:
+          - heading "Key Highlights" [level=3] [ref=f8e65]
+          - list [ref=f8e66]:
+            - listitem [ref=f8e67]: 8-node LangGraph state machine covering search, scraping, synthesis, drafting, critique and finalization.
+            - listitem [ref=f8e68]: "Quality-gated revision loop: AI critic scores drafts (1–10) and triggers automatic rewrites (maximum 3 revisions)."
+        - generic [ref=f8e69]:
+          - heading "Built-in Metrics" [level=3] [ref=f8e70]
+          - list [ref=f8e71]:
+            - listitem [ref=f8e72]:
+              - generic [ref=f8e76]: 8-node LangGraph autonomous research state machine
+            - listitem [ref=f8e77]:
+              - generic [ref=f8e81]: Quality gate ≥ 7 with maximum 3 automated revisions
+            - listitem [ref=f8e82]:
+              - generic [ref=f8e86]: Backed by 12 backend pytest tests
+      - generic [ref=f8e87]:
+        - heading "Tech Stack" [level=3] [ref=f8e88]
+        - generic [ref=f8e89]:
+          - generic [ref=f8e90]: LangGraph
+          - generic [ref=f8e91]: FastAPI
+          - generic [ref=f8e92]: React
+          - generic [ref=f8e93]: TypeScript
+          - generic [ref=f8e94]: Groq Llama-3.3-70B
+          - generic [ref=f8e95]: Tavily
+          - generic [ref=f8e96]: SQLAlchemy
+      - generic [ref=f8e97]:
+        - heading "The Problem" [level=3] [ref=f8e98]
+        - paragraph [ref=f8e99]: Deep web research requires iterative searching, source synthesis, and rigorous fact-checking which is slow and manual.
+      - generic [ref=f8e100]:
+        - heading "Constraints" [level=3] [ref=f8e101]
+        - paragraph [ref=f8e102]: API rate limits and unstructured web scraping noise required robust error handling and validation.
+      - generic [ref=f8e103]:
+        - heading "Architecture Details" [level=3] [ref=f8e104]
+        - paragraph [ref=f8e105]: FastAPI backend orchestrating an 8-node LangGraph agent graph backed by PostgreSQL/SQLAlchemy and Tavily search.
+      - generic [ref=f8e106]:
+        - heading "Key Decisions & Trade-offs" [level=3] [ref=f8e107]
+        - list [ref=f8e108]:
+          - listitem [ref=f8e109]: Implemented an explicit critique-rewrite loop enforcing minimum quality scores before final report generation.
+          - listitem [ref=f8e110]: Used Server-Sent Events (SSE) to stream live node progression states to the React frontend.
+      - generic [ref=f8e111]:
+        - heading "Evaluation" [level=3] [ref=f8e112]
+        - paragraph [ref=f8e113]: Tested across complex multi-faceted research queries with 12 automated pytest suites.
+      - generic [ref=f8e114]:
+        - heading "Results" [level=3] [ref=f8e115]
+        - paragraph [ref=f8e116]: Produces comprehensive, fully cited research briefs with automated quality control.
+      - generic [ref=f8e117]:
+        - heading "Next Steps" [level=3] [ref=f8e118]
+        - list [ref=f8e119]:
+          - listitem [ref=f8e120]: Support multi-source export formats and collaborative team workspaces.
+      - generic [ref=f8e121]:
+        - 'link "Previous: Repogent AI" [ref=f8e122] [cursor=pointer]':
+          - /url: /projects/repogent-ai
+        - 'link "Next: MediConnect" [ref=f8e126] [cursor=pointer]':
+          - /url: /projects/mediconnect
+  - contentinfo [ref=f8e131]:
+    - generic [ref=f8e134]:
+      - paragraph [ref=f8e135]: Building AI products that are measurable and dependable.
+      - generic [ref=f8e136]: Open to AI Engineer roles — Kanpur, India
+      - generic [ref=f8e139]:
+        - generic [ref=f8e140]:
+          - heading "Navigate" [level=3] [ref=f8e141]
+          - list [ref=f8e142]:
+            - listitem [ref=f8e143]:
+              - link "01 Origin" [ref=f8e144] [cursor=pointer]:
+                - /url: "#origin"
+            - listitem [ref=f8e145]:
+              - link "02 Craft" [ref=f8e146] [cursor=pointer]:
+                - /url: "#craft"
+            - listitem [ref=f8e147]:
+              - link "03 Artifacts" [ref=f8e148] [cursor=pointer]:
+                - /url: "#artifacts"
+            - listitem [ref=f8e149]:
+              - link "04 Arsenal" [ref=f8e150] [cursor=pointer]:
+                - /url: "#arsenal"
+            - listitem [ref=f8e151]:
+              - link "Epilogue" [ref=f8e152] [cursor=pointer]:
+                - /url: "#epilogue"
+        - generic [ref=f8e153]:
+          - heading "Case Studies" [level=3] [ref=f8e154]
+          - list [ref=f8e155]:
+            - listitem [ref=f8e156]:
+              - link "Repogent AI" [ref=f8e157] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+            - listitem [ref=f8e158]:
+              - link "Findly.AI" [ref=f8e159] [cursor=pointer]:
+                - /url: /projects/findly-ai
+            - listitem [ref=f8e160]:
+              - link "MediConnect" [ref=f8e161] [cursor=pointer]:
+                - /url: /projects/mediconnect
+            - listitem [ref=f8e162]:
+              - link "Ombre & Ash" [ref=f8e163] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+            - listitem [ref=f8e164]:
+              - link "Biz Trade Mart" [ref=f8e165] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+        - generic [ref=f8e166]:
+          - heading "Connect" [level=3] [ref=f8e167]
+          - list [ref=f8e168]:
+            - listitem [ref=f8e169]:
+              - link "Email" [ref=f8e170] [cursor=pointer]:
+                - /url: mailto:abhishkdk@gmail.com
+            - listitem [ref=f8e171]:
+              - link "GitHub" [ref=f8e172] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar
+            - listitem [ref=f8e176]:
+              - link "LinkedIn" [ref=f8e177] [cursor=pointer]:
+                - /url: https://linkedin.com/in/abhishkatwork
+            - listitem [ref=f8e181]:
+              - link "Résumé" [ref=f8e182] [cursor=pointer]:
+                - /url: /resume.pdf
+      - generic [aria-hidden] [ref=f8e187]: ABHISHEK KUMAR
+      - generic [ref=f8e188]:
+        - generic [ref=f8e189]:
+          - generic [ref=f8e190]: © 2026 Abhishek Kumar. All rights reserved.
+          - generic [ref=f8e191]: Open to AI Engineer roles — Kanpur / Remote
+        - navigation "Section navigation" [ref=f8e192]:
+          - link "Origin" [ref=f8e193] [cursor=pointer]:
+            - /url: "#origin"
+          - link "Craft" [ref=f8e194] [cursor=pointer]:
+            - /url: "#the-craft"
+          - link "Artifacts" [ref=f8e195] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Arsenal" [ref=f8e196] [cursor=pointer]:
+            - /url: "#arsenal"
+        - generic [ref=f8e197]:
+          - link "GitHub" [ref=f8e198] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar
+          - link "LinkedIn" [ref=f8e202] [cursor=pointer]:
+            - /url: https://linkedin.com/in/abhishkatwork
+          - link "Email" [ref=f8e206] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com
+  - alert [ref=f8e210]

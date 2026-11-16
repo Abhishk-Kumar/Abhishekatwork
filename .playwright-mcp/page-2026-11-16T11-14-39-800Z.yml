@@ -1,0 +1,217 @@
+- generic [active] [ref=f30e1]:
+  - link "Skip to main content" [ref=f30e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f30e5]:
+    - generic [ref=f30e6]:
+      - link "Abhishek Kumar" [ref=f30e7] [cursor=pointer]:
+        - /url: "#"
+      - button "Toggle mobile menu" [ref=f30e8] [cursor=pointer]
+  - article [ref=f30e11]:
+    - generic [ref=f30e12]:
+      - img "Ombre & Ash project screenshot" [ref=f30e14]
+      - generic [ref=f30e15]:
+        - link "Back to Artifacts" [ref=f30e16] [cursor=pointer]:
+          - /url: /#artifacts
+        - generic [ref=f30e20]: Live Preview
+      - generic [ref=f30e23]:
+        - generic [ref=f30e24]: Case Study // E-Commerce / Brand Site
+        - heading "Ombre & Ash — Niche Perfumery House" [level=1] [ref=f30e25]
+        - paragraph [ref=f30e26]: E-commerce and brand presentation for an artisanal perfumery featuring 4 signature extraits and numbered batch releases.
+        - generic [ref=f30e27]:
+          - generic [ref=f30e28]:
+            - generic [ref=f30e29]: Role
+            - text: Frontend Developer / Designer
+          - generic [ref=f30e30]:
+            - generic [ref=f30e31]: Stack
+            - text: HTML5, CSS3, JavaScript
+          - generic [ref=f30e32]:
+            - generic [ref=f30e33]: Context
+            - text: E-commerce for artisanal perfumery brand
+          - generic [ref=f30e34]:
+            - generic [ref=f30e35]: Outcome
+            - text: 4 signature extraits; 400 units/batch across 3 salons
+        - link "LIVE DEMO" [ref=f30e37] [cursor=pointer]:
+          - /url: https://ombre-ash-perfumes.vercel.app/
+      - generic [ref=f30e43]:
+        - heading "Architecture Map" [level=2] [ref=f30e44]
+        - generic [ref=f30e45]:
+          - generic [ref=f30e46]:
+            - generic [ref=f30e47]:
+              - generic [ref=f30e48] [cursor=pointer]: Hero
+              - generic [ref=f30e49]: →
+            - generic [ref=f30e50]:
+              - generic [ref=f30e51] [cursor=pointer]: Collection
+              - generic [ref=f30e52]: →
+            - generic [ref=f30e53]:
+              - generic [ref=f30e54] [cursor=pointer]: Atelier
+              - generic [ref=f30e55]: →
+            - generic [ref=f30e56]:
+              - generic [ref=f30e57] [cursor=pointer]: Journal
+              - generic [ref=f30e58]: →
+            - generic [ref=f30e59]: Cart
+          - paragraph [ref=f30e61]: Click a node to scroll to its detailed section below.
+      - generic [ref=f30e62]:
+        - heading "The Problem" [level=3] [ref=f30e63]
+        - paragraph [ref=f30e64]: Artisanal luxury perfumery requires a digital showcase that matches physical atelier exclusivity.
+      - generic [ref=f30e65]:
+        - heading "Solution" [level=3] [ref=f30e66]
+        - generic [ref=f30e67]:
+          - paragraph [ref=f30e68]: Static HTML/CSS/JS frontend hosted on Vercel with responsive mobile-first layouts.
+          - generic [ref=f30e69]:
+            - generic [ref=f30e70]:
+              - generic [ref=f30e71]: Hero
+              - generic [ref=f30e72]: →
+            - generic [ref=f30e73]:
+              - generic [ref=f30e74]: Collection
+              - generic [ref=f30e75]: →
+            - generic [ref=f30e76]:
+              - generic [ref=f30e77]: Atelier
+              - generic [ref=f30e78]: →
+            - generic [ref=f30e79]:
+              - generic [ref=f30e80]: Journal
+              - generic [ref=f30e81]: →
+            - generic [ref=f30e82]: Cart
+      - generic [ref=f30e84]:
+        - heading "How It Works" [level=3] [ref=f30e85]
+        - generic [ref=f30e86]:
+          - generic [ref=f30e87]:
+            - generic [ref=f30e88]: "1"
+            - generic [ref=f30e89]:
+              - heading "Hero" [level=4] [ref=f30e90]
+              - paragraph [ref=f30e91]: Hero section showcases 4 signature extraits with immersive storytelling.
+          - generic [ref=f30e92]:
+            - generic [ref=f30e93]: "2"
+            - generic [ref=f30e94]:
+              - heading "Collection" [level=4] [ref=f30e95]
+              - paragraph [ref=f30e96]: Collection page presents fragrance families with olfactory notes.
+          - generic [ref=f30e97]:
+            - generic [ref=f30e98]: "3"
+            - generic [ref=f30e99]:
+              - heading "Atelier" [level=4] [ref=f30e100]
+              - paragraph [ref=f30e101]: Atelier section reveals craftsmanship and batch production details.
+          - generic [ref=f30e102]:
+            - generic [ref=f30e103]: "4"
+            - generic [ref=f30e104]:
+              - heading "Journal" [level=4] [ref=f30e105]
+              - paragraph [ref=f30e106]: Journal provides brand narrative and fragrance education content.
+          - generic [ref=f30e107]:
+            - generic [ref=f30e108]: "5"
+            - generic [ref=f30e109]:
+              - heading "Cart" [level=4] [ref=f30e110]
+              - paragraph [ref=f30e111]: Cart and checkout for 400-unit limited batches across 3 salons.
+      - generic [ref=f30e112]:
+        - heading "Engineering Decisions & Trade-offs" [level=3] [ref=f30e113]
+        - generic [ref=f30e114]:
+          - generic [ref=f30e116]:
+            - generic [ref=f30e117]:
+              - generic [ref=f30e118]: Decision
+              - paragraph [ref=f30e119]: Static HTML/CSS/JS frontend without heavy framework
+            - generic [ref=f30e120]:
+              - generic [ref=f30e121]: Why
+              - paragraph [ref=f30e122]: Maximum performance and load speed for brand-focused e-commerce; no JS bundle overhead
+            - generic [ref=f30e123]:
+              - generic [ref=f30e124]: Trade-off
+              - paragraph [ref=f30e125]: Limited interactivity; manual DOM updates for cart/checkout
+          - generic [ref=f30e127]:
+            - generic [ref=f30e128]:
+              - generic [ref=f30e129]: Decision
+              - paragraph [ref=f30e130]: Editorial serif typography and dark obsidian tones
+            - generic [ref=f30e131]:
+              - generic [ref=f30e132]: Why
+              - paragraph [ref=f30e133]: Evokes high-end fragrance branding; matches physical atelier exclusivity
+            - generic [ref=f30e134]:
+              - generic [ref=f30e135]: Trade-off
+              - paragraph [ref=f30e136]: Reduced readability for long-form content; accessibility requires careful contrast tuning
+      - generic [ref=f30e137]:
+        - heading "Product Screenshots" [level=3] [ref=f30e138]
+        - generic [ref=f30e140]:
+          - img "Ombre & Ash — Main interface" [ref=f30e141]
+          - paragraph [ref=f30e142]: Main interface view
+      - generic [ref=f30e143]:
+        - heading "What I'd Do Next" [level=3] [ref=f30e144]
+        - paragraph [ref=f30e145]: Add interactive fragrance layering quiz.
+      - generic [ref=f30e146]:
+        - link "Back to Artifacts" [ref=f30e147] [cursor=pointer]:
+          - /url: /#artifacts
+        - generic [ref=f30e151]:
+          - 'link "Previous: MediConnect" [ref=f30e152] [cursor=pointer]':
+            - /url: /projects/mediconnect
+          - 'link "Next: Biz Trade Mart" [ref=f30e156] [cursor=pointer]':
+            - /url: /projects/biz-trade-mart
+  - contentinfo [ref=f30e161]:
+    - generic [ref=f30e164]:
+      - paragraph [ref=f30e165]: Building AI products that are measurable and dependable.
+      - generic [ref=f30e166]: Open to AI Engineer roles — Kanpur, India
+      - generic [ref=f30e169]:
+        - generic [ref=f30e170]:
+          - heading "Navigate" [level=3] [ref=f30e171]
+          - list [ref=f30e172]:
+            - listitem [ref=f30e173]:
+              - link "01 Origin" [ref=f30e174] [cursor=pointer]:
+                - /url: "#origin"
+            - listitem [ref=f30e175]:
+              - link "02 Craft" [ref=f30e176] [cursor=pointer]:
+                - /url: "#craft"
+            - listitem [ref=f30e177]:
+              - link "03 Artifacts" [ref=f30e178] [cursor=pointer]:
+                - /url: "#artifacts"
+            - listitem [ref=f30e179]:
+              - link "04 Arsenal" [ref=f30e180] [cursor=pointer]:
+                - /url: "#arsenal"
+            - listitem [ref=f30e181]:
+              - link "Epilogue" [ref=f30e182] [cursor=pointer]:
+                - /url: "#epilogue"
+        - generic [ref=f30e183]:
+          - heading "Case Studies" [level=3] [ref=f30e184]
+          - list [ref=f30e185]:
+            - listitem [ref=f30e186]:
+              - link "Repogent AI" [ref=f30e187] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+            - listitem [ref=f30e188]:
+              - link "Findly.AI" [ref=f30e189] [cursor=pointer]:
+                - /url: /projects/findly-ai
+            - listitem [ref=f30e190]:
+              - link "MediConnect" [ref=f30e191] [cursor=pointer]:
+                - /url: /projects/mediconnect
+            - listitem [ref=f30e192]:
+              - link "Ombre & Ash" [ref=f30e193] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+            - listitem [ref=f30e194]:
+              - link "Biz Trade Mart" [ref=f30e195] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+        - generic [ref=f30e196]:
+          - heading "Connect" [level=3] [ref=f30e197]
+          - list [ref=f30e198]:
+            - listitem [ref=f30e199]:
+              - link "Email" [ref=f30e200] [cursor=pointer]:
+                - /url: mailto:abhishkdk@gmail.com
+            - listitem [ref=f30e201]:
+              - link "GitHub" [ref=f30e202] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar
+            - listitem [ref=f30e206]:
+              - link "LinkedIn" [ref=f30e207] [cursor=pointer]:
+                - /url: https://linkedin.com/in/abhishkatwork
+            - listitem [ref=f30e211]:
+              - link "Résumé" [ref=f30e212] [cursor=pointer]:
+                - /url: /resume.pdf
+      - generic [aria-hidden] [ref=f30e217]: ABHISHEK KUMAR
+      - generic [ref=f30e218]:
+        - generic [ref=f30e219]:
+          - generic [ref=f30e220]: © 2026 Abhishek Kumar. All rights reserved.
+          - generic [ref=f30e221]: Open to AI Engineer roles — Kanpur / Remote
+        - navigation "Section navigation" [ref=f30e222]:
+          - link "Origin" [ref=f30e223] [cursor=pointer]:
+            - /url: "#origin"
+          - link "Craft" [ref=f30e224] [cursor=pointer]:
+            - /url: "#the-craft"
+          - link "Artifacts" [ref=f30e225] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Arsenal" [ref=f30e226] [cursor=pointer]:
+            - /url: "#arsenal"
+        - generic [ref=f30e227]:
+          - link "GitHub" [ref=f30e228] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar
+          - link "LinkedIn" [ref=f30e232] [cursor=pointer]:
+            - /url: https://linkedin.com/in/abhishkatwork
+          - link "Email" [ref=f30e236] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com

@@ -1,0 +1,152 @@
+[     317ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24651
+[  462166ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:241
+[  462733ms] [ERROR] %o
+
+%s TypeError: Cannot read properties of undefined (reading 'preview')
+    at eval (webpack-internal:///(app-pages-browser)/./components/sections/Artifacts.tsx:205:112)
+    at Array.map (<anonymous>)
+    at Artifacts (webpack-internal:///(app-pages-browser)/./components/sections/Artifacts.tsx:177:44)
+    at react-stack-bottom-frame (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:23610:20)
+    at renderWithHooks (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:4646:22)
+    at updateFunctionComponent (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:8032:19)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:9689:18)
+    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:544:16)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:15064:22)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14888:41)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14868:11)
+    at performWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14351:13)
+    at performSyncWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:15970:7)
+    at flushSyncWorkAcrossRoots_impl (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:15830:21)
+    at flushSyncWork$1 (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14655:12)
+    at Object.scheduleRefresh (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:113:9)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js:265:17)
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js:254:26)
+    at applyUpdate (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js:139:31)
+    at statusHandler (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js:156:13)
+    at setStatus (http://localhost:3000/_next/static/chunks/webpack.js?v=1794826147002:506:55)
+    at http://localhost:3000/_next/static/chunks/webpack.js?v=1794826147002:675:21 The above error occurred in the <Artifacts> component. It was handled by the <ReactDevOverlay> error boundary. @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/react-client-callbacks/app-router.js:53
+[  462739ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:141
+[  462856ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:1
+[  463051ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:24651
+[  463148ms] [ERROR] %o
+
+%s TypeError: Cannot read properties of undefined (reading 'preview')
+    at eval (webpack-internal:///(app-pages-browser)/./components/sections/Artifacts.tsx:205:112)
+    at Array.map (<anonymous>)
+    at Artifacts (webpack-internal:///(app-pages-browser)/./components/sections/Artifacts.tsx:177:44)
+    at react-stack-bottom-frame (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:23610:20)
+    at renderWithHooks (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:4646:22)
+    at updateFunctionComponent (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:8032:19)
+    at beginWork (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:9638:35)
+    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:544:16)
+    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:15064:22)
+    at workLoopSync (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14888:41)
+    at renderRootSync (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14868:11)
+    at performWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:14394:44)
+    at performWorkOnRootViaSchedulerTask (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:15955:7)
+    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:44:48) The above error occurred in the <Artifacts> component. It was handled by the <ReactDevOverlay> error boundary. @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/react-client-callbacks/app-router.js:53
+[  466293ms] [WARNING] The resource http://localhost:3000/_next/static/css/app/layout.css?v=1794826609764 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:1
+[  487689ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:241
+[  487858ms] [ERROR] ./components/sections/Artifacts.tsx
+Error:   x Unexpected token `section`. Expected jsx identifier
+    ,-[/Users/abhishek/Desktop/abhishekatwork/components/sections/Artifacts.tsx:59:1]
+ 56 | 
+ 57 | export const Artifacts: FC = () => {
+ 58 |   return (
+ 59 |     <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
+    :      ^^^^^^^
+ 60 |       <div className="max-w-6xl mx-auto relative">
+ 61 |         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/sections/Artifacts.tsx
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/globals/intercept-console-error.js:51
+[  488675ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:141
+[  489075ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:141
+[  489151ms] [ERROR] ./components/sections/Artifacts.tsx
+Error:   x Unexpected token `section`. Expected jsx identifier
+    ,-[/Users/abhishek/Desktop/abhishekatwork/components/sections/Artifacts.tsx:59:1]
+ 56 | 
+ 57 | export const Artifacts: FC = () => {
+ 58 |   return (
+ 59 |     <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
+    :      ^^^^^^^
+ 60 |       <div className="max-w-6xl mx-auto relative">
+ 61 |         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/sections/Artifacts.tsx
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/globals/intercept-console-error.js:51
+[  489199ms] [ERROR] ./components/sections/Artifacts.tsx
+Error:   x Unexpected token `section`. Expected jsx identifier
+    ,-[/Users/abhishek/Desktop/abhishekatwork/components/sections/Artifacts.tsx:59:1]
+ 56 | 
+ 57 | export const Artifacts: FC = () => {
+ 58 |   return (
+ 59 |     <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
+    :      ^^^^^^^
+ 60 |       <div className="max-w-6xl mx-auto relative">
+ 61 |         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/sections/Artifacts.tsx
+./app/page.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/globals/intercept-console-error.js:51
+[  489294ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:1
+[  489468ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/.pnpm/react-dom@19.0.0_react@19.0.0/node_modules/react-dom/cjs/react-dom-client.development.js:24595
+[  489496ms] ModuleBuildError: Module build failed (from ./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   x Unexpected token `section`. Expected jsx identifier
+    ,-[/Users/abhishek/Desktop/abhishekatwork/components/sections/Artifacts.tsx:59:1]
+ 56 | 
+ 57 | export const Artifacts: FC = () => {
+ 58 |   return (
+ 59 |     <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
+    :      ^^^^^^^
+ 60 |       <div className="max-w-6xl mx-auto relative">
+ 61 |         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+    `----
+
+
+Caused by:
+    Syntax Error
+    at processResult (file:///Users/abhishek/Desktop/abhishekatwork/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/webpack/bundle5.js:28:405677)
+    at <unknown> (file:///Users/abhishek/Desktop/abhishekatwork/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/webpack/bundle5.js:28:407465)
+    at <unknown> (file:///Users/abhishek/Desktop/abhishekatwork/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:8645)
+    at <unknown> (file:///Users/abhishek/Desktop/abhishekatwork/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:5019)
+    at r.callback (file:///Users/abhishek/Desktop/abhishekatwork/node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/compiled/loader-runner/LoaderRunner.js:1:4039)
+[  489496ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:42
+[  489497ms] [ERROR] ./components/sections/Artifacts.tsx
+Error:   x Unexpected token `section`. Expected jsx identifier
+    ,-[/Users/abhishek/Desktop/abhishekatwork/components/sections/Artifacts.tsx:59:1]
+ 56 | 
+ 57 | export const Artifacts: FC = () => {
+ 58 |   return (
+ 59 |     <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
+    :      ^^^^^^^
+ 60 |       <div className="max-w-6xl mx-auto relative">
+ 61 |         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
+    `----
+
+Caused by:
+    Syntax Error @ webpack-internal:///./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:85
+[  561890ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:222
+[  562446ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:222
+[  562879ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/10769b5486e943da.webpack.hot-update.json:1
+[  562880ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///./node_modules/.pnpm/next@15.1.7_react-dom@19.0.0_react@19.0.0__react@19.0.0/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:353
+[  562925ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:1
+[  562942ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/css/app/layout.css?v=1794826709873:1
+[  562959ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/chunks/main-app.js:1
+[  562959ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/chunks/app-pages-internals.js:1
+[  565961ms] [WARNING] The resource http://localhost:3000/_next/static/css/app/layout.css?v=1794826709873 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/:1

@@ -1,0 +1,206 @@
+- generic [active] [ref=f27e1]:
+  - link "Skip to main content" [ref=f27e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f27e5]:
+    - generic [ref=f27e6]:
+      - link "Abhishek Kumar" [ref=f27e7] [cursor=pointer]:
+        - /url: "#"
+      - button "Toggle mobile menu" [ref=f27e8] [cursor=pointer]
+  - article [ref=f27e11]:
+    - generic [ref=f27e12]:
+      - img "Repogent AI project screenshot" [ref=f27e14]
+      - generic [ref=f27e15]:
+        - link "Back to Artifacts" [ref=f27e16] [cursor=pointer]:
+          - /url: /#artifacts
+        - generic [ref=f27e20]: Deployed
+      - generic [ref=f27e23]:
+        - generic [ref=f27e24]: Case Study // AI Agent System
+        - heading "Repogent AI — Codebase Onboarding Agent" [level=1] [ref=f27e25]
+        - paragraph [ref=f27e26]: AI-powered onboarding agent that takes a GitHub repo URL or ZIP upload and generates interactive dependency graphs and visual architecture maps.
+        - generic [ref=f27e27]:
+          - generic [ref=f27e28]:
+            - generic [ref=f27e29]: Role
+            - text: AI Engineer / Full-Stack Developer
+          - generic [ref=f27e30]:
+            - generic [ref=f27e31]: Stack
+            - text: LangChain, LangGraph, Mistral
+          - generic [ref=f27e32]:
+            - generic [ref=f27e33]: Context
+            - text: Personal project to accelerate onboarding to unfamiliar codebases
+          - generic [ref=f27e34]:
+            - generic [ref=f27e35]: Outcome
+            - text: Handles 500+ file repos in <60s; generates interactive dependency graphs
+        - generic [ref=f27e36]:
+          - link "LIVE DEMO" [ref=f27e37] [cursor=pointer]:
+            - /url: https://repogent.vercel.app/
+          - link "GITHUB" [ref=f27e43] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar/Repogent
+      - generic [ref=f27e48]:
+        - heading "Architecture Map" [level=2] [ref=f27e49]
+        - generic [ref=f27e50]:
+          - generic [ref=f27e51]:
+            - generic [ref=f27e52]:
+              - generic [ref=f27e53] [cursor=pointer]: Repo
+              - generic [ref=f27e54]: →
+            - generic [ref=f27e55]:
+              - generic [ref=f27e56] [cursor=pointer]: AST Parse
+              - generic [ref=f27e57]: →
+            - generic [ref=f27e58]:
+              - generic [ref=f27e59] [cursor=pointer]: Graph
+              - generic [ref=f27e60]: →
+            - generic [ref=f27e61]: Chat/Scan
+          - paragraph [ref=f27e63]: Click a node to scroll to its detailed section below.
+      - generic [ref=f27e64]:
+        - heading "The Problem" [level=3] [ref=f27e65]
+        - paragraph [ref=f27e66]: Navigating large unfamiliar codebases takes days of manual exploration and architecture diagramming.
+      - generic [ref=f27e67]:
+        - heading "Solution" [level=3] [ref=f27e68]
+        - generic [ref=f27e69]:
+          - paragraph [ref=f27e70]: Multi-agent LangGraph workflow coordinated with ChromaDB vector store and Groq/Mistral LLM inference.
+          - generic [ref=f27e71]:
+            - generic [ref=f27e72]:
+              - generic [ref=f27e73]: Repo
+              - generic [ref=f27e74]: →
+            - generic [ref=f27e75]:
+              - generic [ref=f27e76]: AST Parse
+              - generic [ref=f27e77]: →
+            - generic [ref=f27e78]:
+              - generic [ref=f27e79]: Graph
+              - generic [ref=f27e80]: →
+            - generic [ref=f27e81]: Chat/Scan
+      - generic [ref=f27e83]:
+        - heading "How It Works" [level=3] [ref=f27e84]
+        - generic [ref=f27e85]:
+          - generic [ref=f27e86]:
+            - generic [ref=f27e87]: "1"
+            - generic [ref=f27e88]:
+              - heading "Repo" [level=4] [ref=f27e89]
+              - paragraph [ref=f27e90]: Repository URL or ZIP is ingested and validated for supported languages.
+          - generic [ref=f27e91]:
+            - generic [ref=f27e92]: "2"
+            - generic [ref=f27e93]:
+              - heading "AST Parse" [level=4] [ref=f27e94]
+              - paragraph [ref=f27e95]: Abstract Syntax Tree parsing extracts symbols, imports, and dependencies across files.
+          - generic [ref=f27e96]:
+            - generic [ref=f27e97]: "3"
+            - generic [ref=f27e98]:
+              - heading "Graph" [level=4] [ref=f27e99]
+              - paragraph [ref=f27e100]: Multi-agent graph builds semantic dependency graph with file-to-file relationships.
+          - generic [ref=f27e101]:
+            - generic [ref=f27e102]: "4"
+            - generic [ref=f27e103]:
+              - heading "Chat/Scan" [level=4] [ref=f27e104]
+              - paragraph [ref=f27e105]: Chat and scan interfaces enable natural-language querying of the generated graph.
+      - generic [ref=f27e106]:
+        - heading "Engineering Decisions & Trade-offs" [level=3] [ref=f27e107]
+        - generic [ref=f27e108]:
+          - generic [ref=f27e110]:
+            - generic [ref=f27e111]:
+              - generic [ref=f27e112]: Decision
+              - paragraph [ref=f27e113]: Chose ChromaDB for local embedding storage
+            - generic [ref=f27e114]:
+              - generic [ref=f27e115]: Why
+              - paragraph [ref=f27e116]: Avoids external vector DB latency and cost; enables fast semantic retrieval in serverless environments
+            - generic [ref=f27e117]:
+              - generic [ref=f27e118]: Trade-off
+              - paragraph [ref=f27e119]: Limited scaling for massive repos; requires periodic re-indexing
+          - generic [ref=f27e121]:
+            - generic [ref=f27e122]:
+              - generic [ref=f27e123]: Decision
+              - paragraph [ref=f27e124]: Structured multi-agent graph with AST parsing, summarization, and graph generation as separate nodes
+            - generic [ref=f27e125]:
+              - generic [ref=f27e126]: Why
+              - paragraph [ref=f27e127]: Enables parallelization and independent optimization of each pipeline stage
+            - generic [ref=f27e128]:
+              - generic [ref=f27e129]: Trade-off
+              - paragraph [ref=f27e130]: Increased orchestration complexity; more state to manage across nodes
+      - generic [ref=f27e131]:
+        - heading "Product Screenshots" [level=3] [ref=f27e132]
+        - generic [ref=f27e134]:
+          - img "Repogent AI — Main interface" [ref=f27e135]
+          - paragraph [ref=f27e136]: Main interface view
+      - generic [ref=f27e137]:
+        - heading "What I'd Do Next" [level=3] [ref=f27e138]
+        - paragraph [ref=f27e139]: Add direct IDE extension integration for real-time workspace indexing.
+      - generic [ref=f27e140]:
+        - link "Back to Artifacts" [ref=f27e141] [cursor=pointer]:
+          - /url: /#artifacts
+        - 'link "Next: Findly.AI" [ref=f27e146] [cursor=pointer]':
+          - /url: /projects/findly-ai
+  - contentinfo [ref=f27e151]:
+    - generic [ref=f27e154]:
+      - paragraph [ref=f27e155]: Building AI products that are measurable and dependable.
+      - generic [ref=f27e156]: Open to AI Engineer roles — Kanpur, India
+      - generic [ref=f27e159]:
+        - generic [ref=f27e160]:
+          - heading "Navigate" [level=3] [ref=f27e161]
+          - list [ref=f27e162]:
+            - listitem [ref=f27e163]:
+              - link "01 Origin" [ref=f27e164] [cursor=pointer]:
+                - /url: "#origin"
+            - listitem [ref=f27e165]:
+              - link "02 Craft" [ref=f27e166] [cursor=pointer]:
+                - /url: "#craft"
+            - listitem [ref=f27e167]:
+              - link "03 Artifacts" [ref=f27e168] [cursor=pointer]:
+                - /url: "#artifacts"
+            - listitem [ref=f27e169]:
+              - link "04 Arsenal" [ref=f27e170] [cursor=pointer]:
+                - /url: "#arsenal"
+            - listitem [ref=f27e171]:
+              - link "Epilogue" [ref=f27e172] [cursor=pointer]:
+                - /url: "#epilogue"
+        - generic [ref=f27e173]:
+          - heading "Case Studies" [level=3] [ref=f27e174]
+          - list [ref=f27e175]:
+            - listitem [ref=f27e176]:
+              - link "Repogent AI" [ref=f27e177] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+            - listitem [ref=f27e178]:
+              - link "Findly.AI" [ref=f27e179] [cursor=pointer]:
+                - /url: /projects/findly-ai
+            - listitem [ref=f27e180]:
+              - link "MediConnect" [ref=f27e181] [cursor=pointer]:
+                - /url: /projects/mediconnect
+            - listitem [ref=f27e182]:
+              - link "Ombre & Ash" [ref=f27e183] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+            - listitem [ref=f27e184]:
+              - link "Biz Trade Mart" [ref=f27e185] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+        - generic [ref=f27e186]:
+          - heading "Connect" [level=3] [ref=f27e187]
+          - list [ref=f27e188]:
+            - listitem [ref=f27e189]:
+              - link "Email" [ref=f27e190] [cursor=pointer]:
+                - /url: mailto:abhishkdk@gmail.com
+            - listitem [ref=f27e191]:
+              - link "GitHub" [ref=f27e192] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar
+            - listitem [ref=f27e196]:
+              - link "LinkedIn" [ref=f27e197] [cursor=pointer]:
+                - /url: https://linkedin.com/in/abhishkatwork
+            - listitem [ref=f27e201]:
+              - link "Résumé" [ref=f27e202] [cursor=pointer]:
+                - /url: /resume.pdf
+      - generic [aria-hidden] [ref=f27e207]: ABHISHEK KUMAR
+      - generic [ref=f27e208]:
+        - generic [ref=f27e209]:
+          - generic [ref=f27e210]: © 2026 Abhishek Kumar. All rights reserved.
+          - generic [ref=f27e211]: Open to AI Engineer roles — Kanpur / Remote
+        - navigation "Section navigation" [ref=f27e212]:
+          - link "Origin" [ref=f27e213] [cursor=pointer]:
+            - /url: "#origin"
+          - link "Craft" [ref=f27e214] [cursor=pointer]:
+            - /url: "#the-craft"
+          - link "Artifacts" [ref=f27e215] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Arsenal" [ref=f27e216] [cursor=pointer]:
+            - /url: "#arsenal"
+        - generic [ref=f27e217]:
+          - link "GitHub" [ref=f27e218] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar
+          - link "LinkedIn" [ref=f27e222] [cursor=pointer]:
+            - /url: https://linkedin.com/in/abhishkatwork
+          - link "Email" [ref=f27e226] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com

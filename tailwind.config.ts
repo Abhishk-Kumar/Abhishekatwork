@@ -74,9 +74,9 @@ const config: Config = {
         'code-inline': ['var(--font-jetbrains)', 'ui-monospace', 'monospace'],
       },
       fontSize: {
-        'display-hero': ['72px', { lineHeight: '44px' }],
+        'display-hero': ['72px', { lineHeight: '76px' }],
         'display-hero-mobile': ['44px', { lineHeight: '52px' }],
-        'headline-lg': ['52px', { lineHeight: '34px' }],
+        'headline-lg': ['52px', { lineHeight: '56px' }],
         'headline-lg-mobile': ['34px', { lineHeight: '42px' }],
         'headline-md': ['28px', { lineHeight: '36px' }],
         'headline-sm': ['22px', { lineHeight: '30px' }],

@@ -26,7 +26,7 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
 
         {/* Monolithic Display Typography */}
 <h1
-          className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.1] mb-4"
+          className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight mb-4"
         >
           <span className="block mb-8">
             {profile.name.split(' ')[0]}
@@ -87,33 +87,31 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
         <div
           className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg min-h-[200px]"
         >
-<div className="flex flex-col">
-            <span className="font-headline-sm text-bone-white font-semibold">YEARS IN SOFTWARE</span>
+          <div className="flex flex-col md:col-span-1">
+            <span className="font-headline-sm text-bone-white font-semibold">1.5+</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               YEARS IN SOFTWARE
             </span>
           </div>
-          <div className="flex flex-col {
-            border-top: 2px solid #ff5722;
-          }">
+          <div className="flex flex-col border-t border-primary md:col-span-1">
             <span className="font-headline-sm text-bone-white font-semibold">+35%</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               RELEVANCE
             </span>
           </div>
-          <div className="flex flex-col border-t border-primary">
+          <div className="flex flex-col border-t border-primary md:col-span-1">
             <span className="font-headline-sm text-bone-white font-semibold">−30%</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               LATENCY
             </span>
           </div>
-          <div className="flex flex-col border-t border-primary">
+          <div className="flex flex-col border-t border-primary md:col-span-1">
             <span className="font-headline-sm text-bone-white font-semibold">62 → 91</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               LIGHTHOUSE PERF GAIN
             </span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:col-span-1 md:col-start-3 md:row-start-2 mx-auto md:mx-0">
             <span className="font-headline-sm text-bone-white font-semibold">2 Shipped</span>
             <span className="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-1">
               AI AGENT PRODUCTS

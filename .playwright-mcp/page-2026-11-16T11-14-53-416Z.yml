@@ -1,0 +1,204 @@
+- generic [active] [ref=f31e1]:
+  - link "Skip to main content" [ref=f31e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f31e5]:
+    - generic [ref=f31e6]:
+      - link "Abhishek Kumar" [ref=f31e7] [cursor=pointer]:
+        - /url: "#"
+      - button "Toggle mobile menu" [ref=f31e8] [cursor=pointer]
+  - article [ref=f31e11]:
+    - generic [ref=f31e12]:
+      - img "Biz Trade Mart project screenshot" [ref=f31e14]
+      - generic [ref=f31e15]:
+        - link "Back to Artifacts" [ref=f31e16] [cursor=pointer]:
+          - /url: /#artifacts
+        - generic [ref=f31e20]: Client Work
+      - generic [ref=f31e23]:
+        - generic [ref=f31e24]: Case Study // B2B Marketplace
+        - heading "Biz Trade Mart — B2B Marketplace & Component Library" [level=1] [ref=f31e25]
+        - paragraph [ref=f31e26]: Scalable B2B marketplace dashboards and reusable React component library built during professional tenure.
+        - generic [ref=f31e27]:
+          - generic [ref=f31e28]:
+            - generic [ref=f31e29]: Role
+            - text: Frontend Developer / Architecture Lead
+          - generic [ref=f31e30]:
+            - generic [ref=f31e31]: Stack
+            - text: React.js, Tailwind CSS, REST APIs
+          - generic [ref=f31e32]:
+            - generic [ref=f31e33]: Context
+            - text: "Client work: B2B marketplace during professional tenure"
+          - generic [ref=f31e34]:
+            - generic [ref=f31e35]: Outcome
+            - text: Lighthouse 62→91; 10+ modules; −35% bug reports
+        - link "LIVE DEMO" [ref=f31e37] [cursor=pointer]:
+          - /url: https://www.biztrademart.com/
+      - generic [ref=f31e43]:
+        - heading "Architecture Map" [level=2] [ref=f31e44]
+        - generic [ref=f31e45]:
+          - generic [ref=f31e46]:
+            - generic [ref=f31e47]:
+              - generic [ref=f31e48] [cursor=pointer]: Catalogue
+              - generic [ref=f31e49]: →
+            - generic [ref=f31e50]:
+              - generic [ref=f31e51] [cursor=pointer]: Cart
+              - generic [ref=f31e52]: →
+            - generic [ref=f31e53]:
+              - generic [ref=f31e54] [cursor=pointer]: Escrow/Order
+              - generic [ref=f31e55]: →
+            - generic [ref=f31e56]: Dashboard
+          - paragraph [ref=f31e58]: Click a node to scroll to its detailed section below.
+      - generic [ref=f31e59]:
+        - heading "The Problem" [level=3] [ref=f31e60]
+        - paragraph [ref=f31e61]: Rapid product expansion led to UI inconsistencies and sluggish dashboard load speeds.
+      - generic [ref=f31e62]:
+        - heading "Solution" [level=3] [ref=f31e63]
+        - generic [ref=f31e64]:
+          - paragraph [ref=f31e65]: Modular React component architecture integrated with RESTful backend APIs and performance optimization budgets.
+          - generic [ref=f31e66]:
+            - generic [ref=f31e67]:
+              - generic [ref=f31e68]: Catalogue
+              - generic [ref=f31e69]: →
+            - generic [ref=f31e70]:
+              - generic [ref=f31e71]: Cart
+              - generic [ref=f31e72]: →
+            - generic [ref=f31e73]:
+              - generic [ref=f31e74]: Escrow/Order
+              - generic [ref=f31e75]: →
+            - generic [ref=f31e76]: Dashboard
+      - generic [ref=f31e78]:
+        - heading "How It Works" [level=3] [ref=f31e79]
+        - generic [ref=f31e80]:
+          - generic [ref=f31e81]:
+            - generic [ref=f31e82]: "1"
+            - generic [ref=f31e83]:
+              - heading "Catalogue" [level=4] [ref=f31e84]
+              - paragraph [ref=f31e85]: Product catalogue with 10+ modules built on atomic design system.
+          - generic [ref=f31e86]:
+            - generic [ref=f31e87]: "2"
+            - generic [ref=f31e88]:
+              - heading "Cart" [level=4] [ref=f31e89]
+              - paragraph [ref=f31e90]: Shopping cart with optimistic UI updates and error boundaries.
+          - generic [ref=f31e91]:
+            - generic [ref=f31e92]: "3"
+            - generic [ref=f31e93]:
+              - heading "Escrow/Order" [level=4] [ref=f31e94]
+              - paragraph [ref=f31e95]: Escrow and order management with RESTful API contracts.
+          - generic [ref=f31e96]:
+            - generic [ref=f31e97]: "4"
+            - generic [ref=f31e98]:
+              - heading "Dashboard" [level=4] [ref=f31e99]
+              - paragraph [ref=f31e100]: Dashboard with lazy-loading, memoization achieving Lighthouse 91.
+      - generic [ref=f31e101]:
+        - heading "Engineering Decisions & Trade-offs" [level=3] [ref=f31e102]
+        - generic [ref=f31e103]:
+          - generic [ref=f31e105]:
+            - generic [ref=f31e106]:
+              - generic [ref=f31e107]: Decision
+              - paragraph [ref=f31e108]: Adopted atomic design and OOP component principles
+            - generic [ref=f31e109]:
+              - generic [ref=f31e110]: Why
+              - paragraph [ref=f31e111]: Reduced UI development time by 40%; enforced design-system consistency across 10+ modules
+            - generic [ref=f31e112]:
+              - generic [ref=f31e113]: Trade-off
+              - paragraph [ref=f31e114]: Initial architecture investment; learning curve for team adoption
+          - generic [ref=f31e116]:
+            - generic [ref=f31e117]:
+              - generic [ref=f31e118]: Decision
+              - paragraph [ref=f31e119]: Applied aggressive code-splitting and route-based lazy loading
+            - generic [ref=f31e120]:
+              - generic [ref=f31e121]: Why
+              - paragraph [ref=f31e122]: Improved core vitals; reduced initial bundle size for faster TTI
+            - generic [ref=f31e123]:
+              - generic [ref=f31e124]: Trade-off
+              - paragraph [ref=f31e125]: Increased build complexity; potential hydration mismatches if not carefully managed
+      - generic [ref=f31e126]:
+        - heading "Product Screenshots" [level=3] [ref=f31e127]
+        - generic [ref=f31e129]:
+          - img "Biz Trade Mart — Main interface" [ref=f31e130]
+          - paragraph [ref=f31e131]: Main interface view
+      - generic [ref=f31e132]:
+        - heading "What I'd Do Next" [level=3] [ref=f31e133]
+        - paragraph [ref=f31e134]: Expand design system token documentation for mobile apps.
+      - generic [ref=f31e135]:
+        - link "Back to Artifacts" [ref=f31e136] [cursor=pointer]:
+          - /url: /#artifacts
+        - 'link "Previous: Ombre & Ash" [ref=f31e141] [cursor=pointer]':
+          - /url: /projects/ombre-ash
+  - contentinfo [ref=f31e146]:
+    - generic [ref=f31e149]:
+      - paragraph [ref=f31e150]: Building AI products that are measurable and dependable.
+      - generic [ref=f31e151]: Open to AI Engineer roles — Kanpur, India
+      - generic [ref=f31e154]:
+        - generic [ref=f31e155]:
+          - heading "Navigate" [level=3] [ref=f31e156]
+          - list [ref=f31e157]:
+            - listitem [ref=f31e158]:
+              - link "01 Origin" [ref=f31e159] [cursor=pointer]:
+                - /url: "#origin"
+            - listitem [ref=f31e160]:
+              - link "02 Craft" [ref=f31e161] [cursor=pointer]:
+                - /url: "#craft"
+            - listitem [ref=f31e162]:
+              - link "03 Artifacts" [ref=f31e163] [cursor=pointer]:
+                - /url: "#artifacts"
+            - listitem [ref=f31e164]:
+              - link "04 Arsenal" [ref=f31e165] [cursor=pointer]:
+                - /url: "#arsenal"
+            - listitem [ref=f31e166]:
+              - link "Epilogue" [ref=f31e167] [cursor=pointer]:
+                - /url: "#epilogue"
+        - generic [ref=f31e168]:
+          - heading "Case Studies" [level=3] [ref=f31e169]
+          - list [ref=f31e170]:
+            - listitem [ref=f31e171]:
+              - link "Repogent AI" [ref=f31e172] [cursor=pointer]:
+                - /url: /projects/repogent-ai
+            - listitem [ref=f31e173]:
+              - link "Findly.AI" [ref=f31e174] [cursor=pointer]:
+                - /url: /projects/findly-ai
+            - listitem [ref=f31e175]:
+              - link "MediConnect" [ref=f31e176] [cursor=pointer]:
+                - /url: /projects/mediconnect
+            - listitem [ref=f31e177]:
+              - link "Ombre & Ash" [ref=f31e178] [cursor=pointer]:
+                - /url: /projects/ombre-ash
+            - listitem [ref=f31e179]:
+              - link "Biz Trade Mart" [ref=f31e180] [cursor=pointer]:
+                - /url: /projects/biz-trade-mart
+        - generic [ref=f31e181]:
+          - heading "Connect" [level=3] [ref=f31e182]
+          - list [ref=f31e183]:
+            - listitem [ref=f31e184]:
+              - link "Email" [ref=f31e185] [cursor=pointer]:
+                - /url: mailto:abhishkdk@gmail.com
+            - listitem [ref=f31e186]:
+              - link "GitHub" [ref=f31e187] [cursor=pointer]:
+                - /url: https://github.com/Abhishk-Kumar
+            - listitem [ref=f31e191]:
+              - link "LinkedIn" [ref=f31e192] [cursor=pointer]:
+                - /url: https://linkedin.com/in/abhishkatwork
+            - listitem [ref=f31e196]:
+              - link "Résumé" [ref=f31e197] [cursor=pointer]:
+                - /url: /resume.pdf
+      - generic [aria-hidden] [ref=f31e202]: ABHISHEK KUMAR
+      - generic [ref=f31e203]:
+        - generic [ref=f31e204]:
+          - generic [ref=f31e205]: © 2026 Abhishek Kumar. All rights reserved.
+          - generic [ref=f31e206]: Open to AI Engineer roles — Kanpur / Remote
+        - navigation "Section navigation" [ref=f31e207]:
+          - link "Origin" [ref=f31e208] [cursor=pointer]:
+            - /url: "#origin"
+          - link "Craft" [ref=f31e209] [cursor=pointer]:
+            - /url: "#the-craft"
+          - link "Artifacts" [ref=f31e210] [cursor=pointer]:
+            - /url: "#artifacts"
+          - link "Arsenal" [ref=f31e211] [cursor=pointer]:
+            - /url: "#arsenal"
+        - generic [ref=f31e212]:
+          - link "GitHub" [ref=f31e213] [cursor=pointer]:
+            - /url: https://github.com/Abhishk-Kumar
+          - link "LinkedIn" [ref=f31e217] [cursor=pointer]:
+            - /url: https://linkedin.com/in/abhishkatwork
+          - link "Email" [ref=f31e221] [cursor=pointer]:
+            - /url: mailto:abhishkdk@gmail.com
+  - alert [ref=f31e225]
