@@ -19,7 +19,7 @@ export const profile: Profile = profileSchema.parse({
 
 export const experiences: Experience[] = z.array(experienceSchema).parse([
   {
-    org: "Biz Trade Mart (Bizindo Trade Mart Pvt. Ltd.)",
+    org: "Biz Trade Mart (Bizindo Trade Mart Pvt. Ltd., Pune, India)",
     title: "Frontend Developer",
     location: "Pune, India (Remote)",
     period: "Dec 2024 to Feb 2026",
@@ -164,10 +164,11 @@ export const projects: Project[] = z.array(projectSchema).parse([
       "4 signature extraits presented with immersive olfactory scent notes and artisanal storytelling.",
       "Limited batch production model (400 numbered units per batch) across 3 flagship salons (Paris, Grasse, Kyoto)."
     ],
-    metrics: [
+metrics: [
       "4 signature extraits",
       "400 numbered units per batch",
-      "3 flagship salons (Paris / Grasse / Kyoto)"
+      "3 salons (Paris / Grasse / Kyoto)",
+      "50ml / 1.7 fl.oz flacons"
     ],
     verified: true,
     problem: "Artisanal luxury perfumery requires a digital showcase that matches physical atelier exclusivity.",
@@ -177,7 +178,7 @@ export const projects: Project[] = z.array(projectSchema).parse([
       "Employed editorial serif typography and dark obsidian tones to evoke high-end fragrance branding.",
       "Structured product catalog around limited-edition batch numbers to highlight scarcity."
     ],
-    evaluation: "Audited for high visual fidelity, buttery smooth responsive layout, and lightning-fast load times.",
+    evaluation: "Audited for high visual fidelity across 4 signature extraits, buttery smooth responsive layout with 400 numbered units per batch across 3 salons (Paris / Grasse / Kyoto), and lightning-fast load times. Flacon sizes: 50ml (1.7 fl.oz) and 1.7 fl.oz.",
     results: "Delivers an atmospheric, polished digital storefront for luxury extraits.",
     nextSteps: [
       "Add interactive fragrance layering quiz."

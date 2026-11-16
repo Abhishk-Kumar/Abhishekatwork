@@ -41,27 +41,27 @@
     position: absolute;
     border-radius: 9999px;
     filter: blur(140px);
-    background: rgba(249, 94, 20, 0.14);
+    background: rgba(249, 94, 20, 0.20);
     opacity: 1;
   }
   .glow-a {
-    width: 520px;
-    height: 520px;
-    top: 8%;
-    right: -6%;
+    width: 600px;
+    height: 600px;
+    top: 6%;
+    right: -8%;
   }
   .glow-b {
-    width: 420px;
-    height: 420px;
-    top: 45%;
-    left: -8%;
-    opacity: 0.10;
+    width: 500px;
+    height: 500px;
+    top: 40%;
+    left: -10%;
+    opacity: 0.12;
   }
   .glow-c {
-    width: 480px;
-    height: 480px;
-    bottom: -8%;
-    right: 10%;
+    width: 550px;
+    height: 550px;
+    bottom: -6%;
+    right: 8%;
   }
 }
 

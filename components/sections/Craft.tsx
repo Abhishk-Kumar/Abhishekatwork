@@ -94,7 +94,7 @@ export const Craft: FC = () => {
   ]
 
   return (
-    <section className="relative w-full px-6 md:px-16 py-20 md:py-28 bg-surface-container-lowest/60 backdrop-blur-[2px]" id="the-craft">
+    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-container-lowest/60 backdrop-blur-[2px]" id="the-craft">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
@@ -125,7 +125,7 @@ export const Craft: FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 font-body-sm text-tertiary">
             {skillStages.map((stage, sIdx) => (
               <div key={sIdx} className="p-3 bg-surface-charcoal rounded border border-border-hairline">
-                <span className="text-primary-container font-bold block mb-1">{stage.period}</span>
+                <span className="text-primary-container font-bold block mb-4">{stage.period}</span>
                 <span>{stage.skills}</span>
               </div>
             ))}

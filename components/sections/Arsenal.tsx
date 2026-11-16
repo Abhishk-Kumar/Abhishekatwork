@@ -6,14 +6,10 @@ import { skills } from '../../content'
 
 export const Arsenal: FC = () => {
   return (
-    <section className="relative w-full px-6 md:px-16 py-20 md:py-28 bg-surface-container-lowest/60 backdrop-blur-[2px]" id="arsenal">
+    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-container-lowest/60 backdrop-blur-[2px]" id="arsenal">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
-
-<div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
-          04
-        </div>
 
         {/* Scene Header */}
         <div className="relative z-10 mb-16">

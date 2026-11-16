@@ -8,14 +8,10 @@ import Link from 'next/link'
 
 export const Artifacts: FC = () => {
   return (
-    <section className="relative w-full px-6 md:px-16 py-20 md:py-28 bg-surface-dim" id="artifacts">
+    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-surface-dim" id="artifacts">
       <div className="max-w-6xl mx-auto relative">
         {/* Watermark Numeral */}
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none rounded-full bg-[rgba(249,94,20,.10)] blur-[130px] w-64 h-64 opacity-20 z-0 -rotate-6"></div>
-
-<div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0">
-          03
-        </div>
 
         {/* Scene Header */}
         <div className="relative z-10 mb-16">
@@ -71,7 +67,7 @@ export const Artifacts: FC = () => {
             return (
               <div
                 key={project.slug}
-                className={`group bg-surface-container-low border border-border-hairline rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl`}
+                className={`group bg-surface-container-low border border-border-hairline rounded-lg p-6 flex flex-col justify-between transition-all duration-300 hover:bg-surface-container hover:shadow-xl min-h-[280px]`}
               >
                 <div>
                   {/* Technical Header Bar */}
@@ -109,15 +105,22 @@ export const Artifacts: FC = () => {
                     </div>
 
                     <div className={`grid gap-2 my-auto items-center ${project.slug === 'ombre-ash' || project.slug === 'biz-trade-mart' ? 'grid-cols-5' : 'grid-cols-4'}`}>
-                      {projectDiagram[project.slug].map((step, sIdx) => (
-                        <div
-                          key={sIdx}
-                          className={`bg-surface-container-high p-2 rounded text-center text-bone-white ${project.slug === 'ombre-ash' || project.slug === 'biz-trade-mart' ? 'text-[8px]' : 'text-[9px]'}`}
-                        >
-                          <div className="text-on-surface-variant uppercase">{step.split(' ')[0]}</div>
-                          <div className="font-semibold">{step.split(' ').slice(1).join(' ') || step}</div>
-                        </div>
-                      ))}
+                      {projectDiagram[project.slug].map((step, sIdx) => {
+                        const parts = step.split(' ')
+                        return (
+                          <div
+                            key={sIdx}
+                            className={`bg-surface-container-high p-2 rounded text-center text-bone-white ${project.slug === 'ombre-ash' || project.slug === 'biz-trade-mart' ? 'text-[8px]' : 'text-[9px]'}`}
+                          >
+                            <div className="text-on-surface-variant uppercase mb-1">
+                              {parts[0]}
+                            </div>
+                            {parts.length > 1 && (
+                              <div className="font-semibold">{step}</div>
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
 
                     <div className="text-on-surface-variant text-[11px]">

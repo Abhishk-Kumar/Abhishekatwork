@@ -129,14 +129,13 @@ export const Footer: FC<FooterProps> = ({ hasResumePdf }) => {
           </div>
         </div>
 
-        {/* Giant ABHISHEK wordmark */}
+{/* Giant ABHISHEK wordmark */}
         <div className="overflow-hidden mb-16 md:mb-20">
           <div
             className="font-newsreader font-semibold uppercase leading-[0.8] tracking-tight whitespace-nowrap select-none text-[clamp(96px,19vw,300px)] text-center transition-colors duration-300"
             style={{
-              backgroundImage: 'linear-gradient(to bottom, #34302c, #1d1a18, #0b0a09)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#262320',
+              textShadow: '0 0 10px rgba(38,35,32,0.3)',
               transform: 'translateY(8%)',
             }}
           >

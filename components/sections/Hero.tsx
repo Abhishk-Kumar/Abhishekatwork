@@ -11,7 +11,7 @@ interface HeroProps {
 
 export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
   return (
-    <section className="relative w-full px-6 md:px-16 pt-16 md:pt-24 pb-28 md:pb-36">
+    <section className="relative w-full px-6 md:px-16 pt-12 md:pt-20 pb-24 md:pb-32 overflow-hidden">
       {/* Ambient glow now comes from the page-level layer */}
       <div className="relative max-w-6xl mx-auto flex flex-col items-start">
         {/* Availability Pill */}
@@ -25,11 +25,15 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
         </div>
 
         {/* Monolithic Display Typography */}
-        <h1
-          className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.04] mb-4"
+<h1
+          className="font-display-hero text-display-hero-mobile md:text-display-hero text-bone-white tracking-tight leading-[1.1] mb-4"
         >
-          {profile.name.split(' ')[0]} <br />
-          <span className="italic text-primary-container font-normal">{profile.name.split(' ')[1]}</span>
+          <span className="block mb-8">
+            {profile.name.split(' ')[0]}
+          </span>
+          <span className="italic text-primary-container font-normal">
+            {profile.name.split(' ')[1]}
+          </span>
         </h1>
 
         {/* Subtitle Indicator */}
@@ -81,7 +85,7 @@ export const Hero: FC<HeroProps> = ({ hasResumePdf }) => {
 
         {/* Recruiter Fast-Scan Strip */}
         <div
-          className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg"
+          className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 p-6 bg-surface-container-lowest border border-border-hairline rounded-lg min-h-[200px]"
         >
 <div className="flex flex-col">
             <span className="font-headline-sm text-bone-white font-semibold">YEARS IN SOFTWARE</span>

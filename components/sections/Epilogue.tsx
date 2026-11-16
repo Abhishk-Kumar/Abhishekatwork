@@ -10,8 +10,6 @@ interface EpilogueProps {
 
 export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
   const [copied, setCopied] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formValues, setFormValues] = useState({ name: '', email: '', message: '' })
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({})
 
@@ -40,43 +38,21 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
     e.preventDefault()
     if (!validateForm()) return
 
-    setSending(true)
-    setSubmitStatus('idle')
-
     const honeypot = (e.currentTarget as HTMLFormElement).elements.namedItem('website')
     if (honeypot && (honeypot as HTMLInputElement).value) {
-      setSending(false)
-      setSubmitStatus('error')
       return
     }
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formValues.name,
-          email: formValues.email,
-          message: formValues.message,
-        }),
-      })
+    const subject = encodeURIComponent(`Contact from ${profile.name}`)
+    const body = encodeURIComponent(`Name: ${formValues.name}\nEmail: ${formValues.email}\n\nMessage: ${formValues.message}`)
+    const mailtoUrl = `mailto:${profile.email}?subject=${subject}&body=${body}`
 
-      if (res.ok) {
-        setSubmitStatus('success')
-        setFormValues({ name: '', email: '', message: '' })
-        setFormErrors({})
-      } else {
-        setSubmitStatus('error')
-      }
-    } catch {
-      setSubmitStatus('error')
-    } finally {
-      setSending(false)
-    }
+    // Open the user's default email application
+    window.open(mailtoUrl, '_blank')
   }
 
   return (
-    <section className="relative w-full px-6 md:px-16 py-24 md:py-36 border-t border-border-hairline" id="epilogue">
+    <section className="relative w-full px-6 md:px-16 py-20 md:py-32 border-t border-border-hairline" id="epilogue">
       <div className="max-w-6xl mx-auto relative">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left: cols 1-6 */}
@@ -219,32 +195,12 @@ export const Epilogue: FC<EpilogueProps> = ({ hasResumePdf }) => {
 
                   <button
                     type="submit"
-                    disabled={sending}
                     className="w-full px-8 py-3.5 rounded font-body-sm text-body-sm font-semibold uppercase tracking-wider transition-colors focus-visible:ring-2 focus-visible:ring-primary-container outline-none"
                   >
-                    {submitStatus === 'success' ? (
-                      <div className="flex items-center gap-2 text-surface-container-lowest">
-                        <Check className="w-4 h-4 text-surface-container-lowest" />
-                        <span>Message sent</span>
-                      </div>
-                    ) : sending ? (
-                      <div className="flex items-center gap-2 text-surface-container-lowest animate-pulse">
-                        <span className="w-3 h-3 rounded-full border-2 border-current border-t-transparent animate-spin" />
-                        <span>Sending…</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-4 h-4" />
-                        <span>{submitStatus === 'error' ? 'Try email directly' : 'Send Message'}</span>
-                      </div>
-                    )}
+                    <Mail className="w-4 h-4" />
+                    <span>Open Email App</span>
                   </button>
 
-                  {submitStatus === 'error' && (
-                    <p className="mt-3 text-xs text-error-container font-mono text-center">
-                      Couldn&apos;t send — email me directly at <a href={`mailto:${profile.email}`} className="text-primary-container hover:underline">{profile.email}</a>
-                    </p>
-                  )}
                 </div>
               </form>
             </div>

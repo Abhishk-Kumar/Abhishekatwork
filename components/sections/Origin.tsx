@@ -5,7 +5,7 @@ import { profile } from '../../content'
 
 export const Origin: FC = () => {
   return (
-    <section className="relative w-full px-6 md:px-16 py-16 md:py-24 bg-transparent" id="origin">
+    <section className="relative w-full px-6 md:px-16 py-12 md:py-18 bg-transparent" id="origin">
       <div className="max-w-6xl mx-auto relative">
         <div className="absolute -top-12 md:-top-16 right-0 select-none pointer-events-none text-wireframe-numeral font-scene-counter text-scene-counter-mobile md:text-scene-counter opacity-30 leading-none z-0" aria-hidden="true">
           01
@@ -30,7 +30,7 @@ export const Origin: FC = () => {
               I started with a Computer Science diploma in 2021, then moved into a B.Tech in CSE (AI &amp; ML) in 2024. In late 2024 I worked in two directions at once: as a frontend developer on a B2B marketplace, where I learned performance, design systems and shipping to real users, and as an AI research intern, where I learned how to measure RAG quality and cut latency.
             </p>
             <p className="relative">
-              What I then combined both skill sets into my own projects: agents with state machines, quality gates and streaming interfaces. What I care about most now is retrieval quality, evaluation and making AI products dependable.
+              What I then combined both skill sets into my own projects: agents with state machines, quality gates and streaming interfaces. I care about retrieval quality, evaluation and making AI products dependable.
             </p>
           </div>
 
